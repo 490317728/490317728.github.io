@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>my-first-blog | Hexo</title>
-  <meta name="keywords" content=" test ">
-  <meta name="description" content="my-first-blog | Hexo">
+  <title>hexo+github建立个人博客 | Hexo</title>
+  <meta name="keywords" content=" hexo,github ">
+  <meta name="description" content="hexo+github建立个人博客 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="test">
 <meta property="og:type" content="article">
@@ -164,9 +164,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo-github建立个人博客" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">my-first-blog</h1>
+        <h1 class="article-title">hexo+github建立个人博客</h1>
     
     <div class="article-meta">
         
@@ -174,21 +174,21 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="test2">test2</a>
+            <a href="javascript:" data-rel="hexo">hexo</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">test</a>
+            <a href="javascript:" class="color2">hexo,github</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-05 21:48:10'>2018-07-05 21:44</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-05 22:50:41'>2018-07-05 22:33</time>
         
     </div>
     <div class="article-meta">
@@ -225,7 +225,25 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>##安装：</p>
+<p>###1、 安装node.js（到官网下载最新的稳定版本，老版本亲测有问题）</p>
+<p>###2、 安装git（官网下载）</p>
+<p>###3、 安装hexo</p>
+<p>####在gitbash中输入：<br>$ npm install -g hexo</p>
+<p>###4、 新建一个文件夹并进入：比如 /hexo<br>$ cd hexo</p>
+<p>###5、 初始化<br>$ hexo init</p>
+<p>###6、 生成生成静态页面至public目录<br>$ hexo g</p>
+<p>###7、 开启服务<br>$ hexo s</p>
+<p>###8、 浏览器输入localhost:4000</p>
+<p>##连接：</p>
+<p>###配置_config.yml中有关deploy的部分<br>deploy:<br>  type: git<br>  repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:liuxianan/liuxianan.github.io.git<br>  branch: master</p>
+<p>###安装插件<br>$ npm install hexo-deployer-git –save</p>
+<p>###部署到github<br>$ hexo d</p>
+<p>##博客内容</p>
+<p>###创建博客<br>$ hexo new “postName” #新建文章</p>
+<p>###删除博客</p>
+<p>####删除本地文件<br>$ hexo g<br>$ hexo d</p>
+
       
        
     </div>
@@ -234,12 +252,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>my-first-blog</p>
+    <p><span>文章标题:</span>hexo+github建立个人博客</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-05, 21:44:21</p>
-    <p><span>最后更新:</span>2018-07-05, 21:48:10</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/05/my-first-blog/" title="my-first-blog">http://yoursite.com/2018/07/05/my-first-blog/</a>
+    <p><span>发布时间:</span>2018-07-05, 22:33:27</p>
+    <p><span>最后更新:</span>2018-07-05, 22:50:41</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/05/hexo-github建立个人博客/" title="hexo+github建立个人博客">http://yoursite.com/2018/07/05/hexo-github建立个人博客/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
