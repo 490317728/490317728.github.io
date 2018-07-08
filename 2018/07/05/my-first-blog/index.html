@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>my-first-blog | Hexo</title>
-  <meta name="keywords" content=" test ">
-  <meta name="description" content="my-first-blog | Hexo">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="hexo+github建立个人博客流程">
 <meta name="keywords" content="hexo,github">
@@ -83,8 +83,6 @@
     
     <li data-rel="hexo"> hexo </li>
     
-    <li data-rel="test2"> test2 </li>
-    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -133,15 +131,19 @@
         <a href="javascript:" class="color2">github</a>
     </li>
     
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">test</a>
-    </li>
-    
     <div class="clearfix"></div>
 </div>
 
     
     <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2018/07/05/my-first-blog/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2018-07-05 21:44:21">2018/07/05</span>
+        </a>
         
         <a  class="hexo "
            href="/2018/07/05/hexo-github建立个人博客/"
@@ -149,14 +151,6 @@
            data-author="" >
             <span class="post-title" title="hexo+github建立个人博客">hexo+github建立个人博客</span>
             <span class="post-date" title="2018-07-05 22:33:27">2018/07/05</span>
-        </a>
-        
-        <a  class="test2 "
-           href="/2018/07/05/my-first-blog/"
-           data-tag="test"
-           data-author="" >
-            <span class="post-title" title="my-first-blog">my-first-blog</span>
-            <span class="post-date" title="2018-07-05 21:44:21">2018/07/05</span>
         </a>
         
     </nav>
@@ -173,29 +167,15 @@
     <div class="pjax">
         <article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">my-first-blog</h1>
-    
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-            <a href="javascript:" data-rel="test2">test2</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color5">test</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-08 19:55:18'>2018-07-05 21:44</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-08 19:58:59'>2018-07-05 21:44</time>
         
     </div>
     <div class="article-meta">
@@ -217,7 +197,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#categories-test2"><span class="toc-text">categories: test2</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -232,7 +212,8 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>title: my-first-blog<br>date: 2018-07-05 21:44:21<br>tags: test</p>
+<h2 id="categories-test2"><a href="#categories-test2" class="headerlink" title="categories: test2"></a>categories: test2</h2>
       
        
     </div>
@@ -241,12 +222,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>my-first-blog</p>
+    <p><span>文章标题:</span></p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
     <p><span>发布时间:</span>2018-07-05, 21:44:21</p>
-    <p><span>最后更新:</span>2018-07-08, 19:55:18</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/05/my-first-blog/" title="my-first-blog">http://yoursite.com/2018/07/05/my-first-blog/</a>
+    <p><span>最后更新:</span>2018-07-08, 19:58:59</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/05/my-first-blog/" title="">http://yoursite.com/2018/07/05/my-first-blog/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -288,7 +269,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#hexo','#github','#test',],
+            'data': ['#hexo','#github',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
