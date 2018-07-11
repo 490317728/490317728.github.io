@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day1 | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day1 | Hexo">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="reader项目-day22、列表页–页面设计一层一层嵌套&amp;lt;view&amp;gt;   &amp;lt;swiper&amp;gt;     &amp;lt;swiper-item&amp;gt;&amp;lt;image src=&amp;#39;/images/iqiyi.png&amp;#39;&amp;gt;&amp;lt;/image&amp;gt;&amp;lt;/swiper-item&amp;gt;     &amp;lt;swiper-item&amp;gt;&amp;lt;image src=&amp;">
 <meta property="og:type" content="article">
@@ -178,31 +178,17 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day1" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">小程序reader项目-day1</h1>
+        <article id="post-阅读小程序-day2" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">小程序</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-09 22:37:02'>2018-07-09 22:30</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-11 23:07:48'>2018-07-11 23:08</time>
         
     </div>
     <div class="article-meta">
@@ -224,7 +210,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day1"><span class="toc-text">reader项目-day1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、首页"><span class="toc-text">1、首页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#兴建小程序时，一般会自带首页，此时首页会自动获取你的微信头像与昵称，并显示"><span class="toc-text">兴建小程序时，一般会自带首页，此时首页会自动获取你的微信头像与昵称，并显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）每个页面中有一个隐藏的-page标签-可以更改整体的效果"><span class="toc-text">（1）每个页面中有一个隐藏的 page标签 可以更改整体的效果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#例如-修改整体页面的背景为指定颜色"><span class="toc-text">例如 修改整体页面的背景为指定颜色</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）app-json中修改”navigationBarBackgroundColor”-可以更改所有页面的顶部内容的颜色"><span class="toc-text">（2）app.json中修改”navigationBarBackgroundColor” 可以更改所有页面的顶部内容的颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）单位使用rpx可以进行自适应"><span class="toc-text">（3）单位使用rpx可以进行自适应</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day2"><span class="toc-text">reader项目-day2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、列表页–页面设计"><span class="toc-text">2、列表页–页面设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一层一层嵌套"><span class="toc-text">一层一层嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-view标签相当于html中的div-2-swiper为轮播图-3-图片路径为绝对路径"><span class="toc-text">1 view标签相当于html中的div 2 swiper为轮播图 3 图片路径为绝对路径</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wcss和css类似"><span class="toc-text">wcss和css类似</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#class-intro-选择所有拥有-class-”intro”-的组件"><span class="toc-text">.class;     .intro;                                        选择所有拥有 class=”intro” 的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#id-firstname-选择拥有-id-”firstname”-的组件"><span class="toc-text">#id;     #firstname;                                    选择拥有 id=”firstname” 的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#element-view-选择所有-view-组件"><span class="toc-text">element;     view;                                    选择所有 view 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#element-element-view-checkbox-选择所有文档的-view-组件和所有的-checkbox-组件"><span class="toc-text">element, element;     view, checkbox;     选择所有文档的 view 组件和所有的 checkbox 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#after-view-after-在-view-组件后边插入内容"><span class="toc-text">::after;     view::after;                            在 view 组件后边插入内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#before-view-before-在-view-组件前边插入内容"><span class="toc-text">::before;     view::before;                        在 view 组件前边插入内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#——————————————————————————————————"><span class="toc-text">——————————————————————————————————-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在blog-json设置顶部内容及样式"><span class="toc-text">在blog.json设置顶部内容及样式</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -239,8 +225,33 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day1"><a href="#reader项目-day1" class="headerlink" title="reader项目-day1"></a>reader项目-day1</h1><h2 id="1、首页"><a href="#1、首页" class="headerlink" title="1、首页"></a>1、首页</h2><h3 id="兴建小程序时，一般会自带首页，此时首页会自动获取你的微信头像与昵称，并显示"><a href="#兴建小程序时，一般会自带首页，此时首页会自动获取你的微信头像与昵称，并显示" class="headerlink" title="兴建小程序时，一般会自带首页，此时首页会自动获取你的微信头像与昵称，并显示"></a>兴建小程序时，一般会自带首页，此时首页会自动获取你的微信头像与昵称，并显示</h3><h3 id="（1）每个页面中有一个隐藏的-page标签-可以更改整体的效果"><a href="#（1）每个页面中有一个隐藏的-page标签-可以更改整体的效果" class="headerlink" title="（1）每个页面中有一个隐藏的 page标签 可以更改整体的效果"></a>（1）每个页面中有一个隐藏的 page标签 可以更改整体的效果</h3><h4 id="例如-修改整体页面的背景为指定颜色"><a href="#例如-修改整体页面的背景为指定颜色" class="headerlink" title="例如 修改整体页面的背景为指定颜色"></a>例如 修改整体页面的背景为指定颜色</h4><p>page{<br>  height: 100%;<br>  background-color: #b3d4db;<br>}</p>
-<h3 id="（2）app-json中修改”navigationBarBackgroundColor”-可以更改所有页面的顶部内容的颜色"><a href="#（2）app-json中修改”navigationBarBackgroundColor”-可以更改所有页面的顶部内容的颜色" class="headerlink" title="（2）app.json中修改”navigationBarBackgroundColor” 可以更改所有页面的顶部内容的颜色"></a>（2）app.json中修改”navigationBarBackgroundColor” 可以更改所有页面的顶部内容的颜色</h3><h3 id="（3）单位使用rpx可以进行自适应"><a href="#（3）单位使用rpx可以进行自适应" class="headerlink" title="（3）单位使用rpx可以进行自适应"></a>（3）单位使用rpx可以进行自适应</h3>
+        <h1 id="reader项目-day2"><a href="#reader项目-day2" class="headerlink" title="reader项目-day2"></a>reader项目-day2</h1><h2 id="2、列表页–页面设计"><a href="#2、列表页–页面设计" class="headerlink" title="2、列表页–页面设计"></a>2、列表页–页面设计</h2><h3 id="一层一层嵌套"><a href="#一层一层嵌套" class="headerlink" title="一层一层嵌套"></a>一层一层嵌套</h3><pre><code class="python">&lt;view&gt;
+  &lt;swiper&gt;
+    &lt;swiper-item&gt;&lt;image src=&#39;/images/iqiyi.png&#39;&gt;&lt;/image&gt;&lt;/swiper-item&gt;
+    &lt;swiper-item&gt;&lt;image src=&#39;/images/vr.png&#39;&gt;&lt;/image&gt;&lt;/swiper-item&gt;
+    &lt;swiper-item&gt;&lt;image src=&#39;/images/wx.png&#39;&gt;&lt;/image&gt;&lt;/swiper-item&gt;
+  &lt;/swiper&gt;
+  &lt;view class=&#39;post-container&#39;&gt;
+    &lt;view class=&#39;post-author-date&#39;&gt;
+      &lt;image class=&#39;post-author&#39; src=&#39;/images/avatar/1.png&#39;&gt;&lt;/image&gt;
+      &lt;text class=&#39;post-date&#39;&gt;Sep 18 2016&lt;/text&gt;
+    &lt;/view&gt;
+    &lt;text class=&#39;post-title&#39;&gt;正是虾肥蟹壮时&lt;/text&gt;
+    &lt;image class=&#39;post-image&#39; src=&#39;/images/post/crab.png&#39;&gt;&lt;/image&gt;
+    &lt;text class=&#39;post-content&#39;&gt;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满”&lt;/text&gt;
+    &lt;view class=&#39;post-like&#39;&gt;
+      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/chat.png&#39;&gt;&lt;/image&gt;
+      &lt;text class=&#39;post-like-font&#39;&gt;95&lt;/text&gt;
+      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/view.png&#39;&gt;&lt;/image&gt;
+      &lt;text class=&#39;post-like-font&#39;&gt;123&lt;/text&gt;
+    &lt;/view&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre>
+<h4 id="1-view标签相当于html中的div-2-swiper为轮播图-3-图片路径为绝对路径"><a href="#1-view标签相当于html中的div-2-swiper为轮播图-3-图片路径为绝对路径" class="headerlink" title="1 view标签相当于html中的div 2 swiper为轮播图 3 图片路径为绝对路径"></a>1 view标签相当于html中的div 2 swiper为轮播图 3 图片路径为绝对路径</h4><h3 id="wcss和css类似"><a href="#wcss和css类似" class="headerlink" title="wcss和css类似"></a>wcss和css类似</h3><h4 id="class-intro-选择所有拥有-class-”intro”-的组件"><a href="#class-intro-选择所有拥有-class-”intro”-的组件" class="headerlink" title=".class;     .intro;                                        选择所有拥有 class=”intro” 的组件"></a>.class;     .intro;                                        选择所有拥有 class=”intro” 的组件</h4><h4 id="id-firstname-选择拥有-id-”firstname”-的组件"><a href="#id-firstname-选择拥有-id-”firstname”-的组件" class="headerlink" title="#id;     #firstname;                                    选择拥有 id=”firstname” 的组件"></a>#id;     #firstname;                                    选择拥有 id=”firstname” 的组件</h4><h4 id="element-view-选择所有-view-组件"><a href="#element-view-选择所有-view-组件" class="headerlink" title="element;     view;                                    选择所有 view 组件"></a>element;     view;                                    选择所有 view 组件</h4><h4 id="element-element-view-checkbox-选择所有文档的-view-组件和所有的-checkbox-组件"><a href="#element-element-view-checkbox-选择所有文档的-view-组件和所有的-checkbox-组件" class="headerlink" title="element, element;     view, checkbox;     选择所有文档的 view 组件和所有的 checkbox 组件"></a>element, element;     view, checkbox;     选择所有文档的 view 组件和所有的 checkbox 组件</h4><h4 id="after-view-after-在-view-组件后边插入内容"><a href="#after-view-after-在-view-组件后边插入内容" class="headerlink" title="::after;     view::after;                            在 view 组件后边插入内容"></a>::after;     view::after;                            在 view 组件后边插入内容</h4><h4 id="before-view-before-在-view-组件前边插入内容"><a href="#before-view-before-在-view-组件前边插入内容" class="headerlink" title="::before;     view::before;                        在 view 组件前边插入内容"></a>::before;     view::before;                        在 view 组件前边插入内容</h4><h3 id="——————————————————————————————————"><a href="#——————————————————————————————————" class="headerlink" title="——————————————————————————————————-"></a>——————————————————————————————————-</h3><h3 id="在blog-json设置顶部内容及样式"><a href="#在blog-json设置顶部内容及样式" class="headerlink" title="在blog.json设置顶部内容及样式"></a>在blog.json设置顶部内容及样式</h3><p>  {<br>  “navigationBarTextStyle”:”white”,<br>  “navigationBarTitleText”:”Blog”<br>  }</p>
+<pre><code class="python">
+</code></pre>
+
       
        
     </div>
@@ -249,12 +260,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day1</p>
+    <p><span>文章标题:</span></p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-09, 22:30:05</p>
-    <p><span>最后更新:</span>2018-07-09, 22:37:02</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/09/阅读小程序-day1/" title="小程序reader项目-day1">http://yoursite.com/2018/07/09/阅读小程序-day1/</a>
+    <p><span>发布时间:</span>2018-07-11, 23:08:08</p>
+    <p><span>最后更新:</span>2018-07-11, 23:07:48</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/11/阅读小程序-day2/" title="">http://yoursite.com/2018/07/11/阅读小程序-day2/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
