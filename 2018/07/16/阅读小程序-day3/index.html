@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>小程序reader项目-day3 | Hexo</title>
+  <meta name="keywords" content=" 小程序 ">
+  <meta name="description" content="小程序reader项目-day3 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader项目第三天">
 <meta name="keywords" content="小程序">
@@ -49,7 +49,7 @@
   <input class="theme_preload_comment" value="false">
 </div>
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -187,10 +187,53 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-阅读小程序-day3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Welcome"><span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#欢迎来到王健的博客"><span class="toc-text">欢迎来到王健的博客</span></a></li></ol></li></ol>
+        <h1 class="article-title">小程序reader项目-day3</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">小程序</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-07-16 22:14:27'>2018-07-16 22:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day3"><span class="toc-text">reader项目-day3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、列表页–页面循环"><span class="toc-text">2、列表页–页面循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）搭建一个框架，通过循环填充内容"><span class="toc-text">（1）搭建一个框架，通过循环填充内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在js文件中，通过var-postsData-require-“-data-posts-data-js”-引用数据库中的文件"><span class="toc-text">（2）在js文件中，通过var postsData = require(“../../data/posts-data.js”)引用数据库中的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）js的文件中，data-用于向wxml中传递数据，"><span class="toc-text">（3）js的文件中，data{}用于向wxml中传递数据，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）onload为预先加载函数，通过"><span class="toc-text">（4）onload为预先加载函数，通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可以在预先加载时，设置data中的数据。"><span class="toc-text">可以在预先加载时，设置data中的数据。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）在wxml文件中调用js传来的数据"><span class="toc-text">（5）在wxml文件中调用js传来的数据</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -203,12 +246,57 @@
     }
 </style>
 </div>
-            <h1 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h1><h2 id="欢迎来到王健的博客"><a href="#欢迎来到王健的博客" class="headerlink" title="欢迎来到王健的博客"></a>欢迎来到王健的博客</h2><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="reader项目-day3"><a href="#reader项目-day3" class="headerlink" title="reader项目-day3"></a>reader项目-day3</h1><h2 id="2、列表页–页面循环"><a href="#2、列表页–页面循环" class="headerlink" title="2、列表页–页面循环"></a>2、列表页–页面循环</h2><h3 id="（1）搭建一个框架，通过循环填充内容"><a href="#（1）搭建一个框架，通过循环填充内容" class="headerlink" title="（1）搭建一个框架，通过循环填充内容"></a>（1）搭建一个框架，通过循环填充内容</h3><h3 id="（2）在js文件中，通过var-postsData-require-“-data-posts-data-js”-引用数据库中的文件"><a href="#（2）在js文件中，通过var-postsData-require-“-data-posts-data-js”-引用数据库中的文件" class="headerlink" title="（2）在js文件中，通过var postsData = require(“../../data/posts-data.js”)引用数据库中的文件"></a>（2）在js文件中，通过var postsData = require(“../../data/posts-data.js”)引用数据库中的文件</h3><h3 id="（3）js的文件中，data-用于向wxml中传递数据，"><a href="#（3）js的文件中，data-用于向wxml中传递数据，" class="headerlink" title="（3）js的文件中，data{}用于向wxml中传递数据，"></a>（3）js的文件中，data{}用于向wxml中传递数据，</h3><h3 id="（4）onload为预先加载函数，通过"><a href="#（4）onload为预先加载函数，通过" class="headerlink" title="（4）onload为预先加载函数，通过"></a>（4）onload为预先加载函数，通过</h3><pre><code class="python">onLoad:function(options){
+    this.setData({
+      posts_key:postsData.postList 
+    });
+  }
+</code></pre>
+<h3 id="可以在预先加载时，设置data中的数据。"><a href="#可以在预先加载时，设置data中的数据。" class="headerlink" title="可以在预先加载时，设置data中的数据。"></a>可以在预先加载时，设置data中的数据。</h3><h3 id="（5）在wxml文件中调用js传来的数据"><a href="#（5）在wxml文件中调用js传来的数据" class="headerlink" title="（5）在wxml文件中调用js传来的数据"></a>（5）在wxml文件中调用js传来的数据</h3><pre><code class="python">&lt;block wx:for=&quot;{{posts_key}}&quot; wx:for-item=&quot;item&quot;&gt;
+    &lt;view class=&#39;post-container&#39;&gt;
+      &lt;view class=&#39;post-author-date&#39;&gt;
+        &lt;image class=&#39;post-author&#39; src=&#39;{{item.avatar}}&#39;&gt;&lt;/image&gt;
+        &lt;text class=&#39;post-date&#39;&gt;{{item.date}}&lt;/text&gt;
+      &lt;/view&gt;
+      &lt;text class=&#39;post-title&#39;&gt;{{item.title}}&lt;/text&gt;
+      &lt;image class=&#39;post-image&#39; src=&#39;{{item.imgSrc}}&#39;&gt;&lt;/image&gt;
+      &lt;text class=&#39;post-content&#39;&gt;{{item.content}}&lt;/text&gt;
+      &lt;view class=&#39;post-like&#39;&gt;
+        &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/chat.png&#39;&gt;&lt;/image&gt;
+        &lt;text class=&#39;post-like-font&#39;&gt;{{item.reading}}&lt;/text&gt;
+        &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/view.png&#39;&gt;&lt;/image&gt;
+        &lt;text class=&#39;post-like-font&#39;&gt;{{item.collection}}&lt;/text&gt;
+      &lt;/view&gt;
+    &lt;/view&gt;
+  &lt;/block&gt; 
+</code></pre>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>小程序reader项目-day3</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
+    <p><span>发布时间:</span>2018-07-16, 22:30:05</p>
+    <p><span>最后更新:</span>2018-07-16, 22:14:27</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/16/阅读小程序-day3/" title="小程序reader项目-day3">http://yoursite.com/2018/07/16/阅读小程序-day3/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 Yelog</p>
