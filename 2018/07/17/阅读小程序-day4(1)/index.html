@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day2 | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day2 | Hexo">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="reader项目-day4(2)3、template模板使用（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称&amp;lt;template name=&amp;quot;postItem&amp;quot;&amp;gt;   &amp;lt;view class=&amp;">
 <meta property="og:type" content="article">
@@ -202,31 +202,17 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day2" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">小程序reader项目-day2</h1>
+        <article id="post-阅读小程序-day4(1)" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">小程序</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-11 23:10:15'>2018-07-11 22:30</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-17 22:13:54'>2018-07-17 22:14</time>
         
     </div>
     <div class="article-meta">
@@ -248,7 +234,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day2"><span class="toc-text">reader项目-day2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、列表页–页面设计"><span class="toc-text">2、列表页–页面设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一层一层嵌套"><span class="toc-text">一层一层嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-view标签相当于html中的div-2-swiper为轮播图-3-图片路径为绝对路径"><span class="toc-text">1 view标签相当于html中的div 2 swiper为轮播图 3 图片路径为绝对路径</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wcss和css类似"><span class="toc-text">wcss和css类似</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#class-intro-选择所有拥有-class-”intro”-的组件"><span class="toc-text">.class;     .intro;                                        选择所有拥有 class=”intro” 的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#id-firstname-选择拥有-id-”firstname”-的组件"><span class="toc-text">#id;     #firstname;                                    选择拥有 id=”firstname” 的组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#element-view-选择所有-view-组件"><span class="toc-text">element;     view;                                    选择所有 view 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#element-element-view-checkbox-选择所有文档的-view-组件和所有的-checkbox-组件"><span class="toc-text">element, element;     view, checkbox;     选择所有文档的 view 组件和所有的 checkbox 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#after-view-after-在-view-组件后边插入内容"><span class="toc-text">::after;     view::after;                            在 view 组件后边插入内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#before-view-before-在-view-组件前边插入内容"><span class="toc-text">::before;     view::before;                        在 view 组件前边插入内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#——————————————————————————————————"><span class="toc-text">——————————————————————————————————-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在blog-json设置顶部内容及样式"><span class="toc-text">在blog.json设置顶部内容及样式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-1"><span class="toc-text">reader项目-day4(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、开始页与列表页跳转"><span class="toc-text">2、开始页与列表页跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><span class="toc-text">（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bindtap-点击子元素，父元素也会执行，即-冒泡"><span class="toc-text">bindtap:点击子元素，父元素也会执行，即  冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catchtap-点击子元素，父元素不执行，即-非冒泡"><span class="toc-text">catchtap:点击子元素，父元素不执行，即  非冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><span class="toc-text">（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><span class="toc-text">wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><span class="toc-text">wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）对于day3的补充知识—-关于本地数据库的调用"><span class="toc-text">（3）对于day3的补充知识—-关于本地数据库的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在本地数据库data-js中，需要在数据最后加入出库代码"><span class="toc-text">在本地数据库data.js中，需要在数据最后加入出库代码</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -263,31 +249,34 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day2"><a href="#reader项目-day2" class="headerlink" title="reader项目-day2"></a>reader项目-day2</h1><h2 id="2、列表页–页面设计"><a href="#2、列表页–页面设计" class="headerlink" title="2、列表页–页面设计"></a>2、列表页–页面设计</h2><h3 id="一层一层嵌套"><a href="#一层一层嵌套" class="headerlink" title="一层一层嵌套"></a>一层一层嵌套</h3><pre><code class="python">&lt;view&gt;
-  &lt;swiper&gt;
-    &lt;swiper-item&gt;&lt;image src=&#39;/images/iqiyi.png&#39;&gt;&lt;/image&gt;&lt;/swiper-item&gt;
-    &lt;swiper-item&gt;&lt;image src=&#39;/images/vr.png&#39;&gt;&lt;/image&gt;&lt;/swiper-item&gt;
-    &lt;swiper-item&gt;&lt;image src=&#39;/images/wx.png&#39;&gt;&lt;/image&gt;&lt;/swiper-item&gt;
-  &lt;/swiper&gt;
-  &lt;view class=&#39;post-container&#39;&gt;
-    &lt;view class=&#39;post-author-date&#39;&gt;
-      &lt;image class=&#39;post-author&#39; src=&#39;/images/avatar/1.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-date&#39;&gt;Sep 18 2016&lt;/text&gt;
-    &lt;/view&gt;
-    &lt;text class=&#39;post-title&#39;&gt;正是虾肥蟹壮时&lt;/text&gt;
-    &lt;image class=&#39;post-image&#39; src=&#39;/images/post/crab.png&#39;&gt;&lt;/image&gt;
-    &lt;text class=&#39;post-content&#39;&gt;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满”&lt;/text&gt;
-    &lt;view class=&#39;post-like&#39;&gt;
-      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/chat.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-like-font&#39;&gt;95&lt;/text&gt;
-      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/view.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-like-font&#39;&gt;123&lt;/text&gt;
-    &lt;/view&gt;
-  &lt;/view&gt;
-&lt;/view&gt;
-</code></pre>
-<h4 id="1-view标签相当于html中的div-2-swiper为轮播图-3-图片路径为绝对路径"><a href="#1-view标签相当于html中的div-2-swiper为轮播图-3-图片路径为绝对路径" class="headerlink" title="1 view标签相当于html中的div 2 swiper为轮播图 3 图片路径为绝对路径"></a>1 view标签相当于html中的div 2 swiper为轮播图 3 图片路径为绝对路径</h4><h3 id="wcss和css类似"><a href="#wcss和css类似" class="headerlink" title="wcss和css类似"></a>wcss和css类似</h3><h4 id="class-intro-选择所有拥有-class-”intro”-的组件"><a href="#class-intro-选择所有拥有-class-”intro”-的组件" class="headerlink" title=".class;     .intro;                                        选择所有拥有 class=”intro” 的组件"></a>.class;     .intro;                                        选择所有拥有 class=”intro” 的组件</h4><h4 id="id-firstname-选择拥有-id-”firstname”-的组件"><a href="#id-firstname-选择拥有-id-”firstname”-的组件" class="headerlink" title="#id;     #firstname;                                    选择拥有 id=”firstname” 的组件"></a>#id;     #firstname;                                    选择拥有 id=”firstname” 的组件</h4><h4 id="element-view-选择所有-view-组件"><a href="#element-view-选择所有-view-组件" class="headerlink" title="element;     view;                                    选择所有 view 组件"></a>element;     view;                                    选择所有 view 组件</h4><h4 id="element-element-view-checkbox-选择所有文档的-view-组件和所有的-checkbox-组件"><a href="#element-element-view-checkbox-选择所有文档的-view-组件和所有的-checkbox-组件" class="headerlink" title="element, element;     view, checkbox;     选择所有文档的 view 组件和所有的 checkbox 组件"></a>element, element;     view, checkbox;     选择所有文档的 view 组件和所有的 checkbox 组件</h4><h4 id="after-view-after-在-view-组件后边插入内容"><a href="#after-view-after-在-view-组件后边插入内容" class="headerlink" title="::after;     view::after;                            在 view 组件后边插入内容"></a>::after;     view::after;                            在 view 组件后边插入内容</h4><h4 id="before-view-before-在-view-组件前边插入内容"><a href="#before-view-before-在-view-组件前边插入内容" class="headerlink" title="::before;     view::before;                        在 view 组件前边插入内容"></a>::before;     view::before;                        在 view 组件前边插入内容</h4><h3 id="——————————————————————————————————"><a href="#——————————————————————————————————" class="headerlink" title="——————————————————————————————————-"></a>——————————————————————————————————-</h3><h3 id="在blog-json设置顶部内容及样式"><a href="#在blog-json设置顶部内容及样式" class="headerlink" title="在blog.json设置顶部内容及样式"></a>在blog.json设置顶部内容及样式</h3><p>  {<br>  “navigationBarTextStyle”:”white”,<br>  “navigationBarTitleText”:”Blog”<br>  }</p>
-<pre><code class="python">
+        <h1 id="reader项目-day4-1"><a href="#reader项目-day4-1" class="headerlink" title="reader项目-day4(1)"></a>reader项目-day4(1)</h1><h2 id="2、开始页与列表页跳转"><a href="#2、开始页与列表页跳转" class="headerlink" title="2、开始页与列表页跳转"></a>2、开始页与列表页跳转</h2><h3 id="（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><a href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”" class="headerlink" title="（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”"></a>（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</h3><h3 id="bindtap-点击子元素，父元素也会执行，即-冒泡"><a href="#bindtap-点击子元素，父元素也会执行，即-冒泡" class="headerlink" title="bindtap:点击子元素，父元素也会执行，即  冒泡"></a>bindtap:点击子元素，父元素也会执行，即  冒泡</h3><h3 id="catchtap-点击子元素，父元素不执行，即-非冒泡"><a href="#catchtap-点击子元素，父元素不执行，即-非冒泡" class="headerlink" title="catchtap:点击子元素，父元素不执行，即  非冒泡"></a>catchtap:点击子元素，父元素不执行，即  非冒泡</h3><h3 id="（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><a href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo" class="headerlink" title="（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo"></a>（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</h3><h3 id="wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><a href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数" class="headerlink" title="wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"></a>wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</h3><h3 id="wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><a href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数" class="headerlink" title="wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"></a>wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</h3><h3 id="（3）对于day3的补充知识—-关于本地数据库的调用"><a href="#（3）对于day3的补充知识—-关于本地数据库的调用" class="headerlink" title="（3）对于day3的补充知识—-关于本地数据库的调用"></a>（3）对于day3的补充知识—-关于本地数据库的调用</h3><h3 id="在本地数据库data-js中，需要在数据最后加入出库代码"><a href="#在本地数据库data-js中，需要在数据最后加入出库代码" class="headerlink" title="在本地数据库data.js中，需要在数据最后加入出库代码"></a>在本地数据库data.js中，需要在数据最后加入出库代码</h3><pre><code class="python">var local_database = [
+  {
+    date: &quot;Sep 18 2016&quot;,
+    title: &quot;正是虾肥蟹壮时&quot;,
+    imgSrc: &quot;/images/post/crab.png&quot;,
+    avatar: &quot;/images/avatar/1.png&quot;,
+    content: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，&quot;,
+    reading: &quot;112&quot;,
+    collection: &quot;96&quot;,
+    headImgSrc: &quot;/images/post/crab.png&quot;,
+    author: &quot;林白衣&quot;,
+    dateTime: &quot;24小时前&quot;,
+    detail: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中，便足了一生矣。”漫漫人生长路，美食与爱岂可辜负？于是作为一个吃货，突然也很想回味一下属于我的味蕾记忆。记忆中的秋蟹，是家人的味道，弥漫着浓浓的亲情。\n\n是谁来自山川湖海，却囿于昼夜，厨房与爱？ 是母亲，深思熟虑，聪明耐心。吃蟹前，总会拿出几件工具，煞有介事而乐此不疲。告诉我们螃蟹至寒，需要佐以姜茶以祛寒，在配备的米醋小碟里，亦添入姜丝与紫苏，前者驱寒后者增香。泡好菊花茶，岁月静好，我们静等。&quot;,
+    postId: 0,
+    music: {
+      url: &quot;http://music.163.com/song/media/outer/url?id=142604.mp3&quot;,
+      title: &quot;夜夜夜夜-齐秦&quot;,
+      coverImg: &quot;http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000&quot;
+    }
+  },
+
+    ......
+]
+
+module.exports = {
+  postList: local_database
+}
+
 </code></pre>
 
       
@@ -298,12 +287,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day2</p>
+    <p><span>文章标题:</span></p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-11, 22:30:05</p>
-    <p><span>最后更新:</span>2018-07-11, 23:10:15</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/11/阅读小程序-day2/" title="小程序reader项目-day2">http://yoursite.com/2018/07/11/阅读小程序-day2/</a>
+    <p><span>发布时间:</span>2018-07-17, 22:14:27</p>
+    <p><span>最后更新:</span>2018-07-17, 22:13:54</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(1)/" title="">http://yoursite.com/2018/07/17/阅读小程序-day4(1)/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
