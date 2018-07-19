@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 小程序 ">
   <meta name="description" content="小程序reader项目-day6 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="学习小程序建设reader项目第五天">
+<meta name="description" content="学习小程序建设reader项目第六天">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序reader项目-day5">
-<meta property="og:url" content="http://yoursite.com/2018/07/18/阅读小程序-day5/index.html">
+<meta property="og:title" content="小程序reader项目-day6">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/阅读小程序-day6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="学习小程序建设reader项目第五天">
+<meta property="og:description" content="学习小程序建设reader项目第六天">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-18T13:47:44.417Z">
+<meta property="og:updated_time" content="2018-07-19T14:09:17.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序reader项目-day5">
-<meta name="twitter:description" content="学习小程序建设reader项目第五天">
+<meta name="twitter:title" content="小程序reader项目-day6">
+<meta name="twitter:description" content="学习小程序建设reader项目第六天">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -243,7 +243,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-19 22:07:05'>2018-07-18 22:06</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-19 22:09:17'>2018-07-18 22:06</time>
         
     </div>
     <div class="article-meta">
@@ -285,18 +285,7 @@
       url: &#39;post-detail/post-detail?id=&#39;+postId,
     })
 </code></pre>
-<pre><code>---------------------------------------------------------------------------
-
-NameError                                 Traceback (most recent call last)
-
-&lt;ipython-input-1-c9938f516864&gt; in &lt;module&gt;()
-----&gt; 1 wx.navigateTo({
-      2   url: &#39;post-detail/post-detail?id=&#39;+postId,
-      3 })
-
-
-NameError: name &#39;wx&#39; is not defined
-</code></pre><h3 id="2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"><a href="#2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据" class="headerlink" title="(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"></a>(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据</h3><pre><code class="python">/post-detail.js
+<h3 id="2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"><a href="#2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据" class="headerlink" title="(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"></a>(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据</h3><pre><code class="python">/post-detail.js
   onLoad: function (option) {
     var postId = option.id;
     var postData = postsData.postList[postId];
@@ -305,11 +294,7 @@ NameError: name &#39;wx&#39; is not defined
     })
   },
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-2-1004363ec0b4&gt;&quot;, line 2
-    onLoad: function (option) {
-    ^
-IndentationError: unexpected indent
-</code></pre><h3 id="option-id-会自动获取传入进来的id"><a href="#option-id-会自动获取传入进来的id" class="headerlink" title="option.id 会自动获取传入进来的id"></a>option.id 会自动获取传入进来的id</h3><h3 id="postsData-postList-postId-获取数据库中指定id的所有数据内容"><a href="#postsData-postList-postId-获取数据库中指定id的所有数据内容" class="headerlink" title="postsData.postList[postId] 获取数据库中指定id的所有数据内容"></a>postsData.postList[postId] 获取数据库中指定id的所有数据内容</h3><h3 id="this-setData-绑定数据，并传入wxml中"><a href="#this-setData-绑定数据，并传入wxml中" class="headerlink" title="this.setData({})绑定数据，并传入wxml中"></a>this.setData({})绑定数据，并传入wxml中</h3><pre><code class="python">
+<h3 id="option-id-会自动获取传入进来的id"><a href="#option-id-会自动获取传入进来的id" class="headerlink" title="option.id 会自动获取传入进来的id"></a>option.id 会自动获取传入进来的id</h3><h3 id="postsData-postList-postId-获取数据库中指定id的所有数据内容"><a href="#postsData-postList-postId-获取数据库中指定id的所有数据内容" class="headerlink" title="postsData.postList[postId] 获取数据库中指定id的所有数据内容"></a>postsData.postList[postId] 获取数据库中指定id的所有数据内容</h3><h3 id="this-setData-绑定数据，并传入wxml中"><a href="#this-setData-绑定数据，并传入wxml中" class="headerlink" title="this.setData({})绑定数据，并传入wxml中"></a>this.setData({})绑定数据，并传入wxml中</h3><pre><code class="python">
 </code></pre>
 
       
@@ -324,7 +309,7 @@ IndentationError: unexpected indent
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
     <p><span>发布时间:</span>2018-07-18, 22:06:05</p>
-    <p><span>最后更新:</span>2018-07-19, 22:07:05</p>
+    <p><span>最后更新:</span>2018-07-19, 22:09:17</p>
     <span>原始链接:</span><a class="post-url" href="/2018/07/18/阅读小程序-day6/" title="小程序reader项目-day6">http://yoursite.com/2018/07/18/阅读小程序-day6/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

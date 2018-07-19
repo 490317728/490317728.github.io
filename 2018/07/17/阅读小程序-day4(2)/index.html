@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 小程序 ">
   <meta name="description" content="小程序reader项目-day4(2) | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="学习小程序建设reader项目第五天">
+<meta name="description" content="学习小程序建设reader项目第六天">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序reader项目-day5">
-<meta property="og:url" content="http://yoursite.com/2018/07/18/阅读小程序-day5/index.html">
+<meta property="og:title" content="小程序reader项目-day6">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/阅读小程序-day6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="学习小程序建设reader项目第五天">
+<meta property="og:description" content="学习小程序建设reader项目第六天">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-18T13:47:44.417Z">
+<meta property="og:updated_time" content="2018-07-19T14:09:17.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序reader项目-day5">
-<meta name="twitter:description" content="学习小程序建设reader项目第五天">
+<meta name="twitter:title" content="小程序reader项目-day6">
+<meta name="twitter:description" content="学习小程序建设reader项目第六天">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -243,7 +243,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-17 22:20:27'>2018-07-17 22:15</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-19 22:10:41'>2018-07-17 22:15</time>
         
     </div>
     <div class="article-meta">
@@ -298,19 +298,11 @@
   &lt;/view&gt;
 &lt;/template&gt;
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-1-ca3b6d2cb9ad&gt;&quot;, line 1
-    &lt;template name=&quot;postItem&quot;&gt;
-    ^
-SyntaxError: invalid syntax
-</code></pre><h3 id="（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”"><a href="#（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”" class="headerlink" title="（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /"></a>（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /</h3><pre><code class="python">  &lt;block wx:for=&quot;{{posts_key}}&quot; wx:for-item=&quot;item&quot;&gt;
+<h3 id="（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”"><a href="#（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”" class="headerlink" title="（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /"></a>（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /</h3><pre><code class="python">  &lt;block wx:for=&quot;{{posts_key}}&quot; wx:for-item=&quot;item&quot;&gt;
     &lt;template is=&quot;postItem&quot; data=&quot;{{item}}&quot; /&gt;
   &lt;/block&gt;
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-2-5355ec9ef720&gt;&quot;, line 1
-    &lt;block wx:for=&quot;{{posts_key}}&quot; wx:for-item=&quot;item&quot;&gt;
-    ^
-SyntaxError: invalid syntax
-</code></pre><h3 id="把数据item传入template模板postsItem中"><a href="#把数据item传入template模板postsItem中" class="headerlink" title="把数据item传入template模板postsItem中"></a>把数据item传入template模板postsItem中</h3><h3 id="4）xxx-template-wxss为样式模板"><a href="#4）xxx-template-wxss为样式模板" class="headerlink" title="(4）xxx-template.wxss为样式模板"></a>(4）xxx-template.wxss为样式模板</h3><h2 id="在wxss文件中引用，-import-“post-item-post-item-template-wxss”"><a href="#在wxss文件中引用，-import-“post-item-post-item-template-wxss”" class="headerlink" title="在wxss文件中引用，@import “post-item/post-item-template.wxss”;"></a>在wxss文件中引用，@import “post-item/post-item-template.wxss”;</h2><pre><code class="python">
+<h3 id="把数据item传入template模板postsItem中"><a href="#把数据item传入template模板postsItem中" class="headerlink" title="把数据item传入template模板postsItem中"></a>把数据item传入template模板postsItem中</h3><h3 id="4）xxx-template-wxss为样式模板"><a href="#4）xxx-template-wxss为样式模板" class="headerlink" title="(4）xxx-template.wxss为样式模板"></a>(4）xxx-template.wxss为样式模板</h3><h2 id="在wxss文件中引用，-import-“post-item-post-item-template-wxss”"><a href="#在wxss文件中引用，-import-“post-item-post-item-template-wxss”" class="headerlink" title="在wxss文件中引用，@import “post-item/post-item-template.wxss”;"></a>在wxss文件中引用，@import “post-item/post-item-template.wxss”;</h2><pre><code class="python">
 </code></pre>
 
       
@@ -325,7 +317,7 @@ SyntaxError: invalid syntax
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
     <p><span>发布时间:</span>2018-07-17, 22:15:05</p>
-    <p><span>最后更新:</span>2018-07-17, 22:20:27</p>
+    <p><span>最后更新:</span>2018-07-19, 22:10:41</p>
     <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(2)/" title="小程序reader项目-day4(2)">http://yoursite.com/2018/07/17/阅读小程序-day4(2)/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

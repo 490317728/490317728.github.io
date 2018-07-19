@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 小程序 ">
   <meta name="description" content="小程序reader项目-day5 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="学习小程序建设reader项目第五天">
+<meta name="description" content="学习小程序建设reader项目第六天">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序reader项目-day5">
-<meta property="og:url" content="http://yoursite.com/2018/07/18/阅读小程序-day5/index.html">
+<meta property="og:title" content="小程序reader项目-day6">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/阅读小程序-day6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="学习小程序建设reader项目第五天">
+<meta property="og:description" content="学习小程序建设reader项目第六天">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-18T13:47:44.417Z">
+<meta property="og:updated_time" content="2018-07-19T14:09:17.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序reader项目-day5">
-<meta name="twitter:description" content="学习小程序建设reader项目第五天">
+<meta name="twitter:title" content="小程序reader项目-day6">
+<meta name="twitter:description" content="学习小程序建设reader项目第六天">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -243,7 +243,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-18 21:47:44'>2018-07-18 21:47</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-19 22:09:43'>2018-07-18 21:47</time>
         
     </div>
     <div class="article-meta">
@@ -282,11 +282,7 @@
       
         <h1 id="reader项目-day5"><a href="#reader项目-day5" class="headerlink" title="reader项目-day5"></a>reader项目-day5</h1><h2 id="4、列表页与详情页跳转"><a href="#4、列表页与详情页跳转" class="headerlink" title="4、列表页与详情页跳转"></a>4、列表页与详情页跳转</h2><h3 id="（1）使用-“…item”-来展开数据元素，在调用时，不需要再前面加-“item-”"><a href="#（1）使用-“…item”-来展开数据元素，在调用时，不需要再前面加-“item-”" class="headerlink" title="（1）使用 “…item” 来展开数据元素，在调用时，不需要再前面加 “item.”"></a>（1）使用 “…item” 来展开数据元素，在调用时，不需要再前面加 “item.”</h3><pre><code class="python">&lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-1-c665e92ee654&gt;&quot;, line 1
-    &lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
-    ^
-SyntaxError: invalid syntax
-</code></pre><pre><code class="python">&lt;template name=&quot;postItem&quot;&gt;
+<pre><code class="python">&lt;template name=&quot;postItem&quot;&gt;
   &lt;view class=&#39;post-container&#39;&gt;
     &lt;view class=&#39;post-author-date&#39;&gt;
       &lt;image class=&#39;post-author&#39; src=&#39;{{avatar}}&#39;&gt;&lt;/image&gt;
@@ -295,40 +291,24 @@ SyntaxError: invalid syntax
   &lt;/view&gt;
 &lt;/template&gt;
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-2-d7f27ba458a6&gt;&quot;, line 1
-    &lt;template name=&quot;postItem&quot;&gt;
-    ^
-SyntaxError: invalid syntax
-</code></pre><h3 id="2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"><a href="#2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式" class="headerlink" title="(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"></a>(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式</h3><h4 id="首先，数据库中每个文章需要有一个id，例：postId"><a href="#首先，数据库中每个文章需要有一个id，例：postId" class="headerlink" title="首先，数据库中每个文章需要有一个id，例：postId"></a>首先，数据库中每个文章需要有一个id，例：postId</h4><h4 id="其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"><a href="#其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用" class="headerlink" title="其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"></a>其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用</h4><pre><code class="python">&lt;view bindtap=&#39;onPostTap&#39; data-postId=&#39;{{item.postId}}&#39;&gt;
+<h3 id="2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"><a href="#2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式" class="headerlink" title="(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"></a>(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式</h3><h4 id="首先，数据库中每个文章需要有一个id，例：postId"><a href="#首先，数据库中每个文章需要有一个id，例：postId" class="headerlink" title="首先，数据库中每个文章需要有一个id，例：postId"></a>首先，数据库中每个文章需要有一个id，例：postId</h4><h4 id="其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"><a href="#其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用" class="headerlink" title="其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"></a>其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用</h4><pre><code class="python">&lt;view bindtap=&#39;onPostTap&#39; data-postId=&#39;{{item.postId}}&#39;&gt;
       &lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
   &lt;/view&gt;
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-4-5e16bc1e5243&gt;&quot;, line 1
-    &lt;view bindtap=&#39;onPostTap&#39; data-postId=&#39;{{item.postId}}&#39;&gt;
-    ^
-SyntaxError: invalid syntax
-</code></pre><h4 id="最后，在js文件中，通过方法调用的方式，获得点击所对应的id"><a href="#最后，在js文件中，通过方法调用的方式，获得点击所对应的id" class="headerlink" title="最后，在js文件中，通过方法调用的方式，获得点击所对应的id"></a>最后，在js文件中，通过方法调用的方式，获得点击所对应的id</h4><h3 id="var-postId-event-currentTarget-dataset-postid"><a href="#var-postId-event-currentTarget-dataset-postid" class="headerlink" title="var postId = event.currentTarget.dataset.postid"></a>var postId = event.currentTarget.dataset.postid</h3><pre><code class="python">  onPostTap:function(event){
+<h4 id="最后，在js文件中，通过方法调用的方式，获得点击所对应的id"><a href="#最后，在js文件中，通过方法调用的方式，获得点击所对应的id" class="headerlink" title="最后，在js文件中，通过方法调用的方式，获得点击所对应的id"></a>最后，在js文件中，通过方法调用的方式，获得点击所对应的id</h4><h3 id="var-postId-event-currentTarget-dataset-postid"><a href="#var-postId-event-currentTarget-dataset-postid" class="headerlink" title="var postId = event.currentTarget.dataset.postid"></a>var postId = event.currentTarget.dataset.postid</h3><pre><code class="python">  onPostTap:function(event){
     var postId = event.currentTarget.dataset.postid;
     wx.navigateTo({
       url: &#39;post-detail/post-detail&#39;,
     })
   }
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-5-cd048ba96abe&gt;&quot;, line 1
-    onPostTap:function(event){
-                             ^
-SyntaxError: invalid syntax
-</code></pre><h3 id="（3）页面跳转，相关操作"><a href="#（3）页面跳转，相关操作" class="headerlink" title="（3）页面跳转，相关操作"></a>（3）页面跳转，相关操作</h3><h4 id="需要在app-json文件中添加相应页面。"><a href="#需要在app-json文件中添加相应页面。" class="headerlink" title="需要在app.json文件中添加相应页面。"></a>需要在app.json文件中添加相应页面。</h4><pre><code class="python">  &quot;pages&quot;: [
+<h3 id="（3）页面跳转，相关操作"><a href="#（3）页面跳转，相关操作" class="headerlink" title="（3）页面跳转，相关操作"></a>（3）页面跳转，相关操作</h3><h4 id="需要在app-json文件中添加相应页面。"><a href="#需要在app-json文件中添加相应页面。" class="headerlink" title="需要在app.json文件中添加相应页面。"></a>需要在app.json文件中添加相应页面。</h4><pre><code class="python">  &quot;pages&quot;: [
     &quot;pages/index/index&quot;,
     &quot;pages/posts/posts&quot;,
     &quot;pages/posts/post-detail/post-detail&quot;
   ],
 </code></pre>
-<pre><code>  File &quot;&lt;ipython-input-6-bbe8066e72d8&gt;&quot;, line 5
-    ],
-     ^
-SyntaxError: invalid syntax
-</code></pre><h2 id="此时，跳转页面的框架已经搭好。"><a href="#此时，跳转页面的框架已经搭好。" class="headerlink" title="此时，跳转页面的框架已经搭好。"></a>此时，跳转页面的框架已经搭好。</h2><pre><code class="python">
+<h2 id="此时，跳转页面的框架已经搭好。"><a href="#此时，跳转页面的框架已经搭好。" class="headerlink" title="此时，跳转页面的框架已经搭好。"></a>此时，跳转页面的框架已经搭好。</h2><pre><code class="python">
 </code></pre>
 
       
@@ -343,7 +323,7 @@ SyntaxError: invalid syntax
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
     <p><span>发布时间:</span>2018-07-18, 21:47:05</p>
-    <p><span>最后更新:</span>2018-07-18, 21:47:44</p>
+    <p><span>最后更新:</span>2018-07-19, 22:09:43</p>
     <span>原始链接:</span><a class="post-url" href="/2018/07/18/阅读小程序-day5/" title="小程序reader项目-day5">http://yoursite.com/2018/07/18/阅读小程序-day5/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
