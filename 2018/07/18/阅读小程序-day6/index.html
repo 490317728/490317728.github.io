@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day4(1) | Hexo</title>
+  <title>小程序reader项目-day6 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day4(1) | Hexo">
+  <meta name="description" content="小程序reader项目-day6 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader项目第五天">
 <meta name="keywords" content="小程序">
@@ -219,9 +219,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day4(1)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读小程序-day6" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day4(1)</h1>
+        <h1 class="article-title">小程序reader项目-day6</h1>
     
     <div class="article-meta">
         
@@ -243,7 +243,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-17 22:17:39'>2018-07-17 22:00</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-19 22:07:05'>2018-07-18 22:06</time>
         
     </div>
     <div class="article-meta">
@@ -265,7 +265,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-1"><span class="toc-text">reader项目-day4(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、开始页与列表页跳转"><span class="toc-text">2、开始页与列表页跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><span class="toc-text">（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bindtap-点击子元素，父元素也会执行，即-冒泡"><span class="toc-text">bindtap:点击子元素，父元素也会执行，即  冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catchtap-点击子元素，父元素不执行，即-非冒泡"><span class="toc-text">catchtap:点击子元素，父元素不执行，即  非冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><span class="toc-text">（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><span class="toc-text">wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><span class="toc-text">wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）对于day3的补充知识—-关于本地数据库的调用"><span class="toc-text">（3）对于day3的补充知识—-关于本地数据库的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在本地数据库data-js中，需要在数据最后加入出库代码"><span class="toc-text">在本地数据库data.js中，需要在数据最后加入出库代码</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day6"><span class="toc-text">reader项目-day6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页数据填充"><span class="toc-text">5、详情页数据填充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过postId来指定每一个详情页的内容"><span class="toc-text">（1）通过postId来指定每一个详情页的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在列表页的js中获取了每篇文章的postId，"><span class="toc-text">在列表页的js中获取了每篇文章的postId，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再点击列表页时，把postId传递到详情页中"><span class="toc-text">再点击列表页时，把postId传递到详情页中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"><span class="toc-text">(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#option-id-会自动获取传入进来的id"><span class="toc-text">option.id 会自动获取传入进来的id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#postsData-postList-postId-获取数据库中指定id的所有数据内容"><span class="toc-text">postsData.postList[postId] 获取数据库中指定id的所有数据内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-setData-绑定数据，并传入wxml中"><span class="toc-text">this.setData({})绑定数据，并传入wxml中</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -280,34 +280,36 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day4-1"><a href="#reader项目-day4-1" class="headerlink" title="reader项目-day4(1)"></a>reader项目-day4(1)</h1><h2 id="2、开始页与列表页跳转"><a href="#2、开始页与列表页跳转" class="headerlink" title="2、开始页与列表页跳转"></a>2、开始页与列表页跳转</h2><h3 id="（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><a href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”" class="headerlink" title="（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”"></a>（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</h3><h3 id="bindtap-点击子元素，父元素也会执行，即-冒泡"><a href="#bindtap-点击子元素，父元素也会执行，即-冒泡" class="headerlink" title="bindtap:点击子元素，父元素也会执行，即  冒泡"></a>bindtap:点击子元素，父元素也会执行，即  冒泡</h3><h3 id="catchtap-点击子元素，父元素不执行，即-非冒泡"><a href="#catchtap-点击子元素，父元素不执行，即-非冒泡" class="headerlink" title="catchtap:点击子元素，父元素不执行，即  非冒泡"></a>catchtap:点击子元素，父元素不执行，即  非冒泡</h3><h3 id="（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><a href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo" class="headerlink" title="（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo"></a>（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</h3><h3 id="wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><a href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数" class="headerlink" title="wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"></a>wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</h3><h3 id="wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><a href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数" class="headerlink" title="wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"></a>wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</h3><h3 id="（3）对于day3的补充知识—-关于本地数据库的调用"><a href="#（3）对于day3的补充知识—-关于本地数据库的调用" class="headerlink" title="（3）对于day3的补充知识—-关于本地数据库的调用"></a>（3）对于day3的补充知识—-关于本地数据库的调用</h3><h3 id="在本地数据库data-js中，需要在数据最后加入出库代码"><a href="#在本地数据库data-js中，需要在数据最后加入出库代码" class="headerlink" title="在本地数据库data.js中，需要在数据最后加入出库代码"></a>在本地数据库data.js中，需要在数据最后加入出库代码</h3><pre><code class="python">var local_database = [
-  {
-    date: &quot;Sep 18 2016&quot;,
-    title: &quot;正是虾肥蟹壮时&quot;,
-    imgSrc: &quot;/images/post/crab.png&quot;,
-    avatar: &quot;/images/avatar/1.png&quot;,
-    content: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，&quot;,
-    reading: &quot;112&quot;,
-    collection: &quot;96&quot;,
-    headImgSrc: &quot;/images/post/crab.png&quot;,
-    author: &quot;林白衣&quot;,
-    dateTime: &quot;24小时前&quot;,
-    detail: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中，便足了一生矣。”漫漫人生长路，美食与爱岂可辜负？于是作为一个吃货，突然也很想回味一下属于我的味蕾记忆。记忆中的秋蟹，是家人的味道，弥漫着浓浓的亲情。\n\n是谁来自山川湖海，却囿于昼夜，厨房与爱？ 是母亲，深思熟虑，聪明耐心。吃蟹前，总会拿出几件工具，煞有介事而乐此不疲。告诉我们螃蟹至寒，需要佐以姜茶以祛寒，在配备的米醋小碟里，亦添入姜丝与紫苏，前者驱寒后者增香。泡好菊花茶，岁月静好，我们静等。&quot;,
-    postId: 0,
-    music: {
-      url: &quot;http://music.163.com/song/media/outer/url?id=142604.mp3&quot;,
-      title: &quot;夜夜夜夜-齐秦&quot;,
-      coverImg: &quot;http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000&quot;
-    }
+        <h1 id="reader项目-day6"><a href="#reader项目-day6" class="headerlink" title="reader项目-day6"></a>reader项目-day6</h1><h2 id="5、详情页数据填充"><a href="#5、详情页数据填充" class="headerlink" title="5、详情页数据填充"></a>5、详情页数据填充</h2><h3 id="（1）通过postId来指定每一个详情页的内容"><a href="#（1）通过postId来指定每一个详情页的内容" class="headerlink" title="（1）通过postId来指定每一个详情页的内容"></a>（1）通过postId来指定每一个详情页的内容</h3><h3 id="在列表页的js中获取了每篇文章的postId，"><a href="#在列表页的js中获取了每篇文章的postId，" class="headerlink" title="在列表页的js中获取了每篇文章的postId，"></a>在列表页的js中获取了每篇文章的postId，</h3><h3 id="再点击列表页时，把postId传递到详情页中"><a href="#再点击列表页时，把postId传递到详情页中" class="headerlink" title="再点击列表页时，把postId传递到详情页中"></a>再点击列表页时，把postId传递到详情页中</h3><pre><code class="python">    /posts.js
+    wx.navigateTo({
+      url: &#39;post-detail/post-detail?id=&#39;+postId,
+    })
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-1-c9938f516864&gt; in &lt;module&gt;()
+----&gt; 1 wx.navigateTo({
+      2   url: &#39;post-detail/post-detail?id=&#39;+postId,
+      3 })
+
+
+NameError: name &#39;wx&#39; is not defined
+</code></pre><h3 id="2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"><a href="#2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据" class="headerlink" title="(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"></a>(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据</h3><pre><code class="python">/post-detail.js
+  onLoad: function (option) {
+    var postId = option.id;
+    var postData = postsData.postList[postId];
+    this.setData({
+      postDetail:postData
+    })
   },
-
-    ......
-]
-
-module.exports = {
-  postList: local_database
-}
-
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-2-1004363ec0b4&gt;&quot;, line 2
+    onLoad: function (option) {
+    ^
+IndentationError: unexpected indent
+</code></pre><h3 id="option-id-会自动获取传入进来的id"><a href="#option-id-会自动获取传入进来的id" class="headerlink" title="option.id 会自动获取传入进来的id"></a>option.id 会自动获取传入进来的id</h3><h3 id="postsData-postList-postId-获取数据库中指定id的所有数据内容"><a href="#postsData-postList-postId-获取数据库中指定id的所有数据内容" class="headerlink" title="postsData.postList[postId] 获取数据库中指定id的所有数据内容"></a>postsData.postList[postId] 获取数据库中指定id的所有数据内容</h3><h3 id="this-setData-绑定数据，并传入wxml中"><a href="#this-setData-绑定数据，并传入wxml中" class="headerlink" title="this.setData({})绑定数据，并传入wxml中"></a>this.setData({})绑定数据，并传入wxml中</h3><pre><code class="python">
 </code></pre>
 
       
@@ -318,12 +320,12 @@ module.exports = {
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day4(1)</p>
+    <p><span>文章标题:</span>小程序reader项目-day6</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-17, 22:00:05</p>
-    <p><span>最后更新:</span>2018-07-17, 22:17:39</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(1)/" title="小程序reader项目-day4(1)">http://yoursite.com/2018/07/17/阅读小程序-day4(1)/</a>
+    <p><span>发布时间:</span>2018-07-18, 22:06:05</p>
+    <p><span>最后更新:</span>2018-07-19, 22:07:05</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/18/阅读小程序-day6/" title="小程序reader项目-day6">http://yoursite.com/2018/07/18/阅读小程序-day6/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
