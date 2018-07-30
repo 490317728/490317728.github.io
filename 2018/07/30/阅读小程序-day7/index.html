@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="学习小程序建设reader项目第七天">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-30T14:59:14.155Z">
+<meta property="og:updated_time" content="2018-07-30T15:03:34.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序reader项目-day7">
 <meta name="twitter:description" content="学习小程序建设reader项目第七天">
@@ -212,7 +212,7 @@
            data-tag="小程序"
            data-author="" >
             <span class="post-title" title="小程序reader项目-day7">小程序reader项目-day7</span>
-            <span class="post-date" title="2018-07-30 23:00:05">2018/07/30</span>
+            <span class="post-date" title="2018-07-30 23:10:05">2018/07/30</span>
         </a>
         
     </nav>
@@ -251,7 +251,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-30 22:59:14'>2018-07-30 23:00</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-30 23:03:34'>2018-07-30 23:10</time>
         
     </div>
     <div class="article-meta">
@@ -288,10 +288,33 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day7"><a href="#reader项目-day7" class="headerlink" title="reader项目-day7"></a>reader项目-day7</h1><h2 id="5、详情页–缓存实现收藏功能"><a href="#5、详情页–缓存实现收藏功能" class="headerlink" title="5、详情页–缓存实现收藏功能"></a>5、详情页–缓存实现收藏功能</h2><h3 id="（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断"><a href="#（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断" class="headerlink" title="（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|"></a>（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|</h3><image wx:if="" catchtap="onCollectionTap" src="/images/icon/collection.png"></image><br><image wx:else="" catchtap="onCollectionTap" src="/images/icon/collection-anti.png"></image>
-
-<h3 id="（2）在js文件中添加代码"><a href="#（2）在js文件中添加代码" class="headerlink" title="（2）在js文件中添加代码"></a>（2）在js文件中添加代码</h3><h3 id="初始化onload函数中，添加"><a href="#初始化onload函数中，添加" class="headerlink" title="初始化onload函数中，添加"></a>初始化onload函数中，添加</h3><p>var postsCollected = wx.getStorageSync(“collect_posts”)<br>if(postsCollected){<br>    var postCollected = postsCollected[postId]<br>    this.setData({<br>        collected: postCollected<br>     })<br>}<br>else{<br>    var postsCollected = {};<br>    postsCollected[postId] = false;<br>    wx.setStorageSync(“collect_posts”, postsCollected)<br>}</p>
-<h3 id="wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容"><a href="#wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容" class="headerlink" title="wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容"></a>wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容</h3><h3 id="判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"><a href="#判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。" class="headerlink" title="判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"></a>判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。</h3><h3 id="判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"><a href="#判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存" class="headerlink" title="判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"></a>判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存</h3><h3 id="（3）在js文件中，为点击收藏添加功能"><a href="#（3）在js文件中，为点击收藏添加功能" class="headerlink" title="（3）在js文件中，为点击收藏添加功能"></a>（3）在js文件中，为点击收藏添加功能</h3><p>onCollectionTap:function(event){<br>    var postsCollected = wx.getStorageSync(“collect_posts”);<br>    var postCollected = postsCollected[this.data.currentPostId];<br>    postCollected = !postCollected;<br>    postsCollected[this.data.currentPostId] = postCollected;<br>    wx.setStorageSync(“collect_posts”, postsCollected)<br>    this.setData({<br>      collected: postCollected<br>    })<br>  }</p>
+        <h1 id="reader项目-day7"><a href="#reader项目-day7" class="headerlink" title="reader项目-day7"></a>reader项目-day7</h1><h2 id="5、详情页–缓存实现收藏功能"><a href="#5、详情页–缓存实现收藏功能" class="headerlink" title="5、详情页–缓存实现收藏功能"></a>5、详情页–缓存实现收藏功能</h2><h3 id="（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断"><a href="#（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断" class="headerlink" title="（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|"></a>（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|</h3><pre><code class="python">&lt;image wx:if=&quot;{{collected}}&quot; catchtap=&#39;onCollectionTap&#39; src=&#39;/images/icon/collection.png&#39;&gt;&lt;/image&gt;
+&lt;image wx:else catchtap=&#39;onCollectionTap&#39; src=&#39;/images/icon/collection-anti.png&#39;&gt;&lt;/image&gt;
+</code></pre>
+<h3 id="（2）在js文件中添加代码"><a href="#（2）在js文件中添加代码" class="headerlink" title="（2）在js文件中添加代码"></a>（2）在js文件中添加代码</h3><h3 id="初始化onload函数中，添加"><a href="#初始化onload函数中，添加" class="headerlink" title="初始化onload函数中，添加"></a>初始化onload函数中，添加</h3><pre><code class="python">var postsCollected = wx.getStorageSync(&quot;collect_posts&quot;)
+if(postsCollected){
+    var postCollected = postsCollected[postId]
+    this.setData({
+        collected: postCollected
+     })
+}
+else{
+    var postsCollected = {};
+    postsCollected[postId] = false;
+    wx.setStorageSync(&quot;collect_posts&quot;, postsCollected)
+}
+</code></pre>
+<h3 id="wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容"><a href="#wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容" class="headerlink" title="wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容"></a>wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容</h3><h3 id="判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"><a href="#判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。" class="headerlink" title="判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"></a>判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。</h3><h3 id="判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"><a href="#判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存" class="headerlink" title="判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"></a>判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存</h3><h3 id="（3）在js文件中，为点击收藏添加功能"><a href="#（3）在js文件中，为点击收藏添加功能" class="headerlink" title="（3）在js文件中，为点击收藏添加功能"></a>（3）在js文件中，为点击收藏添加功能</h3><pre><code class="python">onCollectionTap:function(event){
+    var postsCollected = wx.getStorageSync(&quot;collect_posts&quot;);
+    var postCollected = postsCollected[this.data.currentPostId];
+    postCollected = !postCollected;
+    postsCollected[this.data.currentPostId] = postCollected;
+    wx.setStorageSync(&quot;collect_posts&quot;, postsCollected)
+    this.setData({
+      collected: postCollected
+    })
+  }
+</code></pre>
 <h4 id="首先获取指定ID内容的缓存数据，并进行取反。"><a href="#首先获取指定ID内容的缓存数据，并进行取反。" class="headerlink" title="首先获取指定ID内容的缓存数据，并进行取反。"></a>首先获取指定ID内容的缓存数据，并进行取反。</h4><h4 id="接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中"><a href="#接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中" class="headerlink" title="接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中"></a>接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中</h4><h4 id="最后，更新wxml中的数据"><a href="#最后，更新wxml中的数据" class="headerlink" title="最后，更新wxml中的数据"></a>最后，更新wxml中的数据</h4><pre><code class="python">
 </code></pre>
 
@@ -306,8 +329,8 @@
     <p><span>文章标题:</span>小程序reader项目-day7</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-30, 23:00:05</p>
-    <p><span>最后更新:</span>2018-07-30, 22:59:14</p>
+    <p><span>发布时间:</span>2018-07-30, 23:10:05</p>
+    <p><span>最后更新:</span>2018-07-30, 23:03:34</p>
     <span>原始链接:</span><a class="post-url" href="/2018/07/30/阅读小程序-day7/" title="小程序reader项目-day7">http://yoursite.com/2018/07/30/阅读小程序-day7/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
