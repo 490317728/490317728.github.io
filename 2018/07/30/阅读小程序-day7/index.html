@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day4(2) | Hexo</title>
+  <title>小程序reader项目-day7 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day4(2) | Hexo">
+  <meta name="description" content="小程序reader项目-day7 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader项目第七天">
 <meta name="keywords" content="小程序">
@@ -227,9 +227,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day4(2)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读小程序-day7" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day4(2)</h1>
+        <h1 class="article-title">小程序reader项目-day7</h1>
     
     <div class="article-meta">
         
@@ -251,7 +251,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-19 22:10:41'>2018-07-17 22:15</time>
+        创建时间:<time class="date" title='更新时间: 2018-07-30 22:59:14'>2018-07-30 23:00</time>
         
     </div>
     <div class="article-meta">
@@ -273,7 +273,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-2"><span class="toc-text">reader项目-day4(2)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3、template模板使用"><span class="toc-text">3、template模板使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）把重复使用的代码单独放在一个文件夹中，需要-xxx-template-wxml和xxx-template-wxss文件"><span class="toc-text">（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）xxx-template-wxml中需要使用template标签包含起来，并指定模板名称"><span class="toc-text">（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”"><span class="toc-text">（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把数据item传入template模板postsItem中"><span class="toc-text">把数据item传入template模板postsItem中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）xxx-template-wxss为样式模板"><span class="toc-text">(4）xxx-template.wxss为样式模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在wxss文件中引用，-import-“post-item-post-item-template-wxss”"><span class="toc-text">在wxss文件中引用，@import “post-item/post-item-template.wxss”;</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day7"><span class="toc-text">reader项目-day7</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页–缓存实现收藏功能"><span class="toc-text">5、详情页–缓存实现收藏功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断"><span class="toc-text">（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在js文件中添加代码"><span class="toc-text">（2）在js文件中添加代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化onload函数中，添加"><span class="toc-text">初始化onload函数中，添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容"><span class="toc-text">wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"><span class="toc-text">判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"><span class="toc-text">判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）在js文件中，为点击收藏添加功能"><span class="toc-text">（3）在js文件中，为点击收藏添加功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先获取指定ID内容的缓存数据，并进行取反。"><span class="toc-text">首先获取指定ID内容的缓存数据，并进行取反。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中"><span class="toc-text">接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后，更新wxml中的数据"><span class="toc-text">最后，更新wxml中的数据</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -288,29 +288,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day4-2"><a href="#reader项目-day4-2" class="headerlink" title="reader项目-day4(2)"></a>reader项目-day4(2)</h1><h2 id="3、template模板使用"><a href="#3、template模板使用" class="headerlink" title="3、template模板使用"></a>3、template模板使用</h2><h3 id="（1）把重复使用的代码单独放在一个文件夹中，需要-xxx-template-wxml和xxx-template-wxss文件"><a href="#（1）把重复使用的代码单独放在一个文件夹中，需要-xxx-template-wxml和xxx-template-wxss文件" class="headerlink" title="（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件"></a>（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件</h3><h3 id="（2）xxx-template-wxml中需要使用template标签包含起来，并指定模板名称"><a href="#（2）xxx-template-wxml中需要使用template标签包含起来，并指定模板名称" class="headerlink" title="（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称"></a>（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称</h3><pre><code class="python">&lt;template name=&quot;postItem&quot;&gt;
-  &lt;view class=&#39;post-container&#39;&gt;
-    &lt;view class=&#39;post-author-date&#39;&gt;
-      &lt;image class=&#39;post-author&#39; src=&#39;{{item.avatar}}&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-date&#39;&gt;{{item.date}}&lt;/text&gt;
-    &lt;/view&gt;
-    &lt;text class=&#39;post-title&#39;&gt;{{item.title}}&lt;/text&gt;
-    &lt;image class=&#39;post-image&#39; src=&#39;{{item.imgSrc}}&#39;&gt;&lt;/image&gt;
-    &lt;text class=&#39;post-content&#39;&gt;{{item.content}}&lt;/text&gt;
-    &lt;view class=&#39;post-like&#39;&gt;
-      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/chat.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-like-font&#39;&gt;{{item.reading}}&lt;/text&gt;
-      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/view.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-like-font&#39;&gt;{{item.collection}}&lt;/text&gt;
-    &lt;/view&gt;
-  &lt;/view&gt;
-&lt;/template&gt;
-</code></pre>
-<h3 id="（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”"><a href="#（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”" class="headerlink" title="（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /"></a>（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /</h3><pre><code class="python">  &lt;block wx:for=&quot;{{posts_key}}&quot; wx:for-item=&quot;item&quot;&gt;
-    &lt;template is=&quot;postItem&quot; data=&quot;{{item}}&quot; /&gt;
-  &lt;/block&gt;
-</code></pre>
-<h3 id="把数据item传入template模板postsItem中"><a href="#把数据item传入template模板postsItem中" class="headerlink" title="把数据item传入template模板postsItem中"></a>把数据item传入template模板postsItem中</h3><h3 id="4）xxx-template-wxss为样式模板"><a href="#4）xxx-template-wxss为样式模板" class="headerlink" title="(4）xxx-template.wxss为样式模板"></a>(4）xxx-template.wxss为样式模板</h3><h2 id="在wxss文件中引用，-import-“post-item-post-item-template-wxss”"><a href="#在wxss文件中引用，-import-“post-item-post-item-template-wxss”" class="headerlink" title="在wxss文件中引用，@import “post-item/post-item-template.wxss”;"></a>在wxss文件中引用，@import “post-item/post-item-template.wxss”;</h2><pre><code class="python">
+        <h1 id="reader项目-day7"><a href="#reader项目-day7" class="headerlink" title="reader项目-day7"></a>reader项目-day7</h1><h2 id="5、详情页–缓存实现收藏功能"><a href="#5、详情页–缓存实现收藏功能" class="headerlink" title="5、详情页–缓存实现收藏功能"></a>5、详情页–缓存实现收藏功能</h2><h3 id="（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断"><a href="#（1）修改wxml页面，增加非缓存时图片。通过wx-if-和wx-else实现判断" class="headerlink" title="（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|"></a>（1）修改wxml页面，增加非缓存时图片。通过wx:if 和wx:else实现判断|</h3><image wx:if="" catchtap="onCollectionTap" src="/images/icon/collection.png"></image><br><image wx:else="" catchtap="onCollectionTap" src="/images/icon/collection-anti.png"></image>
+
+<h3 id="（2）在js文件中添加代码"><a href="#（2）在js文件中添加代码" class="headerlink" title="（2）在js文件中添加代码"></a>（2）在js文件中添加代码</h3><h3 id="初始化onload函数中，添加"><a href="#初始化onload函数中，添加" class="headerlink" title="初始化onload函数中，添加"></a>初始化onload函数中，添加</h3><p>var postsCollected = wx.getStorageSync(“collect_posts”)<br>if(postsCollected){<br>    var postCollected = postsCollected[postId]<br>    this.setData({<br>        collected: postCollected<br>     })<br>}<br>else{<br>    var postsCollected = {};<br>    postsCollected[postId] = false;<br>    wx.setStorageSync(“collect_posts”, postsCollected)<br>}</p>
+<h3 id="wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容"><a href="#wx-getStorageSync-“collect-posts”-从本地缓存中同步获取指定-key：collect-posts-对应的内容" class="headerlink" title="wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容"></a>wx.getStorageSync(“collect_posts”)   从本地缓存中同步获取指定 key：collect_posts 对应的内容</h3><h3 id="判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"><a href="#判断-如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。" class="headerlink" title="判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。"></a>判断 如果缓存中有对应的内容，则获取指定Id的缓存内容，并把缓存内容通过setData绑定到wxml中。</h3><h3 id="判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"><a href="#判断-如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存" class="headerlink" title="判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存"></a>判断 如果缓存中没有对应的内容，则先设定postsCollected为空，接着把指定Id的内容设置为false，并把设定好的postsCollected存入缓存</h3><h3 id="（3）在js文件中，为点击收藏添加功能"><a href="#（3）在js文件中，为点击收藏添加功能" class="headerlink" title="（3）在js文件中，为点击收藏添加功能"></a>（3）在js文件中，为点击收藏添加功能</h3><p>onCollectionTap:function(event){<br>    var postsCollected = wx.getStorageSync(“collect_posts”);<br>    var postCollected = postsCollected[this.data.currentPostId];<br>    postCollected = !postCollected;<br>    postsCollected[this.data.currentPostId] = postCollected;<br>    wx.setStorageSync(“collect_posts”, postsCollected)<br>    this.setData({<br>      collected: postCollected<br>    })<br>  }</p>
+<h4 id="首先获取指定ID内容的缓存数据，并进行取反。"><a href="#首先获取指定ID内容的缓存数据，并进行取反。" class="headerlink" title="首先获取指定ID内容的缓存数据，并进行取反。"></a>首先获取指定ID内容的缓存数据，并进行取反。</h4><h4 id="接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中"><a href="#接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中" class="headerlink" title="接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中"></a>接着更改指定Id内容的数据，并通过setStorageSync把其存入缓存中</h4><h4 id="最后，更新wxml中的数据"><a href="#最后，更新wxml中的数据" class="headerlink" title="最后，更新wxml中的数据"></a>最后，更新wxml中的数据</h4><pre><code class="python">
 </code></pre>
 
       
@@ -321,12 +303,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day4(2)</p>
+    <p><span>文章标题:</span>小程序reader项目-day7</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-17, 22:15:05</p>
-    <p><span>最后更新:</span>2018-07-19, 22:10:41</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(2)/" title="小程序reader项目-day4(2)">http://yoursite.com/2018/07/17/阅读小程序-day4(2)/</a>
+    <p><span>发布时间:</span>2018-07-30, 23:00:05</p>
+    <p><span>最后更新:</span>2018-07-30, 22:59:14</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/30/阅读小程序-day7/" title="小程序reader项目-day7">http://yoursite.com/2018/07/30/阅读小程序-day7/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
