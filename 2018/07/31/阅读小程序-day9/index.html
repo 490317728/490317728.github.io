@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day6 | Hexo</title>
+  <title>小程序reader项目-day9 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day6 | Hexo">
+  <meta name="description" content="小程序reader项目-day9 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader项目第八天">
 <meta name="keywords" content="小程序">
@@ -243,9 +243,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day6" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读小程序-day9" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day6</h1>
+        <h1 class="article-title">小程序reader项目-day9</h1>
     
     <div class="article-meta">
         
@@ -267,7 +267,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-19 22:09:17'>2018-07-18 22:06</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-01 22:42:45'>2018-07-31 22:40</time>
         
     </div>
     <div class="article-meta">
@@ -289,7 +289,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day6"><span class="toc-text">reader项目-day6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页数据填充"><span class="toc-text">5、详情页数据填充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过postId来指定每一个详情页的内容"><span class="toc-text">（1）通过postId来指定每一个详情页的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在列表页的js中获取了每篇文章的postId，"><span class="toc-text">在列表页的js中获取了每篇文章的postId，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再点击列表页时，把postId传递到详情页中"><span class="toc-text">再点击列表页时，把postId传递到详情页中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"><span class="toc-text">(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#option-id-会自动获取传入进来的id"><span class="toc-text">option.id 会自动获取传入进来的id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#postsData-postList-postId-获取数据库中指定id的所有数据内容"><span class="toc-text">postsData.postList[postId] 获取数据库中指定id的所有数据内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-setData-绑定数据，并传入wxml中"><span class="toc-text">this.setData({})绑定数据，并传入wxml中</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day8"><span class="toc-text">reader项目-day8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页–音乐播放功能实现"><span class="toc-text">5、详情页–音乐播放功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）在wxml中添加方法-catchtap-’onMusicTap’，并在js文件中编写方法"><span class="toc-text">（1）在wxml中添加方法 catchtap=’onMusicTap’，并在js文件中编写方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-playBackgroundAudio（）使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。"><span class="toc-text">wx.playBackgroundAudio（）使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dataUrl-音乐链接，目前支持的格式有-m4a-aac-mp3-wav"><span class="toc-text">dataUrl 音乐链接，目前支持的格式有 m4a, aac, mp3, wav</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#title-音乐标题"><span class="toc-text">title 音乐标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#coverImgUrl-封面URL"><span class="toc-text">coverImgUrl 封面URL</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-pauseBackgroundAudio-暂停播放音乐。"><span class="toc-text">wx.pauseBackgroundAudio()暂停播放音乐。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）使用音乐监听api，实现后台音乐播放与页面音乐播放同步。"><span class="toc-text">（2）使用音乐监听api，实现后台音乐播放与页面音乐播放同步。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-onBackgroundAudioPlay-CALLBACK-监听音乐播放。"><span class="toc-text">wx.onBackgroundAudioPlay(CALLBACK)监听音乐播放。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-onBackgroundAudioPause-CALLBACK-监听音乐暂停。"><span class="toc-text">wx.onBackgroundAudioPause(CALLBACK)监听音乐暂停。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#当后台音乐播放或者暂停时，设置页面也为播放或者暂停"><span class="toc-text">当后台音乐播放或者暂停时，设置页面也为播放或者暂停</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）当退出页面时，音乐仍然播放，但是在进入此页面，音乐继续播放，图片又恢复最原始状态，不再是播放状态。"><span class="toc-text">（3）当退出页面时，音乐仍然播放，但是在进入此页面，音乐继续播放，图片又恢复最原始状态，不再是播放状态。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#此时需要加入全局变量去实现监听功能"><span class="toc-text">此时需要加入全局变量去实现监听功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果监听到音乐正在播放，则设置全局变量为true，当下次进入时，首先判断全局变量，如果为true，则设置页面为正在播放状态"><span class="toc-text">如果监听到音乐正在播放，则设置全局变量为true，当下次进入时，首先判断全局变量，如果为true，则设置页面为正在播放状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）当播放一首音乐并跳转到另一个页面时，另一个页面仍然显示正在播放的音乐的样式。"><span class="toc-text">（4）当播放一首音乐并跳转到另一个页面时，另一个页面仍然显示正在播放的音乐的样式。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#此时需要新的全局变量来判断所在页面"><span class="toc-text">此时需要新的全局变量来判断所在页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果某页面中的音乐正在播放时，则设置全局变量为当前页面的id"><span class="toc-text">如果某页面中的音乐正在播放时，则设置全局变量为当前页面的id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这时如果还是当前页面，则页面播放样式不变"><span class="toc-text">这时如果还是当前页面，则页面播放样式不变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果到其他页面，则会设置全局变量的id为空"><span class="toc-text">如果到其他页面，则会设置全局变量的id为空</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -304,21 +304,98 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day6"><a href="#reader项目-day6" class="headerlink" title="reader项目-day6"></a>reader项目-day6</h1><h2 id="5、详情页数据填充"><a href="#5、详情页数据填充" class="headerlink" title="5、详情页数据填充"></a>5、详情页数据填充</h2><h3 id="（1）通过postId来指定每一个详情页的内容"><a href="#（1）通过postId来指定每一个详情页的内容" class="headerlink" title="（1）通过postId来指定每一个详情页的内容"></a>（1）通过postId来指定每一个详情页的内容</h3><h3 id="在列表页的js中获取了每篇文章的postId，"><a href="#在列表页的js中获取了每篇文章的postId，" class="headerlink" title="在列表页的js中获取了每篇文章的postId，"></a>在列表页的js中获取了每篇文章的postId，</h3><h3 id="再点击列表页时，把postId传递到详情页中"><a href="#再点击列表页时，把postId传递到详情页中" class="headerlink" title="再点击列表页时，把postId传递到详情页中"></a>再点击列表页时，把postId传递到详情页中</h3><pre><code class="python">    /posts.js
-    wx.navigateTo({
-      url: &#39;post-detail/post-detail?id=&#39;+postId,
+        <h1 id="reader项目-day8"><a href="#reader项目-day8" class="headerlink" title="reader项目-day8"></a>reader项目-day8</h1><h2 id="5、详情页–音乐播放功能实现"><a href="#5、详情页–音乐播放功能实现" class="headerlink" title="5、详情页–音乐播放功能实现"></a>5、详情页–音乐播放功能实现</h2><h3 id="（1）在wxml中添加方法-catchtap-’onMusicTap’，并在js文件中编写方法"><a href="#（1）在wxml中添加方法-catchtap-’onMusicTap’，并在js文件中编写方法" class="headerlink" title="（1）在wxml中添加方法 catchtap=’onMusicTap’，并在js文件中编写方法"></a>（1）在wxml中添加方法 catchtap=’onMusicTap’，并在js文件中编写方法</h3><pre><code class="python">在onload中的data里添加isPlayingMusic变量
+
+onMusicTap: function (event) {
+    var isPlayingMusic = this.data.isPlayingMusic
+    var currentPostId = this.data.currentPostId
+    var postData = postsData.postList[currentPostId]
+    if (isPlayingMusic) {
+      wx.pauseBackgroundAudio()
+      this.setData({
+        isPlayingMusic: false,
+        postData:postData
+      })
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: postData.music.url,
+        title: postData.music.title,
+        coverImgUrl: postData.music.coverImg,
+      })
+      this.setData({
+        isPlayingMusic: true,
+        postData: postData
+      })
+    }
+  }
+</code></pre>
+<h3 id="wx-playBackgroundAudio（）使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。"><a href="#wx-playBackgroundAudio（）使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。" class="headerlink" title="wx.playBackgroundAudio（）使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。"></a>wx.playBackgroundAudio（）使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。</h3><h4 id="dataUrl-音乐链接，目前支持的格式有-m4a-aac-mp3-wav"><a href="#dataUrl-音乐链接，目前支持的格式有-m4a-aac-mp3-wav" class="headerlink" title="dataUrl 音乐链接，目前支持的格式有 m4a, aac, mp3, wav"></a>dataUrl 音乐链接，目前支持的格式有 m4a, aac, mp3, wav</h4><h4 id="title-音乐标题"><a href="#title-音乐标题" class="headerlink" title="title 音乐标题"></a>title 音乐标题</h4><h4 id="coverImgUrl-封面URL"><a href="#coverImgUrl-封面URL" class="headerlink" title="coverImgUrl 封面URL"></a>coverImgUrl 封面URL</h4><h3 id="wx-pauseBackgroundAudio-暂停播放音乐。"><a href="#wx-pauseBackgroundAudio-暂停播放音乐。" class="headerlink" title="wx.pauseBackgroundAudio()暂停播放音乐。"></a>wx.pauseBackgroundAudio()暂停播放音乐。</h3><h3 id="（2）使用音乐监听api，实现后台音乐播放与页面音乐播放同步。"><a href="#（2）使用音乐监听api，实现后台音乐播放与页面音乐播放同步。" class="headerlink" title="（2）使用音乐监听api，实现后台音乐播放与页面音乐播放同步。"></a>（2）使用音乐监听api，实现后台音乐播放与页面音乐播放同步。</h3><pre><code class="python">    wx.onBackgroundAudioPlay(function(){
+      that.setData({
+        isPlayingMusic:true
+      })
+    })
+    wx.onBackgroundAudioPause(function(){
+      that.setData({
+        isPlayingMusic: false
+      })
     })
 </code></pre>
-<h3 id="2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"><a href="#2-在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据" class="headerlink" title="(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据"></a>(2)在详情页的js文件中，接受到来自列表页的id请求并在数据库中寻找数据</h3><pre><code class="python">/post-detail.js
-  onLoad: function (option) {
-    var postId = option.id;
-    var postData = postsData.postList[postId];
-    this.setData({
-      postDetail:postData
-    })
-  },
+<h3 id="wx-onBackgroundAudioPlay-CALLBACK-监听音乐播放。"><a href="#wx-onBackgroundAudioPlay-CALLBACK-监听音乐播放。" class="headerlink" title="wx.onBackgroundAudioPlay(CALLBACK)监听音乐播放。"></a>wx.onBackgroundAudioPlay(CALLBACK)监听音乐播放。</h3><h3 id="wx-onBackgroundAudioPause-CALLBACK-监听音乐暂停。"><a href="#wx-onBackgroundAudioPause-CALLBACK-监听音乐暂停。" class="headerlink" title="wx.onBackgroundAudioPause(CALLBACK)监听音乐暂停。"></a>wx.onBackgroundAudioPause(CALLBACK)监听音乐暂停。</h3><h4 id="当后台音乐播放或者暂停时，设置页面也为播放或者暂停"><a href="#当后台音乐播放或者暂停时，设置页面也为播放或者暂停" class="headerlink" title="当后台音乐播放或者暂停时，设置页面也为播放或者暂停"></a>当后台音乐播放或者暂停时，设置页面也为播放或者暂停</h4><h3 id="（3）当退出页面时，音乐仍然播放，但是在进入此页面，音乐继续播放，图片又恢复最原始状态，不再是播放状态。"><a href="#（3）当退出页面时，音乐仍然播放，但是在进入此页面，音乐继续播放，图片又恢复最原始状态，不再是播放状态。" class="headerlink" title="（3）当退出页面时，音乐仍然播放，但是在进入此页面，音乐继续播放，图片又恢复最原始状态，不再是播放状态。"></a>（3）当退出页面时，音乐仍然播放，但是在进入此页面，音乐继续播放，图片又恢复最原始状态，不再是播放状态。</h3><h3 id="此时需要加入全局变量去实现监听功能"><a href="#此时需要加入全局变量去实现监听功能" class="headerlink" title="此时需要加入全局变量去实现监听功能"></a>此时需要加入全局变量去实现监听功能</h3><pre><code class="python">首先在app.js中添加全局变量
+ globalData: {
+    g_isPlayingMusic:false,
+  }
 </code></pre>
-<h3 id="option-id-会自动获取传入进来的id"><a href="#option-id-会自动获取传入进来的id" class="headerlink" title="option.id 会自动获取传入进来的id"></a>option.id 会自动获取传入进来的id</h3><h3 id="postsData-postList-postId-获取数据库中指定id的所有数据内容"><a href="#postsData-postList-postId-获取数据库中指定id的所有数据内容" class="headerlink" title="postsData.postList[postId] 获取数据库中指定id的所有数据内容"></a>postsData.postList[postId] 获取数据库中指定id的所有数据内容</h3><h3 id="this-setData-绑定数据，并传入wxml中"><a href="#this-setData-绑定数据，并传入wxml中" class="headerlink" title="this.setData({})绑定数据，并传入wxml中"></a>this.setData({})绑定数据，并传入wxml中</h3><pre><code class="python">
+<pre><code class="python">然后在post-detail.js顶部引入全局变量
+var app = getApp()
+</code></pre>
+<pre><code class="python"> var that = this
+if (app.globalData.g_isPlayingMusic){
+      that.setData({
+        isPlayingMusic: true
+      })
+    } 
+wx.onBackgroundAudioPlay(function(){
+      that.setData({
+        isPlayingMusic:true
+      })
+      app.globalData.g_isPlayingMusic = true;
+})
+wx.onBackgroundAudioPause(function(){
+      that.setData({
+        isPlayingMusic: false
+      })
+      app.globalData.g_isPlayingMusic = false;
+})
+</code></pre>
+<h2 id="如果监听到音乐正在播放，则设置全局变量为true，当下次进入时，首先判断全局变量，如果为true，则设置页面为正在播放状态"><a href="#如果监听到音乐正在播放，则设置全局变量为true，当下次进入时，首先判断全局变量，如果为true，则设置页面为正在播放状态" class="headerlink" title="如果监听到音乐正在播放，则设置全局变量为true，当下次进入时，首先判断全局变量，如果为true，则设置页面为正在播放状态"></a>如果监听到音乐正在播放，则设置全局变量为true，当下次进入时，首先判断全局变量，如果为true，则设置页面为正在播放状态</h2><h3 id="（4）当播放一首音乐并跳转到另一个页面时，另一个页面仍然显示正在播放的音乐的样式。"><a href="#（4）当播放一首音乐并跳转到另一个页面时，另一个页面仍然显示正在播放的音乐的样式。" class="headerlink" title="（4）当播放一首音乐并跳转到另一个页面时，另一个页面仍然显示正在播放的音乐的样式。"></a>（4）当播放一首音乐并跳转到另一个页面时，另一个页面仍然显示正在播放的音乐的样式。</h3><h3 id="此时需要新的全局变量来判断所在页面"><a href="#此时需要新的全局变量来判断所在页面" class="headerlink" title="此时需要新的全局变量来判断所在页面"></a>此时需要新的全局变量来判断所在页面</h3><pre><code class="python">在app.js中添加全局变量
+ globalData: {
+    g_isPlayingMusic:false,
+    g_currentMusicPostId:null,
+  }
+</code></pre>
+<pre><code class="python"> var that = this
+    if (app.globalData.g_isPlayingMusic &amp;&amp; app.globalData.g_currentMusicPostId === postId){
+      that.setData({
+        isPlayingMusic: true
+      })
+    }
+
+    wx.onBackgroundAudioPlay(function(){
+      that.setData({
+        isPlayingMusic:true
+      })
+      app.globalData.g_isPlayingMusic = true;
+      app.globalData.g_currentMusicPostId = this.data.currentPostId;
+    })
+    wx.onBackgroundAudioPause(function(){
+      that.setData({
+        isPlayingMusic: false
+      })
+      app.globalData.g_isPlayingMusic = false;
+      app.globalData.g_currentMusicPostId = null;
+    })
+</code></pre>
+<h3 id="如果某页面中的音乐正在播放时，则设置全局变量为当前页面的id"><a href="#如果某页面中的音乐正在播放时，则设置全局变量为当前页面的id" class="headerlink" title="如果某页面中的音乐正在播放时，则设置全局变量为当前页面的id"></a>如果某页面中的音乐正在播放时，则设置全局变量为当前页面的id</h3><h3 id="这时如果还是当前页面，则页面播放样式不变"><a href="#这时如果还是当前页面，则页面播放样式不变" class="headerlink" title="这时如果还是当前页面，则页面播放样式不变"></a>这时如果还是当前页面，则页面播放样式不变</h3><h3 id="如果到其他页面，则会设置全局变量的id为空"><a href="#如果到其他页面，则会设置全局变量的id为空" class="headerlink" title="如果到其他页面，则会设置全局变量的id为空"></a>如果到其他页面，则会设置全局变量的id为空</h3><pre><code class="python">
 </code></pre>
 
       
@@ -329,12 +406,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day6</p>
+    <p><span>文章标题:</span>小程序reader项目-day9</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-18, 22:06:05</p>
-    <p><span>最后更新:</span>2018-07-19, 22:09:17</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/18/阅读小程序-day6/" title="小程序reader项目-day6">http://yoursite.com/2018/07/18/阅读小程序-day6/</a>
+    <p><span>发布时间:</span>2018-07-31, 22:40:05</p>
+    <p><span>最后更新:</span>2018-08-01, 22:42:45</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/31/阅读小程序-day9/" title="小程序reader项目-day9">http://yoursite.com/2018/07/31/阅读小程序-day9/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
