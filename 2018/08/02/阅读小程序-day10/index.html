@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day4(2) | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day4(2) | Hexo">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader项目第八天">
 <meta name="keywords" content="小程序">
@@ -259,31 +259,17 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day4(2)" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">小程序reader项目-day4(2)</h1>
+        <article id="post-阅读小程序-day10" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">小程序</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-19 22:10:41'>2018-07-17 22:15</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-02 21:43:14'>2018-08-02 21:43</time>
         
     </div>
     <div class="article-meta">
@@ -305,7 +291,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-2"><span class="toc-text">reader项目-day4(2)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3、template模板使用"><span class="toc-text">3、template模板使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）把重复使用的代码单独放在一个文件夹中，需要-xxx-template-wxml和xxx-template-wxss文件"><span class="toc-text">（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）xxx-template-wxml中需要使用template标签包含起来，并指定模板名称"><span class="toc-text">（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”"><span class="toc-text">（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把数据item传入template模板postsItem中"><span class="toc-text">把数据item传入template模板postsItem中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）xxx-template-wxss为样式模板"><span class="toc-text">(4）xxx-template.wxss为样式模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在wxss文件中引用，-import-“post-item-post-item-template-wxss”"><span class="toc-text">在wxss文件中引用，@import “post-item/post-item-template.wxss”;</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day10（1）"><span class="toc-text">reader项目-day10（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页–轮播图跳转"><span class="toc-text">5、详情页–轮播图跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先在wxml中设定对应轮播图的id，并绑定方法"><span class="toc-text">首先在wxml中设定对应轮播图的id，并绑定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接着在js文件中设定方法"><span class="toc-text">接着在js文件中设定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target-和-currentTarget的区别"><span class="toc-text">target 和 currentTarget的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target指的是当前点击的组件-currentTarget指的是事件捕获的组件"><span class="toc-text">target指的是当前点击的组件 currentTarget指的是事件捕获的组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target这里指的是image，而currentTarget指的是swiper"><span class="toc-text">target这里指的是image，而currentTarget指的是swiper</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -320,29 +306,26 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day4-2"><a href="#reader项目-day4-2" class="headerlink" title="reader项目-day4(2)"></a>reader项目-day4(2)</h1><h2 id="3、template模板使用"><a href="#3、template模板使用" class="headerlink" title="3、template模板使用"></a>3、template模板使用</h2><h3 id="（1）把重复使用的代码单独放在一个文件夹中，需要-xxx-template-wxml和xxx-template-wxss文件"><a href="#（1）把重复使用的代码单独放在一个文件夹中，需要-xxx-template-wxml和xxx-template-wxss文件" class="headerlink" title="（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件"></a>（1）把重复使用的代码单独放在一个文件夹中，需要 xxx-template.wxml和xxx-template.wxss文件</h3><h3 id="（2）xxx-template-wxml中需要使用template标签包含起来，并指定模板名称"><a href="#（2）xxx-template-wxml中需要使用template标签包含起来，并指定模板名称" class="headerlink" title="（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称"></a>（2）xxx-template.wxml中需要使用template标签包含起来，并指定模板名称</h3><pre><code class="python">&lt;template name=&quot;postItem&quot;&gt;
-  &lt;view class=&#39;post-container&#39;&gt;
-    &lt;view class=&#39;post-author-date&#39;&gt;
-      &lt;image class=&#39;post-author&#39; src=&#39;{{item.avatar}}&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-date&#39;&gt;{{item.date}}&lt;/text&gt;
-    &lt;/view&gt;
-    &lt;text class=&#39;post-title&#39;&gt;{{item.title}}&lt;/text&gt;
-    &lt;image class=&#39;post-image&#39; src=&#39;{{item.imgSrc}}&#39;&gt;&lt;/image&gt;
-    &lt;text class=&#39;post-content&#39;&gt;{{item.content}}&lt;/text&gt;
-    &lt;view class=&#39;post-like&#39;&gt;
-      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/chat.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-like-font&#39;&gt;{{item.reading}}&lt;/text&gt;
-      &lt;image class=&#39;post-like-image&#39; src=&#39;/images/icon/view.png&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-like-font&#39;&gt;{{item.collection}}&lt;/text&gt;
-    &lt;/view&gt;
-  &lt;/view&gt;
-&lt;/template&gt;
+        <h1 id="reader项目-day10（1）"><a href="#reader项目-day10（1）" class="headerlink" title="reader项目-day10（1）"></a>reader项目-day10（1）</h1><h2 id="5、详情页–轮播图跳转"><a href="#5、详情页–轮播图跳转" class="headerlink" title="5、详情页–轮播图跳转"></a>5、详情页–轮播图跳转</h2><h3 id="首先在wxml中设定对应轮播图的id，并绑定方法"><a href="#首先在wxml中设定对应轮播图的id，并绑定方法" class="headerlink" title="首先在wxml中设定对应轮播图的id，并绑定方法"></a>首先在wxml中设定对应轮播图的id，并绑定方法</h3><pre><code class="python">&lt;swiper catchtap=&#39;onSwiperTap&#39; autoplay=&#39;true&#39; interval=&#39;3000&#39; indicator-dots=&#39;true&#39;&gt;
+    &lt;swiper-item&gt;
+      &lt;image data-postId=&quot;5&quot; src=&#39;/images/iqiyi.png&#39;&gt;&lt;/image&gt;
+    &lt;/swiper-item&gt;
+    &lt;swiper-item&gt;
+      &lt;image data-postId=&quot;4&quot; src=&#39;/images/vr.png&#39;&gt;&lt;/image&gt;
+    &lt;/swiper-item&gt;
+    &lt;swiper-item&gt;
+      &lt;image data-postId=&quot;3&quot; src=&#39;/images/wx.png&#39;&gt;&lt;/image&gt;
+    &lt;/swiper-item&gt;
+  &lt;/swiper&gt;
 </code></pre>
-<h3 id="（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”"><a href="#（3）调用template文件：在wxml文件中引用-头部输入：import-src-”post-item-post-item-template-wxml”" class="headerlink" title="（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /"></a>（3）调用template文件：在wxml文件中引用 头部输入：import src=”post-item/post-item-template.wxml” /</h3><pre><code class="python">  &lt;block wx:for=&quot;{{posts_key}}&quot; wx:for-item=&quot;item&quot;&gt;
-    &lt;template is=&quot;postItem&quot; data=&quot;{{item}}&quot; /&gt;
-  &lt;/block&gt;
+<h3 id="接着在js文件中设定方法"><a href="#接着在js文件中设定方法" class="headerlink" title="接着在js文件中设定方法"></a>接着在js文件中设定方法</h3><pre><code class="python">  onSwiperTap:function(event){
+    var postId = event.target.dataset.postid;
+    wx.navigateTo({
+      url: &#39;post-detail/post-detail?id=&#39; + postId,
+    })
+  }
 </code></pre>
-<h3 id="把数据item传入template模板postsItem中"><a href="#把数据item传入template模板postsItem中" class="headerlink" title="把数据item传入template模板postsItem中"></a>把数据item传入template模板postsItem中</h3><h3 id="4）xxx-template-wxss为样式模板"><a href="#4）xxx-template-wxss为样式模板" class="headerlink" title="(4）xxx-template.wxss为样式模板"></a>(4）xxx-template.wxss为样式模板</h3><h2 id="在wxss文件中引用，-import-“post-item-post-item-template-wxss”"><a href="#在wxss文件中引用，-import-“post-item-post-item-template-wxss”" class="headerlink" title="在wxss文件中引用，@import “post-item/post-item-template.wxss”;"></a>在wxss文件中引用，@import “post-item/post-item-template.wxss”;</h2><pre><code class="python">
+<h3 id="target-和-currentTarget的区别"><a href="#target-和-currentTarget的区别" class="headerlink" title="target 和 currentTarget的区别"></a>target 和 currentTarget的区别</h3><h3 id="target指的是当前点击的组件-currentTarget指的是事件捕获的组件"><a href="#target指的是当前点击的组件-currentTarget指的是事件捕获的组件" class="headerlink" title="target指的是当前点击的组件 currentTarget指的是事件捕获的组件"></a>target指的是当前点击的组件 currentTarget指的是事件捕获的组件</h3><h3 id="target这里指的是image，而currentTarget指的是swiper"><a href="#target这里指的是image，而currentTarget指的是swiper" class="headerlink" title="target这里指的是image，而currentTarget指的是swiper"></a>target这里指的是image，而currentTarget指的是swiper</h3><pre><code class="python">
 </code></pre>
 
       
@@ -353,12 +336,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day4(2)</p>
+    <p><span>文章标题:</span></p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-17, 22:15:05</p>
-    <p><span>最后更新:</span>2018-07-19, 22:10:41</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(2)/" title="小程序reader项目-day4(2)">http://yoursite.com/2018/07/17/阅读小程序-day4(2)/</a>
+    <p><span>发布时间:</span>2018-08-02, 21:43:26</p>
+    <p><span>最后更新:</span>2018-08-02, 21:43:14</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/02/阅读小程序-day10/" title="">http://yoursite.com/2018/08/02/阅读小程序-day10/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
