@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>小程序reader+movie项目-day11 | Hexo</title>
+  <meta name="keywords" content=" 小程序 ">
+  <meta name="description" content="小程序reader+movie项目-day11 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="hexo绑定自己的域名">
 <meta name="keywords" content="hexo,github">
@@ -49,7 +49,7 @@
   <input class="theme_preload_comment" value="false">
 </div>
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -275,10 +275,53 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-阅读+电影小程序-day11" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Welcome"><span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#欢迎来到王健的博客"><span class="toc-text">欢迎来到王健的博客</span></a></li></ol></li></ol>
+        <h1 class="article-title">小程序reader+movie项目-day11</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">小程序</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-08-05 21:59:59'>2018-08-05 21:59</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day11"><span class="toc-text">Reader+Movie项目-day11</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Movie页框架–template模板嵌套学习"><span class="toc-text">7.Movie页框架–template模板嵌套学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Movie页分析–template模板"><span class="toc-text">（1）Movie页分析–template模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）movie有三大块内容：正在热映、即将上映、top500，因此这三块可以使用一个template模板"><span class="toc-text">1）movie有三大块内容：正在热映、即将上映、top500，因此这三块可以使用一个template模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-每个大块内容，又有具体的电影，因此可以把每个电影作为一个template模板，这个电影模板可以用在其他的地方"><span class="toc-text">2) 每个大块内容，又有具体的电影，因此可以把每个电影作为一个template模板，这个电影模板可以用在其他的地方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-豆瓣评分在其他地方同样使用到了，因此也做成一个teplate模板"><span class="toc-text">3) 豆瓣评分在其他地方同样使用到了，因此也做成一个teplate模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-使用template模板，可以在任何使用的时候进行调用"><span class="toc-text">4) 使用template模板，可以在任何使用的时候进行调用**</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）template编写顺序–因为嵌套的原因，所以从最小的template模板进行编写"><span class="toc-text">（2）template编写顺序–因为嵌套的原因，所以从最小的template模板进行编写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-豆瓣评分template-（stars-template-wxml）"><span class="toc-text">1) 豆瓣评分template （stars-template.wxml）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-电影template（movie-template-wxml）"><span class="toc-text">2)电影template（movie-template.wxml）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意：引用路径要写对-src-”-stars-stars-template-wxml”"><span class="toc-text">注意：引用路径要写对 src=”../stars/stars-template.wxml” /</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意：引用指定name的template，template-is-”starsTemplate”"><span class="toc-text">注意：引用指定name的template，template is=”starsTemplate”/</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-模块template（movie-list-template-wxml）"><span class="toc-text">3) 模块template（movie-list-template.wxml）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-最后一步，引用movielisttemplate（movie-wxml）"><span class="toc-text">4)最后一步，引用movielisttemplate（movie.wxml）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）小技巧-1"><span class="toc-text">（3）小技巧-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在app-json中的“pages”，直接输入-“pages-xxx”，就会直接在pages下面自动生成xxx-wxml-xxx-wcss-xxx-json-xxx-js文件"><span class="toc-text">在app.json中的“pages”，直接输入 “pages/xxx”，就会直接在pages下面自动生成xxx.wxml; xxx.wcss; xxx.json; xxx.js文件</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -291,12 +334,76 @@
     }
 </style>
 </div>
-            <h1 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h1><h2 id="欢迎来到王健的博客"><a href="#欢迎来到王健的博客" class="headerlink" title="欢迎来到王健的博客"></a>欢迎来到王健的博客</h2><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Reader-Movie项目-day11"><a href="#Reader-Movie项目-day11" class="headerlink" title="Reader+Movie项目-day11"></a>Reader+Movie项目-day11</h1><h2 id="7-Movie页框架–template模板嵌套学习"><a href="#7-Movie页框架–template模板嵌套学习" class="headerlink" title="7.Movie页框架–template模板嵌套学习"></a>7.Movie页框架–template模板嵌套学习</h2><h3 id="（1）Movie页分析–template模板"><a href="#（1）Movie页分析–template模板" class="headerlink" title="（1）Movie页分析–template模板"></a>（1）Movie页分析–template模板</h3><h4 id="1）movie有三大块内容：正在热映、即将上映、top500，因此这三块可以使用一个template模板"><a href="#1）movie有三大块内容：正在热映、即将上映、top500，因此这三块可以使用一个template模板" class="headerlink" title="1）movie有三大块内容：正在热映、即将上映、top500，因此这三块可以使用一个template模板"></a>1）movie有三大块内容：正在热映、即将上映、top500，因此这三块可以使用一个template模板</h4><h4 id="2-每个大块内容，又有具体的电影，因此可以把每个电影作为一个template模板，这个电影模板可以用在其他的地方"><a href="#2-每个大块内容，又有具体的电影，因此可以把每个电影作为一个template模板，这个电影模板可以用在其他的地方" class="headerlink" title="2) 每个大块内容，又有具体的电影，因此可以把每个电影作为一个template模板，这个电影模板可以用在其他的地方"></a>2) 每个大块内容，又有具体的电影，因此可以把每个电影作为一个template模板，这个电影模板可以用在其他的地方</h4><h4 id="3-豆瓣评分在其他地方同样使用到了，因此也做成一个teplate模板"><a href="#3-豆瓣评分在其他地方同样使用到了，因此也做成一个teplate模板" class="headerlink" title="3) 豆瓣评分在其他地方同样使用到了，因此也做成一个teplate模板"></a>3) 豆瓣评分在其他地方同样使用到了，因此也做成一个teplate模板</h4><h4 id="4-使用template模板，可以在任何使用的时候进行调用"><a href="#4-使用template模板，可以在任何使用的时候进行调用" class="headerlink" title="4) 使用template模板，可以在任何使用的时候进行调用**"></a>4) 使用template模板，可以在任何使用的时候进行调用<em>**</em></h4><h3 id="（2）template编写顺序–因为嵌套的原因，所以从最小的template模板进行编写"><a href="#（2）template编写顺序–因为嵌套的原因，所以从最小的template模板进行编写" class="headerlink" title="（2）template编写顺序–因为嵌套的原因，所以从最小的template模板进行编写"></a>（2）template编写顺序–因为嵌套的原因，所以从最小的template模板进行编写</h3><h4 id="1-豆瓣评分template-（stars-template-wxml）"><a href="#1-豆瓣评分template-（stars-template-wxml）" class="headerlink" title="1) 豆瓣评分template （stars-template.wxml）"></a>1) 豆瓣评分template （stars-template.wxml）</h4><pre><code class="python">&lt;template name=&quot;starsTemplate&quot;&gt;
+  &lt;image src=&#39;/images/icon/star.png&#39;&gt;&lt;/image&gt;
+  &lt;text&gt;&lt;/text&gt;
+&lt;/template&gt;
+</code></pre>
+<h4 id="2-电影template（movie-template-wxml）"><a href="#2-电影template（movie-template-wxml）" class="headerlink" title="2)电影template（movie-template.wxml）"></a>2)电影template（movie-template.wxml）</h4><pre><code class="python">&lt;import src=&quot;../stars/stars-template.wxml&quot; /&gt;
+&lt;template name=&quot;movieTemplate&quot;&gt;
+  &lt;image src=&#39;/images/yourname.jpg&#39;&gt;&lt;/image&gt;
+  &lt;text&gt;你的名字&lt;/text&gt;
+  &lt;template is=&quot;starsTemplate&quot;/&gt;
+&lt;/template&gt;
+</code></pre>
+<h2 id="注意：引用路径要写对-src-”-stars-stars-template-wxml”"><a href="#注意：引用路径要写对-src-”-stars-stars-template-wxml”" class="headerlink" title="注意：引用路径要写对 src=”../stars/stars-template.wxml” /"></a>注意：引用路径要写对 src=”../stars/stars-template.wxml” /</h2><h2 id="注意：引用指定name的template，template-is-”starsTemplate”"><a href="#注意：引用指定name的template，template-is-”starsTemplate”" class="headerlink" title="注意：引用指定name的template，template is=”starsTemplate”/"></a>注意：引用指定name的template，template is=”starsTemplate”/</h2><h4 id="3-模块template（movie-list-template-wxml）"><a href="#3-模块template（movie-list-template-wxml）" class="headerlink" title="3) 模块template（movie-list-template.wxml）"></a>3) 模块template（movie-list-template.wxml）</h4><pre><code class="python">&lt;import src=&quot;../movie/movie-template.wxml&quot; /&gt;
+&lt;template name=&quot;movieListTemplate&quot;&gt;
+  &lt;view&gt;
+    &lt;view&gt;
+      &lt;text&gt;正在热映&lt;/text&gt;
+      &lt;view&gt;
+        &lt;text&gt;更多&lt;/text&gt;
+        &lt;image src=&#39;/images/icon/arrow-right.png&#39;&gt;&lt;/image&gt;
+      &lt;/view&gt;
+    &lt;/view&gt;
+    &lt;template is=&quot;movieTemplate&quot;/&gt;
+    &lt;template is=&quot;movieTemplate&quot;/&gt;
+    &lt;template is=&quot;movieTemplate&quot;/&gt;
+  &lt;/view&gt;
+&lt;/template&gt;
+</code></pre>
+<h4 id="4-最后一步，引用movielisttemplate（movie-wxml）"><a href="#4-最后一步，引用movielisttemplate（movie-wxml）" class="headerlink" title="4)最后一步，引用movielisttemplate（movie.wxml）"></a>4)最后一步，引用movielisttemplate（movie.wxml）</h4><pre><code class="python">&lt;import src=&quot;../movies/movie-list/movie-list-template.wxml&quot; /&gt;
+&lt;view&gt;
+  &lt;template is=&quot;movieListTemplate&quot;/&gt;
+  &lt;template is=&quot;movieListTemplate&quot;/&gt;
+  &lt;template is=&quot;movieListTemplate&quot;/&gt;
+&lt;/view&gt;
+</code></pre>
+<h3 id="（3）小技巧-1"><a href="#（3）小技巧-1" class="headerlink" title="（3）小技巧-1"></a>（3）小技巧-1</h3><h4 id="在app-json中的“pages”，直接输入-“pages-xxx”，就会直接在pages下面自动生成xxx-wxml-xxx-wcss-xxx-json-xxx-js文件"><a href="#在app-json中的“pages”，直接输入-“pages-xxx”，就会直接在pages下面自动生成xxx-wxml-xxx-wcss-xxx-json-xxx-js文件" class="headerlink" title="在app.json中的“pages”，直接输入 “pages/xxx”，就会直接在pages下面自动生成xxx.wxml; xxx.wcss; xxx.json; xxx.js文件"></a>在app.json中的“pages”，直接输入 “pages/xxx”，就会直接在pages下面自动生成xxx.wxml; xxx.wcss; xxx.json; xxx.js文件</h4><pre><code class="python">&quot;pages&quot;: [
+    &quot;pages/index/index&quot;,
+    &quot;pages/posts/posts&quot;,
+    &quot;pages/posts/post-detail/post-detail&quot;,
+    &quot;pages/movies/movies&quot;，
+    &quot;pages/xxx&quot;
+  ],
+</code></pre>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>小程序reader+movie项目-day11</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
+    <p><span>发布时间:</span>2018-08-05, 21:59:05</p>
+    <p><span>最后更新:</span>2018-08-05, 21:59:59</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/05/阅读+电影小程序-day11/" title="小程序reader+movie项目-day11">http://yoursite.com/2018/08/05/阅读+电影小程序-day11/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 Yelog</p>
