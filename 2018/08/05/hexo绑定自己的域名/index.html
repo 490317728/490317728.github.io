@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day5 | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day5 | Hexo">
+  <title>hexo绑定自己的域名 | Hexo</title>
+  <meta name="keywords" content=" hexo , github ">
+  <meta name="description" content="hexo绑定自己的域名 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十天">
 <meta name="keywords" content="小程序">
@@ -267,9 +267,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day5" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo绑定自己的域名" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day5</h1>
+        <h1 class="article-title">hexo绑定自己的域名</h1>
     
     <div class="article-meta">
         
@@ -277,21 +277,23 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            <a href="javascript:" data-rel="hexo">hexo</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">小程序</a>
+            <a href="javascript:" class="color5">hexo</a>
+            
+            <a href="javascript:" class="color2">github</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-19 22:09:43'>2018-07-18 21:47</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-05 20:08:19'>2018-08-05 19:48</time>
         
     </div>
     <div class="article-meta">
@@ -313,7 +315,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day5"><span class="toc-text">reader项目-day5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4、列表页与详情页跳转"><span class="toc-text">4、列表页与详情页跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）使用-“…item”-来展开数据元素，在调用时，不需要再前面加-“item-”"><span class="toc-text">（1）使用 “…item” 来展开数据元素，在调用时，不需要再前面加 “item.”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"><span class="toc-text">(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先，数据库中每个文章需要有一个id，例：postId"><span class="toc-text">首先，数据库中每个文章需要有一个id，例：postId</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"><span class="toc-text">其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后，在js文件中，通过方法调用的方式，获得点击所对应的id"><span class="toc-text">最后，在js文件中，通过方法调用的方式，获得点击所对应的id</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var-postId-event-currentTarget-dataset-postid"><span class="toc-text">var postId = event.currentTarget.dataset.postid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）页面跳转，相关操作"><span class="toc-text">（3）页面跳转，相关操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需要在app-json文件中添加相应页面。"><span class="toc-text">需要在app.json文件中添加相应页面。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#此时，跳转页面的框架已经搭好。"><span class="toc-text">此时，跳转页面的框架已经搭好。</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo扩展版"><span class="toc-text">hexo扩展版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#域名绑定"><span class="toc-text">域名绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-在腾讯云购买域名"><span class="toc-text">1、 在腾讯云购买域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-购买很容易，但是备案了好久啊…-整个域名注册大概花费了半个月的时间"><span class="toc-text">2、 购买很容易，但是备案了好久啊….整个域名注册大概花费了半个月的时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-而且不同地区的备案要求也不同，比如在云南，竟然要求要有本地户口！！！这要求太奇葩了"><span class="toc-text">3、 而且不同地区的备案要求也不同，比如在云南，竟然要求要有本地户口！！！这要求太奇葩了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#早早就购买的域名，直到到了杭州，才完成备案。浙江的备案也需要本地电话号码…-有办了个杭州的号"><span class="toc-text">早早就购买的域名，直到到了杭州，才完成备案。浙江的备案也需要本地电话号码….有办了个杭州的号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、-呼，经历了各种磨难，总算拥有了自己的域名。接下来就是绑定到自己的博客上啦"><span class="toc-text">4、 呼，经历了各种磨难，总算拥有了自己的域名。接下来就是绑定到自己的博客上啦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、-问题又出现了，网上有大量关于如何域名解析的帖子，都很简单，但是到我这儿竟然又卡住了"><span class="toc-text">5、 问题又出现了，网上有大量关于如何域名解析的帖子，都很简单，但是到我这儿竟然又卡住了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名解析一直都是暂停解析，还以为是解析的内容写错了，但是这个真的很简单啊，想写错都难"><span class="toc-text">域名解析一直都是暂停解析，还以为是解析的内容写错了，但是这个真的很简单啊，想写错都难</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确写法如下："><span class="toc-text">正确写法如下：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主机记录-记录类型-线路类型-记录值-MX优先级-TTL（秒）"><span class="toc-text">主机记录 记录类型 线路类型  记录值             MX优先级 TTL（秒）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-默认-185-199-108-153-600"><span class="toc-text">*     A       默认  185.199.108.153       -      600</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#www-CNAME-默认-490317728-github-io-600"><span class="toc-text">www  CNAME     默认  490317728.github.io.  -      600</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CNAME-默认-490317728-github-io-600"><span class="toc-text">@   CNAME     默认  490317728.github.io.  -      600</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、-而且也在本地建立了名为CNAME的文件，里面也放了自己的域名，同时也上传到了github，github-io-gt-setting-gt-Custom-domain-gt-wangjian1993-cn-都做完后，还是失败"><span class="toc-text">6、 而且也在本地建立了名为CNAME的文件，里面也放了自己的域名，同时也上传到了github，github.io-&gt;setting-&gt;Custom domain-&gt;wangjian1993.cn,都做完后，还是失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、-很奔溃有木有？？不过在查找半天后，终于还是解决了这个问题，在腾讯云注册的已备案域名，默认是暂停解析状态，"><span class="toc-text">7、 很奔溃有木有？？不过在查找半天后，终于还是解决了这个问题，在腾讯云注册的已备案域名，默认是暂停解析状态，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需要在-“wangjian1993-cn-正常-正常解析-已备案-2019-04-22-解析-管理-更多”中点击“更多”，然后选在“开启解析”……-请原谅我还没研究，如何发带图片的博客"><span class="toc-text">需要在 “wangjian1993.cn 正常  正常解析  已备案 2019-04-22 解析 管理 更多”中点击“更多”，然后选在“开启解析”……(请原谅我还没研究，如何发带图片的博客)</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -328,37 +330,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day5"><a href="#reader项目-day5" class="headerlink" title="reader项目-day5"></a>reader项目-day5</h1><h2 id="4、列表页与详情页跳转"><a href="#4、列表页与详情页跳转" class="headerlink" title="4、列表页与详情页跳转"></a>4、列表页与详情页跳转</h2><h3 id="（1）使用-“…item”-来展开数据元素，在调用时，不需要再前面加-“item-”"><a href="#（1）使用-“…item”-来展开数据元素，在调用时，不需要再前面加-“item-”" class="headerlink" title="（1）使用 “…item” 来展开数据元素，在调用时，不需要再前面加 “item.”"></a>（1）使用 “…item” 来展开数据元素，在调用时，不需要再前面加 “item.”</h3><pre><code class="python">&lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
-</code></pre>
-<pre><code class="python">&lt;template name=&quot;postItem&quot;&gt;
-  &lt;view class=&#39;post-container&#39;&gt;
-    &lt;view class=&#39;post-author-date&#39;&gt;
-      &lt;image class=&#39;post-author&#39; src=&#39;{{avatar}}&#39;&gt;&lt;/image&gt;
-      &lt;text class=&#39;post-date&#39;&gt;{{date}}&lt;/text&gt;
-    &lt;/view&gt;
-  &lt;/view&gt;
-&lt;/template&gt;
-</code></pre>
-<h3 id="2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"><a href="#2-在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式" class="headerlink" title="(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式"></a>(2) 在文章列表页中点击不同文章可以跳转到对应的文章的详情页，通过id的方式</h3><h4 id="首先，数据库中每个文章需要有一个id，例：postId"><a href="#首先，数据库中每个文章需要有一个id，例：postId" class="headerlink" title="首先，数据库中每个文章需要有一个id，例：postId"></a>首先，数据库中每个文章需要有一个id，例：postId</h4><h4 id="其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"><a href="#其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用" class="headerlink" title="其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用"></a>其次，在wxml文件中获取postId，data-xxx为自定义属性，再点击时会进行调用</h4><pre><code class="python">&lt;view bindtap=&#39;onPostTap&#39; data-postId=&#39;{{item.postId}}&#39;&gt;
-      &lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
-  &lt;/view&gt;
-</code></pre>
-<h4 id="最后，在js文件中，通过方法调用的方式，获得点击所对应的id"><a href="#最后，在js文件中，通过方法调用的方式，获得点击所对应的id" class="headerlink" title="最后，在js文件中，通过方法调用的方式，获得点击所对应的id"></a>最后，在js文件中，通过方法调用的方式，获得点击所对应的id</h4><h3 id="var-postId-event-currentTarget-dataset-postid"><a href="#var-postId-event-currentTarget-dataset-postid" class="headerlink" title="var postId = event.currentTarget.dataset.postid"></a>var postId = event.currentTarget.dataset.postid</h3><pre><code class="python">  onPostTap:function(event){
-    var postId = event.currentTarget.dataset.postid;
-    wx.navigateTo({
-      url: &#39;post-detail/post-detail&#39;,
-    })
-  }
-</code></pre>
-<h3 id="（3）页面跳转，相关操作"><a href="#（3）页面跳转，相关操作" class="headerlink" title="（3）页面跳转，相关操作"></a>（3）页面跳转，相关操作</h3><h4 id="需要在app-json文件中添加相应页面。"><a href="#需要在app-json文件中添加相应页面。" class="headerlink" title="需要在app.json文件中添加相应页面。"></a>需要在app.json文件中添加相应页面。</h4><pre><code class="python">  &quot;pages&quot;: [
-    &quot;pages/index/index&quot;,
-    &quot;pages/posts/posts&quot;,
-    &quot;pages/posts/post-detail/post-detail&quot;
-  ],
-</code></pre>
-<h2 id="此时，跳转页面的框架已经搭好。"><a href="#此时，跳转页面的框架已经搭好。" class="headerlink" title="此时，跳转页面的框架已经搭好。"></a>此时，跳转页面的框架已经搭好。</h2><pre><code class="python">
-</code></pre>
-
+        <h1 id="hexo扩展版"><a href="#hexo扩展版" class="headerlink" title="hexo扩展版"></a>hexo扩展版</h1><h2 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h2><h3 id="1、-在腾讯云购买域名"><a href="#1、-在腾讯云购买域名" class="headerlink" title="1、 在腾讯云购买域名"></a>1、 在腾讯云购买域名</h3><h3 id="2、-购买很容易，但是备案了好久啊…-整个域名注册大概花费了半个月的时间"><a href="#2、-购买很容易，但是备案了好久啊…-整个域名注册大概花费了半个月的时间" class="headerlink" title="2、 购买很容易，但是备案了好久啊….整个域名注册大概花费了半个月的时间"></a>2、 购买很容易，但是备案了好久啊….整个域名注册大概花费了半个月的时间</h3><h3 id="3、-而且不同地区的备案要求也不同，比如在云南，竟然要求要有本地户口！！！这要求太奇葩了"><a href="#3、-而且不同地区的备案要求也不同，比如在云南，竟然要求要有本地户口！！！这要求太奇葩了" class="headerlink" title="3、 而且不同地区的备案要求也不同，比如在云南，竟然要求要有本地户口！！！这要求太奇葩了"></a>3、 而且不同地区的备案要求也不同，比如在云南，竟然要求要有本地户口！！！这要求太奇葩了</h3><h3 id="早早就购买的域名，直到到了杭州，才完成备案。浙江的备案也需要本地电话号码…-有办了个杭州的号"><a href="#早早就购买的域名，直到到了杭州，才完成备案。浙江的备案也需要本地电话号码…-有办了个杭州的号" class="headerlink" title="早早就购买的域名，直到到了杭州，才完成备案。浙江的备案也需要本地电话号码….有办了个杭州的号"></a>早早就购买的域名，直到到了杭州，才完成备案。浙江的备案也需要本地电话号码….有办了个杭州的号</h3><h3 id="4、-呼，经历了各种磨难，总算拥有了自己的域名。接下来就是绑定到自己的博客上啦"><a href="#4、-呼，经历了各种磨难，总算拥有了自己的域名。接下来就是绑定到自己的博客上啦" class="headerlink" title="4、 呼，经历了各种磨难，总算拥有了自己的域名。接下来就是绑定到自己的博客上啦"></a>4、 呼，经历了各种磨难，总算拥有了自己的域名。接下来就是绑定到自己的博客上啦</h3><h3 id="5、-问题又出现了，网上有大量关于如何域名解析的帖子，都很简单，但是到我这儿竟然又卡住了"><a href="#5、-问题又出现了，网上有大量关于如何域名解析的帖子，都很简单，但是到我这儿竟然又卡住了" class="headerlink" title="5、 问题又出现了，网上有大量关于如何域名解析的帖子，都很简单，但是到我这儿竟然又卡住了"></a>5、 问题又出现了，网上有大量关于如何域名解析的帖子，都很简单，但是到我这儿竟然又卡住了</h3><h3 id="域名解析一直都是暂停解析，还以为是解析的内容写错了，但是这个真的很简单啊，想写错都难"><a href="#域名解析一直都是暂停解析，还以为是解析的内容写错了，但是这个真的很简单啊，想写错都难" class="headerlink" title="域名解析一直都是暂停解析，还以为是解析的内容写错了，但是这个真的很简单啊，想写错都难"></a>域名解析一直都是暂停解析，还以为是解析的内容写错了，但是这个真的很简单啊，想写错都难</h3><h3 id="正确写法如下："><a href="#正确写法如下：" class="headerlink" title="正确写法如下："></a>正确写法如下：</h3><h4 id="主机记录-记录类型-线路类型-记录值-MX优先级-TTL（秒）"><a href="#主机记录-记录类型-线路类型-记录值-MX优先级-TTL（秒）" class="headerlink" title="主机记录 记录类型 线路类型  记录值             MX优先级 TTL（秒）"></a>主机记录 记录类型 线路类型  记录值             MX优先级 TTL（秒）</h4><h4 id="A-默认-185-199-108-153-600"><a href="#A-默认-185-199-108-153-600" class="headerlink" title="*     A       默认  185.199.108.153       -      600"></a>*     A       默认  185.199.108.153       -      600</h4><h4 id="www-CNAME-默认-490317728-github-io-600"><a href="#www-CNAME-默认-490317728-github-io-600" class="headerlink" title="www  CNAME     默认  490317728.github.io.  -      600"></a>www  CNAME     默认  490317728.github.io.  -      600</h4><h4 id="CNAME-默认-490317728-github-io-600"><a href="#CNAME-默认-490317728-github-io-600" class="headerlink" title="@   CNAME     默认  490317728.github.io.  -      600"></a>@   CNAME     默认  490317728.github.io.  -      600</h4><h3 id="6、-而且也在本地建立了名为CNAME的文件，里面也放了自己的域名，同时也上传到了github，github-io-gt-setting-gt-Custom-domain-gt-wangjian1993-cn-都做完后，还是失败"><a href="#6、-而且也在本地建立了名为CNAME的文件，里面也放了自己的域名，同时也上传到了github，github-io-gt-setting-gt-Custom-domain-gt-wangjian1993-cn-都做完后，还是失败" class="headerlink" title="6、 而且也在本地建立了名为CNAME的文件，里面也放了自己的域名，同时也上传到了github，github.io-&gt;setting-&gt;Custom domain-&gt;wangjian1993.cn,都做完后，还是失败"></a>6、 而且也在本地建立了名为CNAME的文件，里面也放了自己的域名，同时也上传到了github，github.io-&gt;setting-&gt;Custom domain-&gt;wangjian1993.cn,都做完后，还是失败</h3><h3 id="7、-很奔溃有木有？？不过在查找半天后，终于还是解决了这个问题，在腾讯云注册的已备案域名，默认是暂停解析状态，"><a href="#7、-很奔溃有木有？？不过在查找半天后，终于还是解决了这个问题，在腾讯云注册的已备案域名，默认是暂停解析状态，" class="headerlink" title="7、 很奔溃有木有？？不过在查找半天后，终于还是解决了这个问题，在腾讯云注册的已备案域名，默认是暂停解析状态，"></a>7、 很奔溃有木有？？不过在查找半天后，终于还是解决了这个问题，在腾讯云注册的已备案域名，默认是暂停解析状态，</h3><h3 id="需要在-“wangjian1993-cn-正常-正常解析-已备案-2019-04-22-解析-管理-更多”中点击“更多”，然后选在“开启解析”……-请原谅我还没研究，如何发带图片的博客"><a href="#需要在-“wangjian1993-cn-正常-正常解析-已备案-2019-04-22-解析-管理-更多”中点击“更多”，然后选在“开启解析”……-请原谅我还没研究，如何发带图片的博客" class="headerlink" title="需要在 “wangjian1993.cn 正常  正常解析  已备案 2019-04-22 解析 管理 更多”中点击“更多”，然后选在“开启解析”……(请原谅我还没研究，如何发带图片的博客)"></a>需要在 “wangjian1993.cn 正常  正常解析  已备案 2019-04-22 解析 管理 更多”中点击“更多”，然后选在“开启解析”……(请原谅我还没研究，如何发带图片的博客)</h3>
       
        
     </div>
@@ -367,12 +339,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day5</p>
+    <p><span>文章标题:</span>hexo绑定自己的域名</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-18, 21:47:05</p>
-    <p><span>最后更新:</span>2018-07-19, 22:09:43</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/18/阅读小程序-day5/" title="小程序reader项目-day5">http://yoursite.com/2018/07/18/阅读小程序-day5/</a>
+    <p><span>发布时间:</span>2018-08-05, 19:48:02</p>
+    <p><span>最后更新:</span>2018-08-05, 20:08:19</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/05/hexo绑定自己的域名/" title="hexo绑定自己的域名">http://yoursite.com/2018/08/05/hexo绑定自己的域名/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
