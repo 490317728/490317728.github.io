@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day4(1) | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day4(1) | Hexo">
+  <title>hexo生成博文插入图片 | Hexo</title>
+  <meta name="keywords" content=" hexo , github ">
+  <meta name="description" content="hexo生成博文插入图片 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十二天">
 <meta name="keywords" content="小程序">
@@ -291,9 +291,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day4(1)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo生成博文插入图片" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day4(1)</h1>
+        <h1 class="article-title">hexo生成博文插入图片</h1>
     
     <div class="article-meta">
         
@@ -301,26 +301,28 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            <a href="javascript:" data-rel="hexo">hexo</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">小程序</a>
+            <a href="javascript:" class="color5">hexo</a>
+            
+            <a href="javascript:" class="color2">github</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-17 22:17:39'>2018-07-17 22:00</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-07 22:13:09'>2018-08-07 22:04</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:612</span>
+        <span>字数:309</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -339,7 +341,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-1"><span class="toc-text">reader项目-day4(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、开始页与列表页跳转"><span class="toc-text">2、开始页与列表页跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><span class="toc-text">（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bindtap-点击子元素，父元素也会执行，即-冒泡"><span class="toc-text">bindtap:点击子元素，父元素也会执行，即  冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catchtap-点击子元素，父元素不执行，即-非冒泡"><span class="toc-text">catchtap:点击子元素，父元素不执行，即  非冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><span class="toc-text">（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><span class="toc-text">wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><span class="toc-text">wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）对于day3的补充知识—-关于本地数据库的调用"><span class="toc-text">（3）对于day3的补充知识—-关于本地数据库的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在本地数据库data-js中，需要在数据最后加入出库代码"><span class="toc-text">在本地数据库data.js中，需要在数据最后加入出库代码</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#First"><span class="toc-text">First</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-把主页配置文件-config-yml-里的post-asset-folder-这个选项设置为true"><span class="toc-text">1 把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-在你的hexo目录下执行这样一句话npm-install-hexo-asset-image-–save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git"><span class="toc-text">2 在你的hexo目录下执行这样一句话npm install hexo-asset-image –save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-等待一小段时间后，再运行hexo-n-“xxxx”来生成md博文时，-source-posts文件夹内除了xxxx-md文件还有一个同名的文件夹"><span class="toc-text">3 等待一小段时间后，再运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-最后在xxxx-md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx-md中按照markdown的格式引入图片："><span class="toc-text">4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意：-xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。"><span class="toc-text">注意： xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-最后检查一下，hexo-g生成页面后，进入public-2017-02-26-index-html文件中查看相关字段，可以发现，html标签内的语句是，而不是-lt-img-src-”xxxx-图片名-jpg-gt-。这很重要，关乎你的网页是否可以真正加载你想插入的图片。"><span class="toc-text">5 最后检查一下，hexo g生成页面后，进入public\2017\02\26\index.html文件中查看相关字段，可以发现，html标签内的语句是，而不是&lt;img src=”xxxx/图片名.jpg&gt;。这很重要，关乎你的网页是否可以真正加载你想插入的图片。</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -354,36 +356,9 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day4-1"><a href="#reader项目-day4-1" class="headerlink" title="reader项目-day4(1)"></a>reader项目-day4(1)</h1><h2 id="2、开始页与列表页跳转"><a href="#2、开始页与列表页跳转" class="headerlink" title="2、开始页与列表页跳转"></a>2、开始页与列表页跳转</h2><h3 id="（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><a href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”" class="headerlink" title="（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”"></a>（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</h3><h3 id="bindtap-点击子元素，父元素也会执行，即-冒泡"><a href="#bindtap-点击子元素，父元素也会执行，即-冒泡" class="headerlink" title="bindtap:点击子元素，父元素也会执行，即  冒泡"></a>bindtap:点击子元素，父元素也会执行，即  冒泡</h3><h3 id="catchtap-点击子元素，父元素不执行，即-非冒泡"><a href="#catchtap-点击子元素，父元素不执行，即-非冒泡" class="headerlink" title="catchtap:点击子元素，父元素不执行，即  非冒泡"></a>catchtap:点击子元素，父元素不执行，即  非冒泡</h3><h3 id="（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><a href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo" class="headerlink" title="（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo"></a>（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</h3><h3 id="wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><a href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数" class="headerlink" title="wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"></a>wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</h3><h3 id="wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><a href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数" class="headerlink" title="wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"></a>wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</h3><h3 id="（3）对于day3的补充知识—-关于本地数据库的调用"><a href="#（3）对于day3的补充知识—-关于本地数据库的调用" class="headerlink" title="（3）对于day3的补充知识—-关于本地数据库的调用"></a>（3）对于day3的补充知识—-关于本地数据库的调用</h3><h3 id="在本地数据库data-js中，需要在数据最后加入出库代码"><a href="#在本地数据库data-js中，需要在数据最后加入出库代码" class="headerlink" title="在本地数据库data.js中，需要在数据最后加入出库代码"></a>在本地数据库data.js中，需要在数据最后加入出库代码</h3><pre><code class="python">var local_database = [
-  {
-    date: &quot;Sep 18 2016&quot;,
-    title: &quot;正是虾肥蟹壮时&quot;,
-    imgSrc: &quot;/images/post/crab.png&quot;,
-    avatar: &quot;/images/avatar/1.png&quot;,
-    content: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，&quot;,
-    reading: &quot;112&quot;,
-    collection: &quot;96&quot;,
-    headImgSrc: &quot;/images/post/crab.png&quot;,
-    author: &quot;林白衣&quot;,
-    dateTime: &quot;24小时前&quot;,
-    detail: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中，便足了一生矣。”漫漫人生长路，美食与爱岂可辜负？于是作为一个吃货，突然也很想回味一下属于我的味蕾记忆。记忆中的秋蟹，是家人的味道，弥漫着浓浓的亲情。\n\n是谁来自山川湖海，却囿于昼夜，厨房与爱？ 是母亲，深思熟虑，聪明耐心。吃蟹前，总会拿出几件工具，煞有介事而乐此不疲。告诉我们螃蟹至寒，需要佐以姜茶以祛寒，在配备的米醋小碟里，亦添入姜丝与紫苏，前者驱寒后者增香。泡好菊花茶，岁月静好，我们静等。&quot;,
-    postId: 0,
-    music: {
-      url: &quot;http://music.163.com/song/media/outer/url?id=142604.mp3&quot;,
-      title: &quot;夜夜夜夜-齐秦&quot;,
-      coverImg: &quot;http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000&quot;
-    }
-  },
-
-    ......
-]
-
-module.exports = {
-  postList: local_database
-}
-
-</code></pre>
-
+        <h1 id="First"><a href="#First" class="headerlink" title="First"></a>First</h1><h2 id="1-把主页配置文件-config-yml-里的post-asset-folder-这个选项设置为true"><a href="#1-把主页配置文件-config-yml-里的post-asset-folder-这个选项设置为true" class="headerlink" title="1 把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true"></a>1 把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true</h2><h2 id="2-在你的hexo目录下执行这样一句话npm-install-hexo-asset-image-–save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git"><a href="#2-在你的hexo目录下执行这样一句话npm-install-hexo-asset-image-–save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git" class="headerlink" title="2 在你的hexo目录下执行这样一句话npm install hexo-asset-image –save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git"></a>2 在你的hexo目录下执行这样一句话npm install hexo-asset-image –save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git</h2><h2 id="3-等待一小段时间后，再运行hexo-n-“xxxx”来生成md博文时，-source-posts文件夹内除了xxxx-md文件还有一个同名的文件夹"><a href="#3-等待一小段时间后，再运行hexo-n-“xxxx”来生成md博文时，-source-posts文件夹内除了xxxx-md文件还有一个同名的文件夹" class="headerlink" title="3 等待一小段时间后，再运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹"></a>3 等待一小段时间后，再运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹</h2><p>#Second</p>
+<h2 id="4-最后在xxxx-md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx-md中按照markdown的格式引入图片："><a href="#4-最后在xxxx-md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx-md中按照markdown的格式引入图片：" class="headerlink" title="4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片："></a>4 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</h2><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/2018/08/07/hexo生成博文插入图片/xxxx/图片名.jpg" alt="你想输入的替代文字"></h2><p>！<a href="hexo生成博文插入图片/xxx.jpg">xxx图片</a></p>
+<h2 id="注意：-xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。"><a href="#注意：-xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。" class="headerlink" title="注意： xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。"></a>注意： xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。</h2><h2 id="5-最后检查一下，hexo-g生成页面后，进入public-2017-02-26-index-html文件中查看相关字段，可以发现，html标签内的语句是，而不是-lt-img-src-”xxxx-图片名-jpg-gt-。这很重要，关乎你的网页是否可以真正加载你想插入的图片。"><a href="#5-最后检查一下，hexo-g生成页面后，进入public-2017-02-26-index-html文件中查看相关字段，可以发现，html标签内的语句是，而不是-lt-img-src-”xxxx-图片名-jpg-gt-。这很重要，关乎你的网页是否可以真正加载你想插入的图片。" class="headerlink" title="5 最后检查一下，hexo g生成页面后，进入public\2017\02\26\index.html文件中查看相关字段，可以发现，html标签内的语句是，而不是&lt;img src=”xxxx/图片名.jpg&gt;。这很重要，关乎你的网页是否可以真正加载你想插入的图片。"></a>5 最后检查一下，hexo g生成页面后，进入public\2017\02\26\index.html文件中查看相关字段，可以发现，html标签内的语句是<img src="/2018/08/07/hexo生成博文插入图片/2017/02/26/xxxx/图片名.jpg">，而不是&lt;img src=”xxxx/图片名.jpg&gt;。这很重要，关乎你的网页是否可以真正加载你想插入的图片。</h2>
       
        
     </div>
@@ -392,12 +367,12 @@ module.exports = {
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day4(1)</p>
-    <p><span>文章字数:</span><span class="post-count">612</span></p>
+    <p><span>文章标题:</span>hexo生成博文插入图片</p>
+    <p><span>文章字数:</span><span class="post-count">309</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-17, 22:00:05</p>
-    <p><span>最后更新:</span>2018-07-17, 22:17:39</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(1)/" title="小程序reader项目-day4(1)">http://yoursite.com/2018/07/17/阅读小程序-day4(1)/</a>
+    <p><span>发布时间:</span>2018-08-07, 22:04:16</p>
+    <p><span>最后更新:</span>2018-08-07, 22:13:09</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/07/hexo生成博文插入图片/" title="hexo生成博文插入图片">http://yoursite.com/2018/08/07/hexo生成博文插入图片/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
