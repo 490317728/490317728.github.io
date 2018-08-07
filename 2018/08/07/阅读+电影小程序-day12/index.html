@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader+movie项目-day10（2） | Hexo</title>
+  <title>小程序reader+movie项目-day12 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader+movie项目-day10（2） | Hexo">
+  <meta name="description" content="小程序reader+movie项目-day12 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十一天">
 <meta name="keywords" content="小程序">
@@ -283,9 +283,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-小程序tab选项卡-day10（2）" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读+电影小程序-day12" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader+movie项目-day10（2）</h1>
+        <h1 class="article-title">小程序reader+movie项目-day12</h1>
     
     <div class="article-meta">
         
@@ -307,7 +307,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-08-02 22:00:09'>2018-08-02 22:00</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-07 21:46:35'>2018-08-07 21:46</time>
         
     </div>
     <div class="article-meta">
@@ -329,7 +329,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小程序整体配置-day10"><span class="toc-text">小程序整体配置-day10</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6、tab标签"><span class="toc-text">6、tab标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tab标签是指小程序页面底部的项目选项卡"><span class="toc-text">tab标签是指小程序页面底部的项目选项卡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）除reader阅读项目外，还有一个movie电影项目，因此先在pages文件夹下建立movies文件夹"><span class="toc-text">（1）除reader阅读项目外，还有一个movie电影项目，因此先在pages文件夹下建立movies文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在app-json中配置tabbar"><span class="toc-text">（2）在app.json中配置tabbar</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）color-tab-上的文字默认颜色"><span class="toc-text">（1）color-tab 上的文字默认颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）selectedColor-tab上的文字选中时的颜色"><span class="toc-text">（2）selectedColor-tab上的文字选中时的颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）backgroundColor-tab-的背景色"><span class="toc-text">（3）backgroundColor-tab 的背景色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）borderStyle-tabbar上边框的颜色，-仅支持-black-white"><span class="toc-text">（4）borderStyle-tabbar上边框的颜色， 仅支持 black/white</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）list-tab-的列表，详见-list-属性说明，最少2个、最多5个-tab"><span class="toc-text">（5）list-tab 的列表，详见 list 属性说明，最少2个、最多5个 tab</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（6）position-可选值-bottom、top"><span class="toc-text">（6）position-可选值 bottom、top</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list中可选项"><span class="toc-text">list中可选项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）pagePath-页面路径，必须在-pages-中先定义"><span class="toc-text">1）pagePath -页面路径，必须在 pages 中先定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）text-是-tab-上按钮文字"><span class="toc-text">2）text-是     tab 上按钮文字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）iconPath-图片路径，icon-大小限制为40kb，建议尺寸为-81px-81px，当-postion-为-top-时，此参数无效，不支持网络图片"><span class="toc-text">3）iconPath-图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 postion 为 top 时，此参数无效，不支持网络图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4）selectedIconPath-选中时的图片路径，icon-大小限制为40kb，建议尺寸为-81px-81px-，当-postion-为-top-时，此参数无效，不支持网络图片"><span class="toc-text">4）selectedIconPath-选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 postion 为 top 时，此参数无效，不支持网络图片</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）因为添加了tabbar，所以原来的跳转navigateTo和redirectTo都不可以使用。要使用switchTab"><span class="toc-text">（3）因为添加了tabbar，所以原来的跳转navigateTo和redirectTo都不可以使用。要使用switchTab</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day12"><span class="toc-text">Reader+Movie项目-day12</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Movie页–api调用（调用豆瓣的api文档）"><span class="toc-text">7.Movie页–api调用（调用豆瓣的api文档）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在movie-js文件中就行调用"><span class="toc-text">(1)在movie.js文件中就行调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#inTheaterUrl，inComingUrl，top250Url为调用的url路径"><span class="toc-text">inTheaterUrl，inComingUrl，top250Url为调用的url路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-globalData-douban-base为在app-js中定义的全局变量"><span class="toc-text">app.globalData.douban_base为在app.js中定义的全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#‘-v2-movie-in-theaters’-为豆瓣api路径"><span class="toc-text">‘/v2/movie/in_theaters’ 为豆瓣api路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#“-start-0-amp-count-3”-表示从0开始取数据，取三个数据"><span class="toc-text">“?start=0&amp;count=3” 表示从0开始取数据，取三个数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意：需要在movie-js中引入全局变量"><span class="toc-text">注意：需要在movie.js中引入全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义一个getMovieListData方法，这个方法就是具体调用指定url数据的方法"><span class="toc-text">(2)定义一个getMovieListData方法，这个方法就是具体调用指定url数据的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#method-“GET”-是指获取数据的方法，还有”PUT”-”PUSH”-”DELETE”-”OPTION”等方法"><span class="toc-text">method: “GET”,是指获取数据的方法，还有”PUT”,”PUSH”,”DELETE”,”OPTION”等方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#header为数据请求必须的项"><span class="toc-text">header为数据请求必须的项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#success方法为数据获取成功时的输出"><span class="toc-text">success方法为数据获取成功时的输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fail则是指网络连接失败后提示的失败"><span class="toc-text">fail则是指网络连接失败后提示的失败</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -344,27 +344,39 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="小程序整体配置-day10"><a href="#小程序整体配置-day10" class="headerlink" title="小程序整体配置-day10"></a>小程序整体配置-day10</h1><h2 id="6、tab标签"><a href="#6、tab标签" class="headerlink" title="6、tab标签"></a>6、tab标签</h2><h2 id="tab标签是指小程序页面底部的项目选项卡"><a href="#tab标签是指小程序页面底部的项目选项卡" class="headerlink" title="tab标签是指小程序页面底部的项目选项卡"></a>tab标签是指小程序页面底部的项目选项卡</h2><h3 id="（1）除reader阅读项目外，还有一个movie电影项目，因此先在pages文件夹下建立movies文件夹"><a href="#（1）除reader阅读项目外，还有一个movie电影项目，因此先在pages文件夹下建立movies文件夹" class="headerlink" title="（1）除reader阅读项目外，还有一个movie电影项目，因此先在pages文件夹下建立movies文件夹"></a>（1）除reader阅读项目外，还有一个movie电影项目，因此先在pages文件夹下建立movies文件夹</h3><h3 id="（2）在app-json中配置tabbar"><a href="#（2）在app-json中配置tabbar" class="headerlink" title="（2）在app.json中配置tabbar"></a>（2）在app.json中配置tabbar</h3><pre><code class="python">  &quot;tabBar&quot;: {
-    &quot;borderStyle&quot;: &quot;white&quot;,
-    &quot;list&quot;: [
-      {
-        &quot;iconPath&quot;: &quot;images/tap/读书.png&quot;,
-        &quot;selectedIconPath&quot;: &quot;images/tap/读书-1.png&quot;,
-        &quot;pagePath&quot;: &quot;pages/posts/posts&quot;,
-        &quot;text&quot;: &quot;阅读&quot;
-      },
-      {
-        &quot;iconPath&quot;: &quot;images/tap/电影.png&quot;,
-        &quot;selectedIconPath&quot;: &quot;images/tap/电影-1.png&quot;,
-        &quot;pagePath&quot;: &quot;pages/movies/movies&quot;,
-        &quot;text&quot;: &quot;电影&quot;
-      }
-    ]
+        <h1 id="Reader-Movie项目-day12"><a href="#Reader-Movie项目-day12" class="headerlink" title="Reader+Movie项目-day12"></a>Reader+Movie项目-day12</h1><h2 id="7-Movie页–api调用（调用豆瓣的api文档）"><a href="#7-Movie页–api调用（调用豆瓣的api文档）" class="headerlink" title="7.Movie页–api调用（调用豆瓣的api文档）"></a>7.Movie页–api调用（调用豆瓣的api文档）</h2><h3 id="1-在movie-js文件中就行调用"><a href="#1-在movie-js文件中就行调用" class="headerlink" title="(1)在movie.js文件中就行调用"></a>(1)在movie.js文件中就行调用</h3><pre><code class="python">onLoad:function(event){
+    var inTheaterUrl = app.globalData.douban_base + &quot;/v2/movie/in_theaters&quot;+&quot;?start=0&amp;count=3&quot;;
+    var inComingUrl = app.globalData.douban_base + &quot;/v2/movie/coming_soon&quot; + &quot;?start=0&amp;count=3&quot;;
+    var top250Url = app.globalData.douban_base + &quot;/v2/movie/top250&quot; + &quot;?start=0&amp;count=3&quot;;
+
+    this.getMovieListData(inTheaterUrl);
+    this.getMovieListData(inComingUrl);
+    this.getMovieListData(top250Url);
+  },
+</code></pre>
+<h4 id="inTheaterUrl，inComingUrl，top250Url为调用的url路径"><a href="#inTheaterUrl，inComingUrl，top250Url为调用的url路径" class="headerlink" title="inTheaterUrl，inComingUrl，top250Url为调用的url路径"></a>inTheaterUrl，inComingUrl，top250Url为调用的url路径</h4><h4 id="app-globalData-douban-base为在app-js中定义的全局变量"><a href="#app-globalData-douban-base为在app-js中定义的全局变量" class="headerlink" title="app.globalData.douban_base为在app.js中定义的全局变量"></a>app.globalData.douban_base为在app.js中定义的全局变量</h4><pre><code class="python"> globalData: {
+    douban_base: &#39;http://t.yushu.im&#39;,
   }
 </code></pre>
-<h4 id="（1）color-tab-上的文字默认颜色"><a href="#（1）color-tab-上的文字默认颜色" class="headerlink" title="（1）color-tab 上的文字默认颜色"></a>（1）color-tab 上的文字默认颜色</h4><h4 id="（2）selectedColor-tab上的文字选中时的颜色"><a href="#（2）selectedColor-tab上的文字选中时的颜色" class="headerlink" title="（2）selectedColor-tab上的文字选中时的颜色"></a>（2）selectedColor-tab上的文字选中时的颜色</h4><h4 id="（3）backgroundColor-tab-的背景色"><a href="#（3）backgroundColor-tab-的背景色" class="headerlink" title="（3）backgroundColor-tab 的背景色"></a>（3）backgroundColor-tab 的背景色</h4><h4 id="（4）borderStyle-tabbar上边框的颜色，-仅支持-black-white"><a href="#（4）borderStyle-tabbar上边框的颜色，-仅支持-black-white" class="headerlink" title="（4）borderStyle-tabbar上边框的颜色， 仅支持 black/white"></a>（4）borderStyle-tabbar上边框的颜色， 仅支持 black/white</h4><h4 id="（5）list-tab-的列表，详见-list-属性说明，最少2个、最多5个-tab"><a href="#（5）list-tab-的列表，详见-list-属性说明，最少2个、最多5个-tab" class="headerlink" title="（5）list-tab 的列表，详见 list 属性说明，最少2个、最多5个 tab"></a>（5）list-tab 的列表，详见 list 属性说明，最少2个、最多5个 tab</h4><h4 id="（6）position-可选值-bottom、top"><a href="#（6）position-可选值-bottom、top" class="headerlink" title="（6）position-可选值 bottom、top"></a>（6）position-可选值 bottom、top</h4><h3 id="list中可选项"><a href="#list中可选项" class="headerlink" title="list中可选项"></a>list中可选项</h3><h4 id="1）pagePath-页面路径，必须在-pages-中先定义"><a href="#1）pagePath-页面路径，必须在-pages-中先定义" class="headerlink" title="1）pagePath -页面路径，必须在 pages 中先定义"></a>1）pagePath -页面路径，必须在 pages 中先定义</h4><h4 id="2）text-是-tab-上按钮文字"><a href="#2）text-是-tab-上按钮文字" class="headerlink" title="2）text-是     tab 上按钮文字"></a>2）text-是     tab 上按钮文字</h4><h4 id="3）iconPath-图片路径，icon-大小限制为40kb，建议尺寸为-81px-81px，当-postion-为-top-时，此参数无效，不支持网络图片"><a href="#3）iconPath-图片路径，icon-大小限制为40kb，建议尺寸为-81px-81px，当-postion-为-top-时，此参数无效，不支持网络图片" class="headerlink" title="3）iconPath-图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 postion 为 top 时，此参数无效，不支持网络图片"></a>3）iconPath-图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 postion 为 top 时，此参数无效，不支持网络图片</h4><h4 id="4）selectedIconPath-选中时的图片路径，icon-大小限制为40kb，建议尺寸为-81px-81px-，当-postion-为-top-时，此参数无效，不支持网络图片"><a href="#4）selectedIconPath-选中时的图片路径，icon-大小限制为40kb，建议尺寸为-81px-81px-，当-postion-为-top-时，此参数无效，不支持网络图片" class="headerlink" title="4）selectedIconPath-选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 postion 为 top 时，此参数无效，不支持网络图片"></a>4）selectedIconPath-选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 postion 为 top 时，此参数无效，不支持网络图片</h4><h3 id="（3）因为添加了tabbar，所以原来的跳转navigateTo和redirectTo都不可以使用。要使用switchTab"><a href="#（3）因为添加了tabbar，所以原来的跳转navigateTo和redirectTo都不可以使用。要使用switchTab" class="headerlink" title="（3）因为添加了tabbar，所以原来的跳转navigateTo和redirectTo都不可以使用。要使用switchTab"></a>（3）因为添加了tabbar，所以原来的跳转navigateTo和redirectTo都不可以使用。要使用switchTab</h3><pre><code class="python"> wx.switchTab({
-      url: &#39;../posts/posts&#39;,
-})
+<h4 id="‘-v2-movie-in-theaters’-为豆瓣api路径"><a href="#‘-v2-movie-in-theaters’-为豆瓣api路径" class="headerlink" title="‘/v2/movie/in_theaters’ 为豆瓣api路径"></a>‘/v2/movie/in_theaters’ 为豆瓣api路径</h4><h4 id="“-start-0-amp-count-3”-表示从0开始取数据，取三个数据"><a href="#“-start-0-amp-count-3”-表示从0开始取数据，取三个数据" class="headerlink" title="“?start=0&amp;count=3” 表示从0开始取数据，取三个数据"></a>“?start=0&amp;count=3” 表示从0开始取数据，取三个数据</h4><h3 id="注意：需要在movie-js中引入全局变量"><a href="#注意：需要在movie-js中引入全局变量" class="headerlink" title="注意：需要在movie.js中引入全局变量"></a>注意：需要在movie.js中引入全局变量</h3><pre><code class="python">var app = getApp()
+</code></pre>
+<h3 id="2-定义一个getMovieListData方法，这个方法就是具体调用指定url数据的方法"><a href="#2-定义一个getMovieListData方法，这个方法就是具体调用指定url数据的方法" class="headerlink" title="(2)定义一个getMovieListData方法，这个方法就是具体调用指定url数据的方法"></a>(2)定义一个getMovieListData方法，这个方法就是具体调用指定url数据的方法</h3><pre><code class="python">getMovieListData:function(url){
+    wx.request({
+      url: url,
+      method: &quot;GET&quot;,
+      header: {
+        &quot;Content-Type&quot;: &quot;json&quot;
+      },
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
+  }
+</code></pre>
+<h4 id="method-“GET”-是指获取数据的方法，还有”PUT”-”PUSH”-”DELETE”-”OPTION”等方法"><a href="#method-“GET”-是指获取数据的方法，还有”PUT”-”PUSH”-”DELETE”-”OPTION”等方法" class="headerlink" title="method: “GET”,是指获取数据的方法，还有”PUT”,”PUSH”,”DELETE”,”OPTION”等方法"></a>method: “GET”,是指获取数据的方法，还有”PUT”,”PUSH”,”DELETE”,”OPTION”等方法</h4><h4 id="header为数据请求必须的项"><a href="#header为数据请求必须的项" class="headerlink" title="header为数据请求必须的项"></a>header为数据请求必须的项</h4><h4 id="success方法为数据获取成功时的输出"><a href="#success方法为数据获取成功时的输出" class="headerlink" title="success方法为数据获取成功时的输出"></a>success方法为数据获取成功时的输出</h4><h4 id="fail则是指网络连接失败后提示的失败"><a href="#fail则是指网络连接失败后提示的失败" class="headerlink" title="fail则是指网络连接失败后提示的失败"></a>fail则是指网络连接失败后提示的失败</h4><pre><code class="python">
 </code></pre>
 
       
@@ -375,12 +387,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader+movie项目-day10（2）</p>
+    <p><span>文章标题:</span>小程序reader+movie项目-day12</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-08-02, 22:00:05</p>
-    <p><span>最后更新:</span>2018-08-02, 22:00:09</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/08/02/小程序tab选项卡-day10（2）/" title="小程序reader+movie项目-day10（2）">http://yoursite.com/2018/08/02/小程序tab选项卡-day10（2）/</a>
+    <p><span>发布时间:</span>2018-08-07, 21:46:05</p>
+    <p><span>最后更新:</span>2018-08-07, 21:46:35</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/07/阅读+电影小程序-day12/" title="小程序reader+movie项目-day12">http://yoursite.com/2018/08/07/阅读+电影小程序-day12/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
