@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day4(1) | Hexo</title>
+  <title>小程序reader+movie项目-day13 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day4(1) | Hexo">
+  <meta name="description" content="小程序reader+movie项目-day13 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十三天">
 <meta name="keywords" content="小程序">
@@ -299,9 +299,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day4(1)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读-电影小程序-day13" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day4(1)</h1>
+        <h1 class="article-title">小程序reader+movie项目-day13</h1>
     
     <div class="article-meta">
         
@@ -323,12 +323,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-17 22:17:39'>2018-07-17 22:00</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-08 21:55:38'>2018-08-08 21:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:612</span>
+        <span>字数:658</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -347,7 +347,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-1"><span class="toc-text">reader项目-day4(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、开始页与列表页跳转"><span class="toc-text">2、开始页与列表页跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><span class="toc-text">（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bindtap-点击子元素，父元素也会执行，即-冒泡"><span class="toc-text">bindtap:点击子元素，父元素也会执行，即  冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catchtap-点击子元素，父元素不执行，即-非冒泡"><span class="toc-text">catchtap:点击子元素，父元素不执行，即  非冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><span class="toc-text">（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><span class="toc-text">wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><span class="toc-text">wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）对于day3的补充知识—-关于本地数据库的调用"><span class="toc-text">（3）对于day3的补充知识—-关于本地数据库的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在本地数据库data-js中，需要在数据最后加入出库代码"><span class="toc-text">在本地数据库data.js中，需要在数据最后加入出库代码</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day13"><span class="toc-text">Reader+Movie项目-day13</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Movie页–数据绑定"><span class="toc-text">7.Movie页–数据绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）getMovieListData获取数据，获取成功后，在success方法中绑定数据"><span class="toc-text">（1）getMovieListData获取数据，获取成功后，在success方法中绑定数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义一个processDoubanData的方法用来处理数据（传递参数res-data）"><span class="toc-text">定义一个processDoubanData的方法用来处理数据（传递参数res.data）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-在processDoubanData方法中处理数据"><span class="toc-text">(2)在processDoubanData方法中处理数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for循环获取每一个电影id，并通过这个电影id把这个电影的所有数据赋值给subject变量"><span class="toc-text">for循环获取每一个电影id，并通过这个电影id把这个电影的所有数据赋值给subject变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#if判断电影名字长度，如果大于6，则通过substring方法截取"><span class="toc-text">if判断电影名字长度，如果大于6，则通过substring方法截取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过一个temp变量存储这一大类中，所有需要的数据，并放到movies变量中"><span class="toc-text">通过一个temp变量存储这一大类中，所有需要的数据，并放到movies变量中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过setData绑定前端数据"><span class="toc-text">通过setData绑定前端数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以上只是绑定一个大类中的电影数据内容，下面则是详细的绑定三个大类中的内容"><span class="toc-text">以上只是绑定一个大类中的电影数据内容，下面则是详细的绑定三个大类中的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）在data中定义三个大类的数据集"><span class="toc-text">（3）在data中定义三个大类的数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）在onload函数，调用getMovieList方法中，指定传入的参数"><span class="toc-text">（4）在onload函数，调用getMovieList方法中，指定传入的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）在getMovieListData方法中接受参数，并把参数传递到processDoubanData方法中"><span class="toc-text">（5）在getMovieListData方法中接受参数，并把参数传递到processDoubanData方法中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#readyData-settedKey-动态绑定数据"><span class="toc-text">readyData[settedKey]  动态绑定数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#this-setData（readyData）设置数据到data：中指定的数据集中"><span class="toc-text">this.setData（readyData）设置数据到data：中指定的数据集中</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（6）在movies-wxml中接受绑定的数据"><span class="toc-text">（6）在movies.wxml中接受绑定的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-”…inTheaters”为传递inTheaters数据到movieListTemplate界面。…为铺开数据"><span class="toc-text">data=”…inTheaters”为传递inTheaters数据到movieListTemplate界面。…为铺开数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（7）在movie-list-template-wxml文件中修改"><span class="toc-text">（7）在movie-list-template.wxml文件中修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对每个电影进行数据绑定，data-”…movie”所以传递每个电影到movieTemplate"><span class="toc-text">对每个电影进行数据绑定，data=”…movie”所以传递每个电影到movieTemplate</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（8）在movie-template-wxml文件中数据绑定"><span class="toc-text">（8）在movie-template.wxml文件中数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（9）在stars-tempalte-wxml文件中修改"><span class="toc-text">（9）在stars-tempalte.wxml文件中修改</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -362,34 +362,119 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day4-1"><a href="#reader项目-day4-1" class="headerlink" title="reader项目-day4(1)"></a>reader项目-day4(1)</h1><h2 id="2、开始页与列表页跳转"><a href="#2、开始页与列表页跳转" class="headerlink" title="2、开始页与列表页跳转"></a>2、开始页与列表页跳转</h2><h3 id="（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><a href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”" class="headerlink" title="（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”"></a>（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</h3><h3 id="bindtap-点击子元素，父元素也会执行，即-冒泡"><a href="#bindtap-点击子元素，父元素也会执行，即-冒泡" class="headerlink" title="bindtap:点击子元素，父元素也会执行，即  冒泡"></a>bindtap:点击子元素，父元素也会执行，即  冒泡</h3><h3 id="catchtap-点击子元素，父元素不执行，即-非冒泡"><a href="#catchtap-点击子元素，父元素不执行，即-非冒泡" class="headerlink" title="catchtap:点击子元素，父元素不执行，即  非冒泡"></a>catchtap:点击子元素，父元素不执行，即  非冒泡</h3><h3 id="（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><a href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo" class="headerlink" title="（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo"></a>（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</h3><h3 id="wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><a href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数" class="headerlink" title="wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"></a>wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</h3><h3 id="wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><a href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数" class="headerlink" title="wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"></a>wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</h3><h3 id="（3）对于day3的补充知识—-关于本地数据库的调用"><a href="#（3）对于day3的补充知识—-关于本地数据库的调用" class="headerlink" title="（3）对于day3的补充知识—-关于本地数据库的调用"></a>（3）对于day3的补充知识—-关于本地数据库的调用</h3><h3 id="在本地数据库data-js中，需要在数据最后加入出库代码"><a href="#在本地数据库data-js中，需要在数据最后加入出库代码" class="headerlink" title="在本地数据库data.js中，需要在数据最后加入出库代码"></a>在本地数据库data.js中，需要在数据最后加入出库代码</h3><pre><code class="python">var local_database = [
-  {
-    date: &quot;Sep 18 2016&quot;,
-    title: &quot;正是虾肥蟹壮时&quot;,
-    imgSrc: &quot;/images/post/crab.png&quot;,
-    avatar: &quot;/images/avatar/1.png&quot;,
-    content: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，&quot;,
-    reading: &quot;112&quot;,
-    collection: &quot;96&quot;,
-    headImgSrc: &quot;/images/post/crab.png&quot;,
-    author: &quot;林白衣&quot;,
-    dateTime: &quot;24小时前&quot;,
-    detail: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中，便足了一生矣。”漫漫人生长路，美食与爱岂可辜负？于是作为一个吃货，突然也很想回味一下属于我的味蕾记忆。记忆中的秋蟹，是家人的味道，弥漫着浓浓的亲情。\n\n是谁来自山川湖海，却囿于昼夜，厨房与爱？ 是母亲，深思熟虑，聪明耐心。吃蟹前，总会拿出几件工具，煞有介事而乐此不疲。告诉我们螃蟹至寒，需要佐以姜茶以祛寒，在配备的米醋小碟里，亦添入姜丝与紫苏，前者驱寒后者增香。泡好菊花茶，岁月静好，我们静等。&quot;,
-    postId: 0,
-    music: {
-      url: &quot;http://music.163.com/song/media/outer/url?id=142604.mp3&quot;,
-      title: &quot;夜夜夜夜-齐秦&quot;,
-      coverImg: &quot;http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000&quot;
-    }
+        <h1 id="Reader-Movie项目-day13"><a href="#Reader-Movie项目-day13" class="headerlink" title="Reader+Movie项目-day13"></a>Reader+Movie项目-day13</h1><h2 id="7-Movie页–数据绑定"><a href="#7-Movie页–数据绑定" class="headerlink" title="7.Movie页–数据绑定"></a>7.Movie页–数据绑定</h2><h3 id="（1）getMovieListData获取数据，获取成功后，在success方法中绑定数据"><a href="#（1）getMovieListData获取数据，获取成功后，在success方法中绑定数据" class="headerlink" title="（1）getMovieListData获取数据，获取成功后，在success方法中绑定数据"></a>（1）getMovieListData获取数据，获取成功后，在success方法中绑定数据</h3><pre><code class="python"> getMovieListData:function(url){
+    var that = this
+    wx.request({
+      url: url,
+      method: &quot;GET&quot;,
+      header: {
+        &quot;Content-Type&quot;: &quot;json&quot;
+      },
+      success: function (res) {
+        console.log(res)
+        that.processDoubanData(res.data)
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
   },
-
-    ......
-]
-
-module.exports = {
-  postList: local_database
+</code></pre>
+<h3 id="定义一个processDoubanData的方法用来处理数据（传递参数res-data）"><a href="#定义一个processDoubanData的方法用来处理数据（传递参数res-data）" class="headerlink" title="定义一个processDoubanData的方法用来处理数据（传递参数res.data）"></a>定义一个processDoubanData的方法用来处理数据（传递参数res.data）</h3><h3 id="2-在processDoubanData方法中处理数据"><a href="#2-在processDoubanData方法中处理数据" class="headerlink" title="(2)在processDoubanData方法中处理数据"></a>(2)在processDoubanData方法中处理数据</h3><pre><code class="python">processDoubanData: function (moviesDouban, settedKey){
+    var movies = [];
+    for (var idx in moviesDouban.subjects){
+      var subject = moviesDouban.subjects[idx];
+      var title = subject.title;
+      if(title.length &gt;= 6){
+        title = title.substring(0,6) + &quot;...&quot;;
+      }
+      var temp = {
+        title:title,
+        average:subject.rating.average,
+        coverageUrl:subject.images.large,
+        movieId:subject.id,
+      }
+      movies.push(temp)
+    }
+    this.setData({
+     movies:movies   
+    })
 }
+</code></pre>
+<h4 id="for循环获取每一个电影id，并通过这个电影id把这个电影的所有数据赋值给subject变量"><a href="#for循环获取每一个电影id，并通过这个电影id把这个电影的所有数据赋值给subject变量" class="headerlink" title="for循环获取每一个电影id，并通过这个电影id把这个电影的所有数据赋值给subject变量"></a>for循环获取每一个电影id，并通过这个电影id把这个电影的所有数据赋值给subject变量</h4><h4 id="if判断电影名字长度，如果大于6，则通过substring方法截取"><a href="#if判断电影名字长度，如果大于6，则通过substring方法截取" class="headerlink" title="if判断电影名字长度，如果大于6，则通过substring方法截取"></a>if判断电影名字长度，如果大于6，则通过substring方法截取</h4><h4 id="通过一个temp变量存储这一大类中，所有需要的数据，并放到movies变量中"><a href="#通过一个temp变量存储这一大类中，所有需要的数据，并放到movies变量中" class="headerlink" title="通过一个temp变量存储这一大类中，所有需要的数据，并放到movies变量中"></a>通过一个temp变量存储这一大类中，所有需要的数据，并放到movies变量中</h4><h4 id="通过setData绑定前端数据"><a href="#通过setData绑定前端数据" class="headerlink" title="通过setData绑定前端数据"></a>通过setData绑定前端数据</h4><h2 id="以上只是绑定一个大类中的电影数据内容，下面则是详细的绑定三个大类中的内容"><a href="#以上只是绑定一个大类中的电影数据内容，下面则是详细的绑定三个大类中的内容" class="headerlink" title="以上只是绑定一个大类中的电影数据内容，下面则是详细的绑定三个大类中的内容"></a>以上只是绑定一个大类中的电影数据内容，下面则是详细的绑定三个大类中的内容</h2><h3 id="（3）在data中定义三个大类的数据集"><a href="#（3）在data中定义三个大类的数据集" class="headerlink" title="（3）在data中定义三个大类的数据集"></a>（3）在data中定义三个大类的数据集</h3><pre><code class="python">  data:{
+    inTheaters:{},
+    ComingSoon:{},
+    top250:{}
+  },
+</code></pre>
+<h3 id="（4）在onload函数，调用getMovieList方法中，指定传入的参数"><a href="#（4）在onload函数，调用getMovieList方法中，指定传入的参数" class="headerlink" title="（4）在onload函数，调用getMovieList方法中，指定传入的参数"></a>（4）在onload函数，调用getMovieList方法中，指定传入的参数</h3><pre><code class="python">  onLoad:function(event){
+    var inTheaterUrl = app.globalData.douban_base + &quot;/v2/movie/in_theaters&quot;+&quot;?start=0&amp;count=3&quot;;
+    var inComingUrl = app.globalData.douban_base + &quot;/v2/movie/coming_soon&quot; + &quot;?start=0&amp;count=3&quot;;
+    var top250Url = app.globalData.douban_base + &quot;/v2/movie/top250&quot; + &quot;?start=0&amp;count=3&quot;;
 
+    this.getMovieListData(inTheaterUrl,&quot;inTheaters&quot;);
+    this.getMovieListData(inComingUrl,&quot;ComingSoon&quot;);
+    this.getMovieListData(top250Url,&quot;top250&quot;);
+  },
+</code></pre>
+<h3 id="（5）在getMovieListData方法中接受参数，并把参数传递到processDoubanData方法中"><a href="#（5）在getMovieListData方法中接受参数，并把参数传递到processDoubanData方法中" class="headerlink" title="（5）在getMovieListData方法中接受参数，并把参数传递到processDoubanData方法中"></a>（5）在getMovieListData方法中接受参数，并把参数传递到processDoubanData方法中</h3><pre><code class="python">    getMovieListData:function(url,settedKey){
+        .....
+    success: function (res) {
+        console.log(res)
+        that.processDoubanData(res.data, settedKey)
+      },
+    }
+</code></pre>
+<pre><code class="python">processDoubanData: function (moviesDouban, settedKey){
+    var movies = [];
+    for (var idx in moviesDouban.subjects){
+      var subject = moviesDouban.subjects[idx];
+      var title = subject.title;
+      if(title.length &gt;= 6){
+        title = title.substring(0,6) + &quot;...&quot;;
+      }
+      var temp = {
+        title:title,
+        average:subject.rating.average,
+        coverageUrl:subject.images.large,
+        movieId:subject.id,
+      }
+      movies.push(temp)
+    }
+    var readyData = {};
+    readyData[settedKey] ={
+      movies:movies
+    } 
+    this.setData(readyData)
+  }
+</code></pre>
+<h3 id="readyData-settedKey-动态绑定数据"><a href="#readyData-settedKey-动态绑定数据" class="headerlink" title="readyData[settedKey]  动态绑定数据"></a>readyData[settedKey]  动态绑定数据</h3><h4 id="this-setData（readyData）设置数据到data：中指定的数据集中"><a href="#this-setData（readyData）设置数据到data：中指定的数据集中" class="headerlink" title="this.setData（readyData）设置数据到data：中指定的数据集中"></a>this.setData（readyData）设置数据到data：中指定的数据集中</h4><h3 id="（6）在movies-wxml中接受绑定的数据"><a href="#（6）在movies-wxml中接受绑定的数据" class="headerlink" title="（6）在movies.wxml中接受绑定的数据"></a>（6）在movies.wxml中接受绑定的数据</h3><pre><code class="python">&lt;import src=&quot;../movies/movie-list/movie-list-template.wxml&quot; /&gt;
+&lt;view class=&#39;container&#39;&gt;
+  &lt;view class=&#39;movie-template&#39;&gt;
+    &lt;template is=&quot;movieListTemplate&quot; data=&quot;{{...inTheaters}}&quot; /&gt;
+  &lt;/view&gt;
+  &lt;view class=&#39;movie-template&#39;&gt;
+    &lt;template is=&quot;movieListTemplate&quot; data=&quot;{{...ComingSoon}}&quot;/&gt;
+  &lt;/view&gt;
+  &lt;view class=&#39;movie-template&#39;&gt;
+    &lt;template is=&quot;movieListTemplate&quot;data=&quot;{{...top250}}&quot; /&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre>
+<h3 id="data-”…inTheaters”为传递inTheaters数据到movieListTemplate界面。…为铺开数据"><a href="#data-”…inTheaters”为传递inTheaters数据到movieListTemplate界面。…为铺开数据" class="headerlink" title="data=”…inTheaters”为传递inTheaters数据到movieListTemplate界面。…为铺开数据"></a>data=”…inTheaters”为传递inTheaters数据到movieListTemplate界面。…为铺开数据</h3><h3 id="（7）在movie-list-template-wxml文件中修改"><a href="#（7）在movie-list-template-wxml文件中修改" class="headerlink" title="（7）在movie-list-template.wxml文件中修改"></a>（7）在movie-list-template.wxml文件中修改</h3><pre><code class="python">&lt;block wx:for=&quot;{{movies}}&quot; wx:for-item=&quot;movie&quot;&gt;
+    &lt;template is=&quot;movieTemplate&quot; data=&quot;{{...movie}}&quot; /&gt;
+&lt;/block&gt;
+</code></pre>
+<h4 id="对每个电影进行数据绑定，data-”…movie”所以传递每个电影到movieTemplate"><a href="#对每个电影进行数据绑定，data-”…movie”所以传递每个电影到movieTemplate" class="headerlink" title="对每个电影进行数据绑定，data=”…movie”所以传递每个电影到movieTemplate"></a>对每个电影进行数据绑定，data=”…movie”所以传递每个电影到movieTemplate</h4><h3 id="（8）在movie-template-wxml文件中数据绑定"><a href="#（8）在movie-template-wxml文件中数据绑定" class="headerlink" title="（8）在movie-template.wxml文件中数据绑定"></a>（8）在movie-template.wxml文件中数据绑定</h3><pre><code class="python">&lt;import src=&quot;../stars/stars-template.wxml&quot; /&gt;
+&lt;template name=&quot;movieTemplate&quot;&gt;
+  &lt;view class=&#39;movie-container&#39;&gt;
+    &lt;image class=&#39;movie-img&#39; src=&#39;{{coverageUrl}}&#39;&gt;&lt;/image&gt;
+    &lt;text class=&#39;movie-title&#39;&gt;{{title}}&lt;/text&gt;
+    &lt;template is=&quot;starsTemplate&quot; data=&quot;{{average}}&quot;/&gt;
+  &lt;/view&gt;
+&lt;/template&gt;
+</code></pre>
+<h3 id="（9）在stars-tempalte-wxml文件中修改"><a href="#（9）在stars-tempalte-wxml文件中修改" class="headerlink" title="（9）在stars-tempalte.wxml文件中修改"></a>（9）在stars-tempalte.wxml文件中修改</h3><pre><code class="python">&lt;text class=&#39;star-score&#39;&gt;{{average}}&lt;/text&gt;
 </code></pre>
 
       
@@ -400,12 +485,12 @@ module.exports = {
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day4(1)</p>
-    <p><span>文章字数:</span><span class="post-count">612</span></p>
+    <p><span>文章标题:</span>小程序reader+movie项目-day13</p>
+    <p><span>文章字数:</span><span class="post-count">658</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-17, 22:00:05</p>
-    <p><span>最后更新:</span>2018-07-17, 22:17:39</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(1)/" title="小程序reader项目-day4(1)">http://yoursite.com/2018/07/17/阅读小程序-day4(1)/</a>
+    <p><span>发布时间:</span>2018-08-08, 21:48:05</p>
+    <p><span>最后更新:</span>2018-08-08, 21:55:38</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/08/阅读-电影小程序-day13/" title="小程序reader+movie项目-day13">http://yoursite.com/2018/08/08/阅读-电影小程序-day13/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
