@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>小程序reader+movie项目-day15 | Hexo</title>
+  <meta name="keywords" content=" 小程序 ">
+  <meta name="description" content="小程序reader+movie项目-day15 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十五天">
 <meta name="keywords" content="小程序">
@@ -49,7 +49,7 @@
   <input class="theme_preload_comment" value="false">
 </div>
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -315,10 +315,55 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-阅读+电影小程序-day15" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Welcome"><span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#欢迎来到王健的博客"><span class="toc-text">欢迎来到王健的博客</span></a></li></ol></li></ol>
+        <h1 class="article-title">小程序reader+movie项目-day15</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">小程序</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-08-13 22:15:09'>2018-08-13 22:14</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:209</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day15"><span class="toc-text">Reader+Movie项目-day15</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Movie更多页–更多跳转"><span class="toc-text">8.Movie更多页–更多跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）在movie-list-template页面中，绑定更多的跳转方法"><span class="toc-text">（1）在movie-list-template页面中，绑定更多的跳转方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#绑定onMoreTap方法"><span class="toc-text">绑定onMoreTap方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#并传入参数categoryTitle-这里的categoryTitle是指不同的类别，”正在热映”，”即将上映”，”top250”"><span class="toc-text">并传入参数categoryTitle,这里的categoryTitle是指不同的类别，”正在热映”，”即将上映”，”top250”</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在movie-js文件中，编辑onMoreTap方法"><span class="toc-text">（2）在movie.js文件中，编辑onMoreTap方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#category-event-currentTarget-dataset-category为获取指定的类别"><span class="toc-text">category = event.currentTarget.dataset.category为获取指定的类别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-navigateTo为页面跳转-路径中指定特点的类别的页面"><span class="toc-text">wx.navigateTo为页面跳转 路径中指定特点的类别的页面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）在movies-more-js文件中，接受指定类别的参数"><span class="toc-text">（3）在movies-more.js文件中，接受指定类别的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）在movies-more-js文件中，设定不同类别的title"><span class="toc-text">（4）在movies-more.js文件中，设定不同类别的title</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -331,12 +376,52 @@
     }
 </style>
 </div>
-            <h1 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h1><h2 id="欢迎来到王健的博客"><a href="#欢迎来到王健的博客" class="headerlink" title="欢迎来到王健的博客"></a>欢迎来到王健的博客</h2><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Reader-Movie项目-day15"><a href="#Reader-Movie项目-day15" class="headerlink" title="Reader+Movie项目-day15"></a>Reader+Movie项目-day15</h1><h2 id="8-Movie更多页–更多跳转"><a href="#8-Movie更多页–更多跳转" class="headerlink" title="8.Movie更多页–更多跳转"></a>8.Movie更多页–更多跳转</h2><h3 id="（1）在movie-list-template页面中，绑定更多的跳转方法"><a href="#（1）在movie-list-template页面中，绑定更多的跳转方法" class="headerlink" title="（1）在movie-list-template页面中，绑定更多的跳转方法"></a>（1）在movie-list-template页面中，绑定更多的跳转方法</h3><pre><code class="python">&lt;view catchtap=&#39;onMoreTap&#39; class=&#39;more&#39; data-category=&#39;{{categoryTitle}}&#39;&gt;
+    &lt;text class=&#39;more-text&#39;&gt;更多&lt;/text&gt;
+    &lt;image class=&#39;more-img&#39; src=&#39;/images/icon/arrow-right.png&#39;&gt;&lt;/image&gt;
+&lt;/view&gt;
+</code></pre>
+<h4 id="绑定onMoreTap方法"><a href="#绑定onMoreTap方法" class="headerlink" title="绑定onMoreTap方法"></a>绑定onMoreTap方法</h4><h4 id="并传入参数categoryTitle-这里的categoryTitle是指不同的类别，”正在热映”，”即将上映”，”top250”"><a href="#并传入参数categoryTitle-这里的categoryTitle是指不同的类别，”正在热映”，”即将上映”，”top250”" class="headerlink" title="并传入参数categoryTitle,这里的categoryTitle是指不同的类别，”正在热映”，”即将上映”，”top250”"></a>并传入参数categoryTitle,这里的categoryTitle是指不同的类别，”正在热映”，”即将上映”，”top250”</h4><h3 id="（2）在movie-js文件中，编辑onMoreTap方法"><a href="#（2）在movie-js文件中，编辑onMoreTap方法" class="headerlink" title="（2）在movie.js文件中，编辑onMoreTap方法"></a>（2）在movie.js文件中，编辑onMoreTap方法</h3><pre><code class="python">onMoreTap:function(event){
+    var category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: &#39;moveis-more/movies-more?category=&#39;+ category
+    })
+},
+</code></pre>
+<h4 id="category-event-currentTarget-dataset-category为获取指定的类别"><a href="#category-event-currentTarget-dataset-category为获取指定的类别" class="headerlink" title="category = event.currentTarget.dataset.category为获取指定的类别"></a>category = event.currentTarget.dataset.category为获取指定的类别</h4><h4 id="wx-navigateTo为页面跳转-路径中指定特点的类别的页面"><a href="#wx-navigateTo为页面跳转-路径中指定特点的类别的页面" class="headerlink" title="wx.navigateTo为页面跳转 路径中指定特点的类别的页面"></a>wx.navigateTo为页面跳转 路径中指定特点的类别的页面</h4><h3 id="（3）在movies-more-js文件中，接受指定类别的参数"><a href="#（3）在movies-more-js文件中，接受指定类别的参数" class="headerlink" title="（3）在movies-more.js文件中，接受指定类别的参数"></a>（3）在movies-more.js文件中，接受指定类别的参数</h3><p>  data: {<br>    categoryTitle:””<br>  },<br>  onLoad: function (options) {<br>    var category = options.category;//获取category<br>    this.setData({<br>      categoryTitle:category<br>    })<br>  },</p>
+<h3 id="（4）在movies-more-js文件中，设定不同类别的title"><a href="#（4）在movies-more-js文件中，设定不同类别的title" class="headerlink" title="（4）在movies-more.js文件中，设定不同类别的title"></a>（4）在movies-more.js文件中，设定不同类别的title</h3><pre><code class="python">  onReady: function () {
+    wx.setNavigationBarTitle({
+      title:this.data.categoryTitle
+    })
+  },
+</code></pre>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>小程序reader+movie项目-day15</p>
+    <p><span>文章字数:</span><span class="post-count">209</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
+    <p><span>发布时间:</span>2018-08-13, 22:14:05</p>
+    <p><span>最后更新:</span>2018-08-13, 22:15:09</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/13/阅读+电影小程序-day15/" title="小程序reader+movie项目-day15">http://yoursite.com/2018/08/13/阅读+电影小程序-day15/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 Yelog</p>
