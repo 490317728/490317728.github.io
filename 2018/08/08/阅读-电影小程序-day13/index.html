@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 小程序 ">
   <meta name="description" content="小程序reader+movie项目-day13 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="学习小程序建设reader+movie项目第十七天">
-<meta name="keywords" content="小程序">
+<meta name="description" content="学习自公众号–经济学人数据分析（侵删）1、爬虫的常用形式获取某类特定资源的情况需要若干包含某些关键词的论文需要某个行业的数据以用于机器学习或理论分析需要大量针对某个商品的评论以决定是否要下单需要大量对某部电影的影评已决定是否区观看……这时候，爬虫便是我们快速获取这些资源的一条有效途径 网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动抓">
+<meta name="keywords" content="数据分析,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序reader+movie项目-day17（1）">
-<meta property="og:url" content="http://yoursite.com/2018/08/19/阅读+电影小程序-day17（1）/index.html">
+<meta property="og:title" content="python爬虫学习笔记1">
+<meta property="og:url" content="http://yoursite.com/2018/08/19/python爬虫学习笔记1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="学习小程序建设reader+movie项目第十七天">
+<meta property="og:description" content="学习自公众号–经济学人数据分析（侵删）1、爬虫的常用形式获取某类特定资源的情况需要若干包含某些关键词的论文需要某个行业的数据以用于机器学习或理论分析需要大量针对某个商品的评论以决定是否要下单需要大量对某部电影的影评已决定是否区观看……这时候，爬虫便是我们快速获取这些资源的一条有效途径 网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动抓">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-19T08:09:03.153Z">
+<meta property="og:updated_time" content="2018-08-19T09:56:35.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序reader+movie项目-day17（1）">
-<meta name="twitter:description" content="学习小程序建设reader+movie项目第十七天">
+<meta name="twitter:title" content="python爬虫学习笔记1">
+<meta name="twitter:description" content="学习自公众号–经济学人数据分析（侵删）1、爬虫的常用形式获取某类特定资源的情况需要若干包含某些关键词的论文需要某个行业的数据以用于机器学习或理论分析需要大量针对某个商品的评论以决定是否要下单需要大量对某部电影的影评已决定是否区观看……这时候，爬虫便是我们快速获取这些资源的一条有效途径 网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动抓">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -85,6 +85,8 @@
     
     <li data-rel="小程序学习"> 小程序学习 </li>
     
+    <li data-rel="数据分析"> 数据分析 </li>
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -95,8 +97,8 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="23">
-<input type="hidden" id="yelog_site_word_count" value="8.7k">
+<input type="hidden" id="yelog_site_posts_number" value="24">
+<input type="hidden" id="yelog_site_word_count" value="10.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -135,6 +137,14 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">小程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据分析</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">爬虫</a>
     </li>
     
     <div class="clearfix"></div>
@@ -325,6 +335,14 @@
            data-author="" >
             <span class="post-title" title="小程序reader+movie项目-day17（1）">小程序reader+movie项目-day17（1）</span>
             <span class="post-date" title="2018-08-19 16:08:05">2018/08/19</span>
+        </a>
+        
+        <a  class="数据分析 "
+           href="/2018/08/19/python爬虫学习笔记1/"
+           data-tag="数据分析,爬虫"
+           data-author="" >
+            <span class="post-title" title="python爬虫学习笔记1">python爬虫学习笔记1</span>
+            <span class="post-date" title="2018-08-19 17:55:05">2018/08/19</span>
         </a>
         
     </nav>
@@ -572,7 +590,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#hexo','#github','#小程序',],
+            'data': ['#hexo','#github','#小程序','#数据分析','#爬虫',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
