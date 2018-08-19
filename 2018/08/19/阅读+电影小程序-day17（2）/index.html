@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day10（1） | Hexo</title>
+  <title>小程序reader+movie项目-day17（7） | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day10（1） | Hexo">
+  <meta name="description" content="小程序reader+movie项目-day17（7） | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十七天">
 <meta name="keywords" content="小程序">
@@ -339,9 +339,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day10" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读+电影小程序-day17（2）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day10（1）</h1>
+        <h1 class="article-title">小程序reader+movie项目-day17（7）</h1>
     
     <div class="article-meta">
         
@@ -363,12 +363,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-08-02 22:04:03'>2018-08-02 21:30</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-19 16:09:33'>2018-08-19 16:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:150</span>
+        <span>字数:75</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -387,7 +387,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day10（1）"><span class="toc-text">reader项目-day10（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页–轮播图跳转"><span class="toc-text">5、详情页–轮播图跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先在wxml中设定对应轮播图的id，并绑定方法"><span class="toc-text">首先在wxml中设定对应轮播图的id，并绑定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接着在js文件中设定方法"><span class="toc-text">接着在js文件中设定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target-和-currentTarget的区别"><span class="toc-text">target 和 currentTarget的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target指的是当前点击的组件-currentTarget指的是事件捕获的组件"><span class="toc-text">target指的是当前点击的组件 currentTarget指的是事件捕获的组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target这里指的是image，而currentTarget指的是swiper"><span class="toc-text">target这里指的是image，而currentTarget指的是swiper</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day17（2）"><span class="toc-text">Reader+Movie项目-day17（2）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Movie更多页–实现下拉跟新"><span class="toc-text">8.Movie更多页–实现下拉跟新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在movies-more-json文件中进行全局设置"><span class="toc-text">(1)在movies-more.json文件中进行全局设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义onPullDownRefresh方法"><span class="toc-text">(2)定义onPullDownRefresh方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-在processDoubanData中停止刷新"><span class="toc-text">(3)在processDoubanData中停止刷新</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -402,26 +402,12 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day10（1）"><a href="#reader项目-day10（1）" class="headerlink" title="reader项目-day10（1）"></a>reader项目-day10（1）</h1><h2 id="5、详情页–轮播图跳转"><a href="#5、详情页–轮播图跳转" class="headerlink" title="5、详情页–轮播图跳转"></a>5、详情页–轮播图跳转</h2><h3 id="首先在wxml中设定对应轮播图的id，并绑定方法"><a href="#首先在wxml中设定对应轮播图的id，并绑定方法" class="headerlink" title="首先在wxml中设定对应轮播图的id，并绑定方法"></a>首先在wxml中设定对应轮播图的id，并绑定方法</h3><pre><code class="python">&lt;swiper catchtap=&#39;onSwiperTap&#39; autoplay=&#39;true&#39; interval=&#39;3000&#39; indicator-dots=&#39;true&#39;&gt;
-    &lt;swiper-item&gt;
-      &lt;image data-postId=&quot;5&quot; src=&#39;/images/iqiyi.png&#39;&gt;&lt;/image&gt;
-    &lt;/swiper-item&gt;
-    &lt;swiper-item&gt;
-      &lt;image data-postId=&quot;4&quot; src=&#39;/images/vr.png&#39;&gt;&lt;/image&gt;
-    &lt;/swiper-item&gt;
-    &lt;swiper-item&gt;
-      &lt;image data-postId=&quot;3&quot; src=&#39;/images/wx.png&#39;&gt;&lt;/image&gt;
-    &lt;/swiper-item&gt;
-  &lt;/swiper&gt;
+        <h1 id="Reader-Movie项目-day17（2）"><a href="#Reader-Movie项目-day17（2）" class="headerlink" title="Reader+Movie项目-day17（2）"></a>Reader+Movie项目-day17（2）</h1><h2 id="8-Movie更多页–实现下拉跟新"><a href="#8-Movie更多页–实现下拉跟新" class="headerlink" title="8.Movie更多页–实现下拉跟新"></a>8.Movie更多页–实现下拉跟新</h2><h3 id="1-在movies-more-json文件中进行全局设置"><a href="#1-在movies-more-json文件中进行全局设置" class="headerlink" title="(1)在movies-more.json文件中进行全局设置"></a>(1)在movies-more.json文件中进行全局设置</h3><pre><code class="python">{
+  &quot;enablePullDownRefresh&quot;:true
+}
 </code></pre>
-<h3 id="接着在js文件中设定方法"><a href="#接着在js文件中设定方法" class="headerlink" title="接着在js文件中设定方法"></a>接着在js文件中设定方法</h3><pre><code class="python">  onSwiperTap:function(event){
-    var postId = event.target.dataset.postid;
-    wx.navigateTo({
-      url: &#39;post-detail/post-detail?id=&#39; + postId,
-    })
-  }
-</code></pre>
-<h3 id="target-和-currentTarget的区别"><a href="#target-和-currentTarget的区别" class="headerlink" title="target 和 currentTarget的区别"></a>target 和 currentTarget的区别</h3><h3 id="target指的是当前点击的组件-currentTarget指的是事件捕获的组件"><a href="#target指的是当前点击的组件-currentTarget指的是事件捕获的组件" class="headerlink" title="target指的是当前点击的组件 currentTarget指的是事件捕获的组件"></a>target指的是当前点击的组件 currentTarget指的是事件捕获的组件</h3><h3 id="target这里指的是image，而currentTarget指的是swiper"><a href="#target这里指的是image，而currentTarget指的是swiper" class="headerlink" title="target这里指的是image，而currentTarget指的是swiper"></a>target这里指的是image，而currentTarget指的是swiper</h3><pre><code class="python">
+<h3 id="2-定义onPullDownRefresh方法"><a href="#2-定义onPullDownRefresh方法" class="headerlink" title="(2)定义onPullDownRefresh方法"></a>(2)定义onPullDownRefresh方法</h3><p>  onPullDownRefresh:function(event){<br>    var refreshUrl = this.data.requestUrl + “?start=0&amp;count=20”;<br>    this.data.moveis = {};<br>    this.data.isEmpyt = true;<br>    util.http(refreshUrl, this.processDoubanData);<br>    wx.showNavigationBarLoading();<br>  },</p>
+<h3 id="3-在processDoubanData中停止刷新"><a href="#3-在processDoubanData中停止刷新" class="headerlink" title="(3)在processDoubanData中停止刷新"></a>(3)在processDoubanData中停止刷新</h3><pre><code class="python">wx.stopPullDownRefresh();
 </code></pre>
 
       
@@ -432,12 +418,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day10（1）</p>
-    <p><span>文章字数:</span><span class="post-count">150</span></p>
+    <p><span>文章标题:</span>小程序reader+movie项目-day17（7）</p>
+    <p><span>文章字数:</span><span class="post-count">75</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-08-02, 21:30:05</p>
-    <p><span>最后更新:</span>2018-08-02, 22:04:03</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/08/02/阅读小程序-day10/" title="小程序reader项目-day10（1）">http://yoursite.com/2018/08/02/阅读小程序-day10/</a>
+    <p><span>发布时间:</span>2018-08-19, 16:09:05</p>
+    <p><span>最后更新:</span>2018-08-19, 16:09:33</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/19/阅读+电影小程序-day17（2）/" title="小程序reader+movie项目-day17（7）">http://yoursite.com/2018/08/19/阅读+电影小程序-day17（2）/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

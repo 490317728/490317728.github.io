@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day10（1） | Hexo</title>
+  <title>小程序reader+movie项目-day17（1） | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day10（1） | Hexo">
+  <meta name="description" content="小程序reader+movie项目-day17（1） | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第十七天">
 <meta name="keywords" content="小程序">
@@ -339,9 +339,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day10" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读+电影小程序-day17（1）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day10（1）</h1>
+        <h1 class="article-title">小程序reader+movie项目-day17（1）</h1>
     
     <div class="article-meta">
         
@@ -363,12 +363,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-08-02 22:04:03'>2018-08-02 21:30</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-19 16:09:03'>2018-08-19 16:08</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:150</span>
+        <span>字数:435</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -387,7 +387,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day10（1）"><span class="toc-text">reader项目-day10（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5、详情页–轮播图跳转"><span class="toc-text">5、详情页–轮播图跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先在wxml中设定对应轮播图的id，并绑定方法"><span class="toc-text">首先在wxml中设定对应轮播图的id，并绑定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接着在js文件中设定方法"><span class="toc-text">接着在js文件中设定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target-和-currentTarget的区别"><span class="toc-text">target 和 currentTarget的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target指的是当前点击的组件-currentTarget指的是事件捕获的组件"><span class="toc-text">target指的是当前点击的组件 currentTarget指的是事件捕获的组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target这里指的是image，而currentTarget指的是swiper"><span class="toc-text">target这里指的是image，而currentTarget指的是swiper</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day17（1）"><span class="toc-text">Reader+Movie项目-day17（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Movie更多页–实现下滑加载更多数据"><span class="toc-text">8.Movie更多页–实现下滑加载更多数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）修改view为scroll-view（可滚动视图区域）"><span class="toc-text">（1）修改view为scroll-view（可滚动视图区域）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#scroll-x-”false”设置不能横向滚动"><span class="toc-text">scroll-x=”false”设置不能横向滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scroll-y-”true”-设置可以纵向滚动"><span class="toc-text">scroll-y=”true” 设置可以纵向滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bindscrolltolower-滚动到底部-右边，会触发-scrolltolower-事件onScrollLower"><span class="toc-text">bindscrolltolower 滚动到底部/右边，会触发 scrolltolower 事件onScrollLower</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-在wxss中设置滚动的高度，当滚动指定高度时，会触发bindscrolltolower的事件"><span class="toc-text">(2)在wxss中设置滚动的高度，当滚动指定高度时，会触发bindscrolltolower的事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）在js文件上设置滚动后加载的方法"><span class="toc-text">（3）在js文件上设置滚动后加载的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需要在data中指定变量：requestUrl：-，totalcount：0"><span class="toc-text">需要在data中指定变量：requestUrl：{}，totalcount：0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this-data-requestUrl为onload加载数据时的url路径"><span class="toc-text">this.data.requestUrl为onload加载数据时的url路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this-data-totalCount在processDoubanData方法中每次循环增加20，this-data-totalCount-20"><span class="toc-text">this.data.totalCount在processDoubanData方法中每次循环增加20，this.data.totalCount += 20;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-这时存在的问题是，下拉会把当前页面的数据更新为其他20条数据，不是我们希望的在20条后面再加20条"><span class="toc-text">(4)这时存在的问题是，下拉会把当前页面的数据更新为其他20条数据，不是我们希望的在20条后面再加20条</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#所以需要在data中定义一个新的变量isEmpty用来判断movies是否为空"><span class="toc-text">所以需要在data中定义一个新的变量isEmpty用来判断movies是否为空</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在processDoubanData方法中添加"><span class="toc-text">在processDoubanData方法中添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#首先判断isEmpty是否真，如果为假，则认为已经有数据，这时候把data中的数据和processDoubanData中获得的数据合在一起"><span class="toc-text">首先判断isEmpty是否真，如果为假，则认为已经有数据，这时候把data中的数据和processDoubanData中获得的数据合在一起</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如果为真，则认为本来就是空的，直接把processDoubanData中获得的数据赋给data中的movies"><span class="toc-text">如果为真，则认为本来就是空的，直接把processDoubanData中获得的数据赋给data中的movies</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-设置正在加载提示"><span class="toc-text">(5)设置正在加载提示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第三步中的wx-showNavigationBarLoading-就是正在加载提示"><span class="toc-text">第三步中的wx.showNavigationBarLoading()就是正在加载提示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第四部中的wx-hideNavigationBarLoading-为加载完成停止"><span class="toc-text">第四部中的wx.hideNavigationBarLoading()为加载完成停止</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -402,26 +402,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day10（1）"><a href="#reader项目-day10（1）" class="headerlink" title="reader项目-day10（1）"></a>reader项目-day10（1）</h1><h2 id="5、详情页–轮播图跳转"><a href="#5、详情页–轮播图跳转" class="headerlink" title="5、详情页–轮播图跳转"></a>5、详情页–轮播图跳转</h2><h3 id="首先在wxml中设定对应轮播图的id，并绑定方法"><a href="#首先在wxml中设定对应轮播图的id，并绑定方法" class="headerlink" title="首先在wxml中设定对应轮播图的id，并绑定方法"></a>首先在wxml中设定对应轮播图的id，并绑定方法</h3><pre><code class="python">&lt;swiper catchtap=&#39;onSwiperTap&#39; autoplay=&#39;true&#39; interval=&#39;3000&#39; indicator-dots=&#39;true&#39;&gt;
-    &lt;swiper-item&gt;
-      &lt;image data-postId=&quot;5&quot; src=&#39;/images/iqiyi.png&#39;&gt;&lt;/image&gt;
-    &lt;/swiper-item&gt;
-    &lt;swiper-item&gt;
-      &lt;image data-postId=&quot;4&quot; src=&#39;/images/vr.png&#39;&gt;&lt;/image&gt;
-    &lt;/swiper-item&gt;
-    &lt;swiper-item&gt;
-      &lt;image data-postId=&quot;3&quot; src=&#39;/images/wx.png&#39;&gt;&lt;/image&gt;
-    &lt;/swiper-item&gt;
-  &lt;/swiper&gt;
+        <h1 id="Reader-Movie项目-day17（1）"><a href="#Reader-Movie项目-day17（1）" class="headerlink" title="Reader+Movie项目-day17（1）"></a>Reader+Movie项目-day17（1）</h1><h2 id="8-Movie更多页–实现下滑加载更多数据"><a href="#8-Movie更多页–实现下滑加载更多数据" class="headerlink" title="8.Movie更多页–实现下滑加载更多数据"></a>8.Movie更多页–实现下滑加载更多数据</h2><h3 id="（1）修改view为scroll-view（可滚动视图区域）"><a href="#（1）修改view为scroll-view（可滚动视图区域）" class="headerlink" title="（1）修改view为scroll-view（可滚动视图区域）"></a>（1）修改view为scroll-view（可滚动视图区域）</h3><pre><code class="python">&lt;scroll-view class=&#39;grid-container&#39; scroll-x=&quot;false&quot; scroll-y=&quot;true&quot; bindscrolltolower=&quot;onScrollLower&quot;&gt;
+  &lt;block wx:for=&quot;{{movies}}&quot; wx:for-item=&quot;movie&quot;&gt;
+    &lt;view class=&#39;single-view-container&#39;&gt;
+      &lt;template is=&quot;movieTemplate&quot; data=&quot;{{...movie}}&quot; /&gt;
+    &lt;/view&gt;
+  &lt;/block&gt;
+&lt;/scroll-view&gt;
 </code></pre>
-<h3 id="接着在js文件中设定方法"><a href="#接着在js文件中设定方法" class="headerlink" title="接着在js文件中设定方法"></a>接着在js文件中设定方法</h3><pre><code class="python">  onSwiperTap:function(event){
-    var postId = event.target.dataset.postid;
-    wx.navigateTo({
-      url: &#39;post-detail/post-detail?id=&#39; + postId,
-    })
-  }
+<h4 id="scroll-x-”false”设置不能横向滚动"><a href="#scroll-x-”false”设置不能横向滚动" class="headerlink" title="scroll-x=”false”设置不能横向滚动"></a>scroll-x=”false”设置不能横向滚动</h4><h4 id="scroll-y-”true”-设置可以纵向滚动"><a href="#scroll-y-”true”-设置可以纵向滚动" class="headerlink" title="scroll-y=”true” 设置可以纵向滚动"></a>scroll-y=”true” 设置可以纵向滚动</h4><h4 id="bindscrolltolower-滚动到底部-右边，会触发-scrolltolower-事件onScrollLower"><a href="#bindscrolltolower-滚动到底部-右边，会触发-scrolltolower-事件onScrollLower" class="headerlink" title="bindscrolltolower 滚动到底部/右边，会触发 scrolltolower 事件onScrollLower"></a>bindscrolltolower 滚动到底部/右边，会触发 scrolltolower 事件onScrollLower</h4><h3 id="2-在wxss中设置滚动的高度，当滚动指定高度时，会触发bindscrolltolower的事件"><a href="#2-在wxss中设置滚动的高度，当滚动指定高度时，会触发bindscrolltolower的事件" class="headerlink" title="(2)在wxss中设置滚动的高度，当滚动指定高度时，会触发bindscrolltolower的事件"></a>(2)在wxss中设置滚动的高度，当滚动指定高度时，会触发bindscrolltolower的事件</h3><pre><code class="python">.grid-container{
+  height: 1300rpx;
+  margin: 40rpx 0 40rpx 6rpx;
+}
 </code></pre>
-<h3 id="target-和-currentTarget的区别"><a href="#target-和-currentTarget的区别" class="headerlink" title="target 和 currentTarget的区别"></a>target 和 currentTarget的区别</h3><h3 id="target指的是当前点击的组件-currentTarget指的是事件捕获的组件"><a href="#target指的是当前点击的组件-currentTarget指的是事件捕获的组件" class="headerlink" title="target指的是当前点击的组件 currentTarget指的是事件捕获的组件"></a>target指的是当前点击的组件 currentTarget指的是事件捕获的组件</h3><h3 id="target这里指的是image，而currentTarget指的是swiper"><a href="#target这里指的是image，而currentTarget指的是swiper" class="headerlink" title="target这里指的是image，而currentTarget指的是swiper"></a>target这里指的是image，而currentTarget指的是swiper</h3><pre><code class="python">
+<h3 id="（3）在js文件上设置滚动后加载的方法"><a href="#（3）在js文件上设置滚动后加载的方法" class="headerlink" title="（3）在js文件上设置滚动后加载的方法"></a>（3）在js文件上设置滚动后加载的方法</h3><pre><code class="python">  onScrollLower: function(event) {
+    var nextUrl = this.data.requestUrl + &quot;?start=&quot; + this.data.totalCount + &quot;&amp;count=20&quot;;
+    util.http(nextUrl, this.processDoubanData)
+    wx.showNavigationBarLoading()
+  },
+</code></pre>
+<h4 id="需要在data中指定变量：requestUrl：-，totalcount：0"><a href="#需要在data中指定变量：requestUrl：-，totalcount：0" class="headerlink" title="需要在data中指定变量：requestUrl：{}，totalcount：0"></a>需要在data中指定变量：requestUrl：{}，totalcount：0</h4><h4 id="this-data-requestUrl为onload加载数据时的url路径"><a href="#this-data-requestUrl为onload加载数据时的url路径" class="headerlink" title="this.data.requestUrl为onload加载数据时的url路径"></a>this.data.requestUrl为onload加载数据时的url路径</h4><h4 id="this-data-totalCount在processDoubanData方法中每次循环增加20，this-data-totalCount-20"><a href="#this-data-totalCount在processDoubanData方法中每次循环增加20，this-data-totalCount-20" class="headerlink" title="this.data.totalCount在processDoubanData方法中每次循环增加20，this.data.totalCount += 20;"></a>this.data.totalCount在processDoubanData方法中每次循环增加20，this.data.totalCount += 20;</h4><h3 id="4-这时存在的问题是，下拉会把当前页面的数据更新为其他20条数据，不是我们希望的在20条后面再加20条"><a href="#4-这时存在的问题是，下拉会把当前页面的数据更新为其他20条数据，不是我们希望的在20条后面再加20条" class="headerlink" title="(4)这时存在的问题是，下拉会把当前页面的数据更新为其他20条数据，不是我们希望的在20条后面再加20条"></a>(4)这时存在的问题是，下拉会把当前页面的数据更新为其他20条数据，不是我们希望的在20条后面再加20条</h3><h4 id="所以需要在data中定义一个新的变量isEmpty用来判断movies是否为空"><a href="#所以需要在data中定义一个新的变量isEmpty用来判断movies是否为空" class="headerlink" title="所以需要在data中定义一个新的变量isEmpty用来判断movies是否为空"></a>所以需要在data中定义一个新的变量isEmpty用来判断movies是否为空</h4><pre><code class="python">  data: {
+    movies: {},
+    categoryTitle: &quot;&quot;,
+    requestUrl: &quot;&quot;,
+    totalCount: 0,
+    isEmpyt: true,
+  },
+</code></pre>
+<h4 id="在processDoubanData方法中添加"><a href="#在processDoubanData方法中添加" class="headerlink" title="在processDoubanData方法中添加"></a>在processDoubanData方法中添加</h4><pre><code class="python">var totalMovies = {}
+if (!this.data.isEmpyt) {
+    totalMovies = this.data.movies.concat(movies)
+} else {
+    totalMovies = movies;
+    this.data.isEmpyt = false;
+}
+this.setData({
+    movies: totalMovies
+})
+this.data.totalCount += 20;
+wx.hideNavigationBarLoading();
+</code></pre>
+<h4 id="首先判断isEmpty是否真，如果为假，则认为已经有数据，这时候把data中的数据和processDoubanData中获得的数据合在一起"><a href="#首先判断isEmpty是否真，如果为假，则认为已经有数据，这时候把data中的数据和processDoubanData中获得的数据合在一起" class="headerlink" title="首先判断isEmpty是否真，如果为假，则认为已经有数据，这时候把data中的数据和processDoubanData中获得的数据合在一起"></a>首先判断isEmpty是否真，如果为假，则认为已经有数据，这时候把data中的数据和processDoubanData中获得的数据合在一起</h4><h4 id="如果为真，则认为本来就是空的，直接把processDoubanData中获得的数据赋给data中的movies"><a href="#如果为真，则认为本来就是空的，直接把processDoubanData中获得的数据赋给data中的movies" class="headerlink" title="如果为真，则认为本来就是空的，直接把processDoubanData中获得的数据赋给data中的movies"></a>如果为真，则认为本来就是空的，直接把processDoubanData中获得的数据赋给data中的movies</h4><h3 id="5-设置正在加载提示"><a href="#5-设置正在加载提示" class="headerlink" title="(5)设置正在加载提示"></a>(5)设置正在加载提示</h3><h4 id="第三步中的wx-showNavigationBarLoading-就是正在加载提示"><a href="#第三步中的wx-showNavigationBarLoading-就是正在加载提示" class="headerlink" title="第三步中的wx.showNavigationBarLoading()就是正在加载提示"></a>第三步中的wx.showNavigationBarLoading()就是正在加载提示</h4><h4 id="第四部中的wx-hideNavigationBarLoading-为加载完成停止"><a href="#第四部中的wx-hideNavigationBarLoading-为加载完成停止" class="headerlink" title="第四部中的wx.hideNavigationBarLoading()为加载完成停止"></a>第四部中的wx.hideNavigationBarLoading()为加载完成停止</h4><pre><code class="python">
 </code></pre>
 
       
@@ -432,12 +453,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day10（1）</p>
-    <p><span>文章字数:</span><span class="post-count">150</span></p>
+    <p><span>文章标题:</span>小程序reader+movie项目-day17（1）</p>
+    <p><span>文章字数:</span><span class="post-count">435</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-08-02, 21:30:05</p>
-    <p><span>最后更新:</span>2018-08-02, 22:04:03</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/08/02/阅读小程序-day10/" title="小程序reader项目-day10（1）">http://yoursite.com/2018/08/02/阅读小程序-day10/</a>
+    <p><span>发布时间:</span>2018-08-19, 16:08:05</p>
+    <p><span>最后更新:</span>2018-08-19, 16:09:03</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/19/阅读+电影小程序-day17（1）/" title="小程序reader+movie项目-day17（1）">http://yoursite.com/2018/08/19/阅读+电影小程序-day17（1）/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
