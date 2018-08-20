@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader+movie项目-day17（7） | Hexo</title>
+  <title>小程序reader+movie项目-day18 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader+movie项目-day17（7） | Hexo">
+  <meta name="description" content="小程序reader+movie项目-day18 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在.BeautifulSoup是一个可以从HTML或XML文件中提取数据的Python库。它能够通过你喜欢的转换器实现惯用的文档导航，查找，修改文档的方式。Beautiful Soup会帮你节省数小时甚至数天的工作时间。(解释来自Beautif">
 <meta name="keywords" content="数据分析,爬虫">
@@ -375,9 +375,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读+电影小程序-day17（2）" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读+电影小程序-day18" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader+movie项目-day17（7）</h1>
+        <h1 class="article-title">小程序reader+movie项目-day18</h1>
     
     <div class="article-meta">
         
@@ -399,12 +399,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-08-19 16:09:33'>2018-08-19 16:09</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-20 22:27:57'>2018-08-20 22:27</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:75</span>
+        <span>字数:408</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -423,7 +423,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day17（2）"><span class="toc-text">Reader+Movie项目-day17（2）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Movie更多页–实现下拉跟新"><span class="toc-text">8.Movie更多页–实现下拉跟新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在movies-more-json文件中进行全局设置"><span class="toc-text">(1)在movies-more.json文件中进行全局设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义onPullDownRefresh方法"><span class="toc-text">(2)定义onPullDownRefresh方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-在processDoubanData中停止刷新"><span class="toc-text">(3)在processDoubanData中停止刷新</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day18"><span class="toc-text">Reader+Movie项目-day18</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Movie搜多功能-基础设计"><span class="toc-text">8.Movie搜多功能-基础设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）在movie-wxml页面中添加搜索相关的项"><span class="toc-text">（1）在movie.wxml页面中添加搜索相关的项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#input标签中可以设置输入类型type，设置默认显示的文字placeholder以及其样式placeholder-class"><span class="toc-text">*input标签中可以设置输入类型type，设置默认显示的文字placeholder以及其样式placeholder-class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bindfocus为输入框聚焦时触发的事件，bindchange为聚焦状态修改时触发的事件"><span class="toc-text">bindfocus为输入框聚焦时触发的事件，bindchange为聚焦状态修改时触发的事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需要在movies-wxss中为每一项添加样式"><span class="toc-text">需要在movies.wxss中为每一项添加样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在movie-wxml添加搜索结果项，当触发时onBindFocus事件时会加载搜索结果页面"><span class="toc-text">（2）在movie.wxml添加搜索结果项，当触发时onBindFocus事件时会加载搜索结果页面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#直接调用movies-Grid-Template模块"><span class="toc-text">直接调用movies-Grid-Template模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）开始编写方法，首先在movie-js文件中的data中添加两个监视变量"><span class="toc-text">（3）开始编写方法，首先在movie.js文件中的data中添加两个监视变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#containerShow为电影列表页内容，searchPannelShow为搜素结果页"><span class="toc-text">containerShow为电影列表页内容，searchPannelShow为搜素结果页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接着定义onBindFocus方法，"><span class="toc-text">接着定义onBindFocus方法，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当触发方法时，设置电影列表页隐藏，搜索页展示"><span class="toc-text">当触发方法时，设置电影列表页隐藏，搜索页展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）触发方法，进入搜索页面，这时面临回不去的问题。这时需要对（1）中的X图片定义一个方法，用来退出搜索页面到列表页。"><span class="toc-text">（4）触发方法，进入搜索页面，这时面临回不去的问题。这时需要对（1）中的X图片定义一个方法，用来退出搜索页面到列表页。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#此时的方法效果与onBindFocus方法相反"><span class="toc-text">此时的方法效果与onBindFocus方法相反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）需要设置在电影列表页时不显示X图片，当点击搜索框时再出现X图片"><span class="toc-text">（5）需要设置在电影列表页时不显示X图片，当点击搜索框时再出现X图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当searchPannelShow为真时在显示图片"><span class="toc-text">当searchPannelShow为真时在显示图片</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -438,12 +438,41 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Reader-Movie项目-day17（2）"><a href="#Reader-Movie项目-day17（2）" class="headerlink" title="Reader+Movie项目-day17（2）"></a>Reader+Movie项目-day17（2）</h1><h2 id="8-Movie更多页–实现下拉跟新"><a href="#8-Movie更多页–实现下拉跟新" class="headerlink" title="8.Movie更多页–实现下拉跟新"></a>8.Movie更多页–实现下拉跟新</h2><h3 id="1-在movies-more-json文件中进行全局设置"><a href="#1-在movies-more-json文件中进行全局设置" class="headerlink" title="(1)在movies-more.json文件中进行全局设置"></a>(1)在movies-more.json文件中进行全局设置</h3><pre><code class="python">{
-  &quot;enablePullDownRefresh&quot;:true
-}
+        <h1 id="Reader-Movie项目-day18"><a href="#Reader-Movie项目-day18" class="headerlink" title="Reader+Movie项目-day18"></a>Reader+Movie项目-day18</h1><h2 id="8-Movie搜多功能-基础设计"><a href="#8-Movie搜多功能-基础设计" class="headerlink" title="8.Movie搜多功能-基础设计"></a>8.Movie搜多功能-基础设计</h2><h3 id="（1）在movie-wxml页面中添加搜索相关的项"><a href="#（1）在movie-wxml页面中添加搜索相关的项" class="headerlink" title="（1）在movie.wxml页面中添加搜索相关的项"></a>（1）在movie.wxml页面中添加搜索相关的项</h3><pre><code class="python">&lt;view class=&#39;search&#39;&gt;
+  &lt;icon type=&#39;search&#39; class=&#39;search-img&#39; size=&#39;13&#39; color=&#39;#405f80&#39; /&gt;
+  &lt;input type=&#39;text&#39; placeholder=&#39;后来的我们，幕后玩家&#39; placeholder-class=&#39;placeholder&#39; bindfocus=&#39;onBindFocus&#39; bindchange=&quot;onBindChange&quot; /&gt;
+  &lt;image src=&#39;/images/icon/xx.png&#39; bindtap=&#39;onCancelImgTap&#39; class=&#39;xx-image&#39; wx:if=&quot;{{searchPannelShow}}&quot;&gt;&lt;/image&gt;
+&lt;/view&gt;
 </code></pre>
-<h3 id="2-定义onPullDownRefresh方法"><a href="#2-定义onPullDownRefresh方法" class="headerlink" title="(2)定义onPullDownRefresh方法"></a>(2)定义onPullDownRefresh方法</h3><p>  onPullDownRefresh:function(event){<br>    var refreshUrl = this.data.requestUrl + “?start=0&amp;count=20”;<br>    this.data.moveis = {};<br>    this.data.isEmpyt = true;<br>    util.http(refreshUrl, this.processDoubanData);<br>    wx.showNavigationBarLoading();<br>  },</p>
-<h3 id="3-在processDoubanData中停止刷新"><a href="#3-在processDoubanData中停止刷新" class="headerlink" title="(3)在processDoubanData中停止刷新"></a>(3)在processDoubanData中停止刷新</h3><pre><code class="python">wx.stopPullDownRefresh();
+<h3 id="input标签中可以设置输入类型type，设置默认显示的文字placeholder以及其样式placeholder-class"><a href="#input标签中可以设置输入类型type，设置默认显示的文字placeholder以及其样式placeholder-class" class="headerlink" title="*input标签中可以设置输入类型type，设置默认显示的文字placeholder以及其样式placeholder-class"></a>*input标签中可以设置输入类型type，设置默认显示的文字placeholder以及其样式placeholder-class</h3><h3 id="bindfocus为输入框聚焦时触发的事件，bindchange为聚焦状态修改时触发的事件"><a href="#bindfocus为输入框聚焦时触发的事件，bindchange为聚焦状态修改时触发的事件" class="headerlink" title="bindfocus为输入框聚焦时触发的事件，bindchange为聚焦状态修改时触发的事件"></a>bindfocus为输入框聚焦时触发的事件，bindchange为聚焦状态修改时触发的事件</h3><h2 id="需要在movies-wxss中为每一项添加样式"><a href="#需要在movies-wxss中为每一项添加样式" class="headerlink" title="需要在movies.wxss中为每一项添加样式"></a>需要在movies.wxss中为每一项添加样式</h2><h3 id="（2）在movie-wxml添加搜索结果项，当触发时onBindFocus事件时会加载搜索结果页面"><a href="#（2）在movie-wxml添加搜索结果项，当触发时onBindFocus事件时会加载搜索结果页面" class="headerlink" title="（2）在movie.wxml添加搜索结果项，当触发时onBindFocus事件时会加载搜索结果页面"></a>（2）在movie.wxml添加搜索结果项，当触发时onBindFocus事件时会加载搜索结果页面</h3><pre><code class="python">&lt;view class=&#39;search-panel&#39; wx:if=&quot;{{searchPannelShow}}&quot;&gt;
+  &lt;template is=&quot;moviesGridTemplate&quot; /&gt;
+&lt;/view&gt;
+</code></pre>
+<h4 id="直接调用movies-Grid-Template模块"><a href="#直接调用movies-Grid-Template模块" class="headerlink" title="直接调用movies-Grid-Template模块"></a>直接调用movies-Grid-Template模块</h4><h3 id="（3）开始编写方法，首先在movie-js文件中的data中添加两个监视变量"><a href="#（3）开始编写方法，首先在movie-js文件中的data中添加两个监视变量" class="headerlink" title="（3）开始编写方法，首先在movie.js文件中的data中添加两个监视变量"></a>（3）开始编写方法，首先在movie.js文件中的data中添加两个监视变量</h3><pre><code class="python">  data:{
+    inTheaters:{},
+    ComingSoon:{},
+    top250:{},
+    containerShow:true,
+    searchPannelShow:false
+  },
+</code></pre>
+<h3 id="containerShow为电影列表页内容，searchPannelShow为搜素结果页"><a href="#containerShow为电影列表页内容，searchPannelShow为搜素结果页" class="headerlink" title="containerShow为电影列表页内容，searchPannelShow为搜素结果页"></a>containerShow为电影列表页内容，searchPannelShow为搜素结果页</h3><h3 id="接着定义onBindFocus方法，"><a href="#接着定义onBindFocus方法，" class="headerlink" title="接着定义onBindFocus方法，"></a>接着定义onBindFocus方法，</h3><pre><code class="python">  onBindFocus:function(event){
+    this.setData({
+      containerShow:false,
+      searchPannelShow:true
+    })
+  },
+</code></pre>
+<h3 id="当触发方法时，设置电影列表页隐藏，搜索页展示"><a href="#当触发方法时，设置电影列表页隐藏，搜索页展示" class="headerlink" title="当触发方法时，设置电影列表页隐藏，搜索页展示"></a>当触发方法时，设置电影列表页隐藏，搜索页展示</h3><h3 id="（4）触发方法，进入搜索页面，这时面临回不去的问题。这时需要对（1）中的X图片定义一个方法，用来退出搜索页面到列表页。"><a href="#（4）触发方法，进入搜索页面，这时面临回不去的问题。这时需要对（1）中的X图片定义一个方法，用来退出搜索页面到列表页。" class="headerlink" title="（4）触发方法，进入搜索页面，这时面临回不去的问题。这时需要对（1）中的X图片定义一个方法，用来退出搜索页面到列表页。"></a>（4）触发方法，进入搜索页面，这时面临回不去的问题。这时需要对（1）中的X图片定义一个方法，用来退出搜索页面到列表页。</h3><pre><code class="python">  onCancelImgTap:function(event){
+    this.setData({
+      containerShow:true,
+      searchPannelShow:false
+    })
+  },
+</code></pre>
+<h3 id="此时的方法效果与onBindFocus方法相反"><a href="#此时的方法效果与onBindFocus方法相反" class="headerlink" title="此时的方法效果与onBindFocus方法相反"></a>此时的方法效果与onBindFocus方法相反</h3><h3 id="（5）需要设置在电影列表页时不显示X图片，当点击搜索框时再出现X图片"><a href="#（5）需要设置在电影列表页时不显示X图片，当点击搜索框时再出现X图片" class="headerlink" title="（5）需要设置在电影列表页时不显示X图片，当点击搜索框时再出现X图片"></a>（5）需要设置在电影列表页时不显示X图片，当点击搜索框时再出现X图片</h3><pre><code class="python">&lt;image src=&#39;/images/icon/xx.png&#39; bindtap=&#39;onCancelImgTap&#39; class=&#39;xx-image&#39; wx:if=&quot;{{searchPannelShow}}
+</code></pre>
+<h3 id="当searchPannelShow为真时在显示图片"><a href="#当searchPannelShow为真时在显示图片" class="headerlink" title="当searchPannelShow为真时在显示图片"></a>当searchPannelShow为真时在显示图片</h3><pre><code class="python">
 </code></pre>
 
       
@@ -454,12 +483,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader+movie项目-day17（7）</p>
-    <p><span>文章字数:</span><span class="post-count">75</span></p>
+    <p><span>文章标题:</span>小程序reader+movie项目-day18</p>
+    <p><span>文章字数:</span><span class="post-count">408</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-08-19, 16:09:05</p>
-    <p><span>最后更新:</span>2018-08-19, 16:09:33</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/08/19/阅读+电影小程序-day17（2）/" title="小程序reader+movie项目-day17（7）">http://yoursite.com/2018/08/19/阅读+电影小程序-day17（2）/</a>
+    <p><span>发布时间:</span>2018-08-20, 22:27:05</p>
+    <p><span>最后更新:</span>2018-08-20, 22:27:57</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/20/阅读+电影小程序-day18/" title="小程序reader+movie项目-day18">http://yoursite.com/2018/08/20/阅读+电影小程序-day18/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

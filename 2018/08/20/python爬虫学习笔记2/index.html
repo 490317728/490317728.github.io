@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader+movie项目-day17（7） | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader+movie项目-day17（7） | Hexo">
+  <title>python爬虫学习笔记2 | Hexo</title>
+  <meta name="keywords" content=" 数据分析 , 爬虫 ">
+  <meta name="description" content="python爬虫学习笔记2 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在.BeautifulSoup是一个可以从HTML或XML文件中提取数据的Python库。它能够通过你喜欢的转换器实现惯用的文档导航，查找，修改文档的方式。Beautiful Soup会帮你节省数小时甚至数天的工作时间。(解释来自Beautif">
 <meta name="keywords" content="数据分析,爬虫">
@@ -375,9 +375,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读+电影小程序-day17（2）" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python爬虫学习笔记2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader+movie项目-day17（7）</h1>
+        <h1 class="article-title">python爬虫学习笔记2</h1>
     
     <div class="article-meta">
         
@@ -385,26 +385,28 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            <a href="javascript:" data-rel="数据分析">数据分析</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">小程序</a>
+            <a href="javascript:" class="color5">数据分析</a>
+            
+            <a href="javascript:" class="color3">爬虫</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-08-19 16:09:33'>2018-08-19 16:09</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-20 22:27:09'>2018-08-20 22:26</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:75</span>
+        <span>字数:925</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -423,7 +425,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day17（2）"><span class="toc-text">Reader+Movie项目-day17（2）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Movie更多页–实现下拉跟新"><span class="toc-text">8.Movie更多页–实现下拉跟新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在movies-more-json文件中进行全局设置"><span class="toc-text">(1)在movies-more.json文件中进行全局设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义onPullDownRefresh方法"><span class="toc-text">(2)定义onPullDownRefresh方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-在processDoubanData中停止刷新"><span class="toc-text">(3)在processDoubanData中停止刷新</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在"><span class="toc-text">首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在.</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -438,14 +440,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Reader-Movie项目-day17（2）"><a href="#Reader-Movie项目-day17（2）" class="headerlink" title="Reader+Movie项目-day17（2）"></a>Reader+Movie项目-day17（2）</h1><h2 id="8-Movie更多页–实现下拉跟新"><a href="#8-Movie更多页–实现下拉跟新" class="headerlink" title="8.Movie更多页–实现下拉跟新"></a>8.Movie更多页–实现下拉跟新</h2><h3 id="1-在movies-more-json文件中进行全局设置"><a href="#1-在movies-more-json文件中进行全局设置" class="headerlink" title="(1)在movies-more.json文件中进行全局设置"></a>(1)在movies-more.json文件中进行全局设置</h3><pre><code class="python">{
-  &quot;enablePullDownRefresh&quot;:true
-}
-</code></pre>
-<h3 id="2-定义onPullDownRefresh方法"><a href="#2-定义onPullDownRefresh方法" class="headerlink" title="(2)定义onPullDownRefresh方法"></a>(2)定义onPullDownRefresh方法</h3><p>  onPullDownRefresh:function(event){<br>    var refreshUrl = this.data.requestUrl + “?start=0&amp;count=20”;<br>    this.data.moveis = {};<br>    this.data.isEmpyt = true;<br>    util.http(refreshUrl, this.processDoubanData);<br>    wx.showNavigationBarLoading();<br>  },</p>
-<h3 id="3-在processDoubanData中停止刷新"><a href="#3-在processDoubanData中停止刷新" class="headerlink" title="(3)在processDoubanData中停止刷新"></a>(3)在processDoubanData中停止刷新</h3><pre><code class="python">wx.stopPullDownRefresh();
-</code></pre>
+        <h2 id="首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在"><a href="#首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在" class="headerlink" title="首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在."></a>首先，需要给大家科普的一点就是，爬虫的核心并不是爬，而是对网页的分析，拿到一个陌生的网页，如何获取到自己想要的最干净、最简洁、最稳定的部分，才是爬虫的奥义所在.</h2><font color="gray" size="4">BeautifulSoup是一个可以从HTML或XML文件中提取数据的Python库。它能够通过你喜欢的转换器实现惯用的文档导航，查找，修改文档的方式。Beautiful Soup会帮你节省数小时甚至数天的工作时间。(解释来自Beautiful Soup 4.2.0 文档(若链接无法打开，请访问<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html)" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html)</a>)</font>
 
+<font color="black" size="5" face="黑体">简单的说，Beautifulsoup就是一个用来解析网页的模块，同样，我们用第一讲所说的pip工具来安装，由于Beautifulsoup 3已经停止维护，Beautifulsoup模块迁移到bs4，因此，我们需要在命令行输入pip install bs4来完成Beautifulsoup模块的安装，完成后使用from bs4 import BeautifulSoup进行调用。</font>
+
+
+<pre><code class="python"># -*- coding:utf-8 -*-
+import requests
+from bs4 import BeautifulSoup
+
+url = &quot;https://www.dbmeinv.com/&quot;
+headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36&#39;}
+response = requests.get(url=url,headers=headers)
+content = response.content.decode()
+
+soup = BeautifulSoup(content,&#39;html.parser&#39;) #注1
+img_list = soup.find_all(name=&quot;img&quot;,class_=&quot;height_min&quot;) #注2
+
+for img in img_list:
+    src = img.attrs[&quot;src&quot;] #注3
+    title = img.attrs[&quot;title&quot;]
+    response = requests.get(url=src,headers=headers)
+    content = response.content
+    with open(&#39;E:/image/%s.jpg&#39; % title,&#39;wb&#39;) as f: #注4
+        f.write(content)
+</code></pre>
+<font color="red" size="5" face="黑体">注释1：这里新建了一个Beautifulsoup对象，它有两个必要的参数，第一个参数是HTML代码对象，比如这里content存储了URL为”<a href="https://www.dbmeinv.com/&quot;" target="_blank" rel="noopener">https://www.dbmeinv.com/&quot;</a> 的这张网页的HTML代码，它是个字符串或者是一个文件句柄第二个参数是HTML解析器，这个解析器可以使用内置标准的”html.parser”，也可以安装第三方的解析器，比如lxml和html5lib。<font><br><br><font size="5" color="red" face="黑体">注释2：这里使用了soup对象的一个方法”find_all()”，字面理解就是”找出所有的”，那么找出什么，如何定位这个所谓的”什么”？这里就要传入两个参数，第一个是HTML文档的节点名，也可以理解为HTML的标签名；第二个则是该节点的class类名，比如上面代码中，我要找出该网页上所有的img节点，且我需要的img节点的类名为”height_min”。但是对于一些没有class类名的HTML元素我们该如何寻找？</font>
+
+<font size="4" color="black" face="黑体">我们还可以用到另一个属性：attrs，比如这里可以写成： attrs是字典类型，冒号左边为关键字，右边为关键字的值。不一定要通过class来查找某一个元素，也可以通过比如”id”，”name”，”type”等各种HTML的属性，如果想要的元素实在没有其他属性，可以先定位到该元素的父属性，再使用”.children”定位到该元素。更多Beautifulsoup的高级用法请参考上面的”Beautiful Soup 4.2.0 文档”。</font>
+
+<font size="5" color="red">注释3：因为img实际上是一个BeautifulSoup的Tag对象，所以可以通过”attrs”属性将img解析为一个字典对象，通过键值”src”取出图片的真实地址。</font>
+
+<font size="5" color="red">注释6：这里需要重新请求图片的地址，获得图片二进制的返回值，因为是图片，所以不能用decode()解码，必须以二进制的方式写入，后面的写入模式”wb”，加了个”b”就是表示以二进制的形式，具体Python文件的读写请参考一篇博文：Python 文件I/O | 菜鸟教程(若链接失效请访问：<a href="http://www.runoob.com/python/python-files-io.html)。" target="_blank" rel="noopener">http://www.runoob.com/python/python-files-io.html)。</a></font>
+
+
+<pre><code class="python">%%html
+&lt;img src=&quot;F:/cloud/hexo/source/_posts/meizitu.jpg&quot; /&gt;
+</code></pre>
+<p><img src="/2018/08/20/python爬虫学习笔记2/F:/cloud/hexo/source/_posts/meizitu.jpg"></p>
+<pre><code class="python">
+</code></pre>
+</font></font>
       
        
     </div>
@@ -454,12 +489,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader+movie项目-day17（7）</p>
-    <p><span>文章字数:</span><span class="post-count">75</span></p>
+    <p><span>文章标题:</span>python爬虫学习笔记2</p>
+    <p><span>文章字数:</span><span class="post-count">925</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-08-19, 16:09:05</p>
-    <p><span>最后更新:</span>2018-08-19, 16:09:33</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/08/19/阅读+电影小程序-day17（2）/" title="小程序reader+movie项目-day17（7）">http://yoursite.com/2018/08/19/阅读+电影小程序-day17（2）/</a>
+    <p><span>发布时间:</span>2018-08-20, 22:26:05</p>
+    <p><span>最后更新:</span>2018-08-20, 22:27:09</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/20/python爬虫学习笔记2/" title="python爬虫学习笔记2">http://yoursite.com/2018/08/20/python爬虫学习笔记2/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
