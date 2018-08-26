@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader项目-day4(1) | Hexo</title>
+  <title>小程序reader+movie项目-day20 | Hexo</title>
   <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader项目-day4(1) | Hexo">
+  <meta name="description" content="小程序reader+movie项目-day20 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="学习小程序建设reader+movie项目第二十天">
 <meta name="keywords" content="小程序">
@@ -389,9 +389,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读小程序-day4(1)" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-阅读+电影小程序-day20" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader项目-day4(1)</h1>
+        <h1 class="article-title">小程序reader+movie项目-day20</h1>
     
     <div class="article-meta">
         
@@ -413,12 +413,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-07-17 22:17:39'>2018-07-17 22:00</time>
+        创建时间:<time class="date" title='更新时间: 2018-08-26 22:53:21'>2018-08-26 22:53</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:612</span>
+        <span>字数:381</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -437,7 +437,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reader项目-day4-1"><span class="toc-text">reader项目-day4(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、开始页与列表页跳转"><span class="toc-text">2、开始页与列表页跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><span class="toc-text">（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bindtap-点击子元素，父元素也会执行，即-冒泡"><span class="toc-text">bindtap:点击子元素，父元素也会执行，即  冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catchtap-点击子元素，父元素不执行，即-非冒泡"><span class="toc-text">catchtap:点击子元素，父元素不执行，即  非冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><span class="toc-text">（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><span class="toc-text">wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><span class="toc-text">wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）对于day3的补充知识—-关于本地数据库的调用"><span class="toc-text">（3）对于day3的补充知识—-关于本地数据库的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在本地数据库data-js中，需要在数据最后加入出库代码"><span class="toc-text">在本地数据库data.js中，需要在数据最后加入出库代码</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day20"><span class="toc-text">Reader+Movie项目-day20</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9、movie详情页数据调取"><span class="toc-text">9、movie详情页数据调取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）在movie-template-wxml中为每个电影添加方法-view-class-’movie-container’-catchtap-’onDetailTap’-data-movieId-’‘"><span class="toc-text">（1）在movie-template.wxml中为每个电影添加方法 view class=’movie-container’ catchtap=’onDetailTap’ data-movieId=’‘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传入每个movie的movieId"><span class="toc-text">传入每个movie的movieId</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并在movies-js中编写方法"><span class="toc-text">并在movies.js中编写方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意event-currentTarget-dataset-movieid的movieid为小写"><span class="toc-text">注意event.currentTarget.dataset.movieid的movieid为小写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在movie-ditail-js中编写跳转后数据调用方法"><span class="toc-text">（2）在movie-ditail.js中编写跳转后数据调用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取传入的id，并获得指定url的数据"><span class="toc-text">获取传入的id，并获得指定url的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http会获取到所有数据，需要通过回调函数processDoubanData来处理获得的所有数据"><span class="toc-text">http会获取到所有数据，需要通过回调函数processDoubanData来处理获得的所有数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需要对一些变量即director里的内容进行一定的判定，因为有的电影有，而有的电影没有。避免因为调动不存在而出错"><span class="toc-text">需要对一些变量即director里的内容进行一定的判定，因为有的电影有，而有的电影没有。避免因为调动不存在而出错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）convertToCastString和convertToCastInfos方法在utils中编写，对变量进行一定的处理"><span class="toc-text">（3）convertToCastString和convertToCastInfos方法在utils中编写，对变量进行一定的处理</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -452,34 +452,79 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="reader项目-day4-1"><a href="#reader项目-day4-1" class="headerlink" title="reader项目-day4(1)"></a>reader项目-day4(1)</h1><h2 id="2、开始页与列表页跳转"><a href="#2、开始页与列表页跳转" class="headerlink" title="2、开始页与列表页跳转"></a>2、开始页与列表页跳转</h2><h3 id="（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”"><a href="#（1）通过绑定事件的方法来实现页面间的跳转-bindtap-”bindViewTap”；-catchtap-”bindViewTap”" class="headerlink" title="（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”"></a>（1）通过绑定事件的方法来实现页面间的跳转 bindtap=”bindViewTap”； catchtap=”bindViewTap”</h3><h3 id="bindtap-点击子元素，父元素也会执行，即-冒泡"><a href="#bindtap-点击子元素，父元素也会执行，即-冒泡" class="headerlink" title="bindtap:点击子元素，父元素也会执行，即  冒泡"></a>bindtap:点击子元素，父元素也会执行，即  冒泡</h3><h3 id="catchtap-点击子元素，父元素不执行，即-非冒泡"><a href="#catchtap-点击子元素，父元素不执行，即-非冒泡" class="headerlink" title="catchtap:点击子元素，父元素不执行，即  非冒泡"></a>catchtap:点击子元素，父元素不执行，即  非冒泡</h3><h3 id="（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo"><a href="#（2）js文件中，通过方法处理bindtap和catchtap请求。wx-redirectTo；wx-navigateTo" class="headerlink" title="（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo"></a>（2）js文件中，通过方法处理bindtap和catchtap请求。wx.redirectTo；wx.navigateTo</h3><h3 id="wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"><a href="#wx-redirectTo-url-‘-posts-posts’-实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数" class="headerlink" title="wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数"></a>wx.redirectTo({url: ‘../posts/posts’,})  实现平行页面间的跳转，原页面关闭，不能返回。执行生命周期中的onUnload函数</h3><h3 id="wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"><a href="#wx-navigateTo-url-‘-posts-posts’-实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数" class="headerlink" title="wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数"></a>wx.navigateTo({ url: ‘../posts/posts’}) 实现父页面与子页面之间的跳转，跳转时，父页面不关闭，只是隐藏。执行生命周期中的onHide函数</h3><h3 id="（3）对于day3的补充知识—-关于本地数据库的调用"><a href="#（3）对于day3的补充知识—-关于本地数据库的调用" class="headerlink" title="（3）对于day3的补充知识—-关于本地数据库的调用"></a>（3）对于day3的补充知识—-关于本地数据库的调用</h3><h3 id="在本地数据库data-js中，需要在数据最后加入出库代码"><a href="#在本地数据库data-js中，需要在数据最后加入出库代码" class="headerlink" title="在本地数据库data.js中，需要在数据最后加入出库代码"></a>在本地数据库data.js中，需要在数据最后加入出库代码</h3><pre><code class="python">var local_database = [
-  {
-    date: &quot;Sep 18 2016&quot;,
-    title: &quot;正是虾肥蟹壮时&quot;,
-    imgSrc: &quot;/images/post/crab.png&quot;,
-    avatar: &quot;/images/avatar/1.png&quot;,
-    content: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，&quot;,
-    reading: &quot;112&quot;,
-    collection: &quot;96&quot;,
-    headImgSrc: &quot;/images/post/crab.png&quot;,
-    author: &quot;林白衣&quot;,
-    dateTime: &quot;24小时前&quot;,
-    detail: &quot;菊黄蟹正肥，品尝秋之味。徐志摩把“看初花的荻芦”和“到楼外楼吃蟹”并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，壳凸红脂块块香”；在《世说新语》里，晋毕卓更是感叹“右手持酒杯，左手持蟹螯，拍浮酒船中，便足了一生矣。”漫漫人生长路，美食与爱岂可辜负？于是作为一个吃货，突然也很想回味一下属于我的味蕾记忆。记忆中的秋蟹，是家人的味道，弥漫着浓浓的亲情。\n\n是谁来自山川湖海，却囿于昼夜，厨房与爱？ 是母亲，深思熟虑，聪明耐心。吃蟹前，总会拿出几件工具，煞有介事而乐此不疲。告诉我们螃蟹至寒，需要佐以姜茶以祛寒，在配备的米醋小碟里，亦添入姜丝与紫苏，前者驱寒后者增香。泡好菊花茶，岁月静好，我们静等。&quot;,
-    postId: 0,
-    music: {
-      url: &quot;http://music.163.com/song/media/outer/url?id=142604.mp3&quot;,
-      title: &quot;夜夜夜夜-齐秦&quot;,
-      coverImg: &quot;http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000&quot;
-    }
+        <h1 id="Reader-Movie项目-day20"><a href="#Reader-Movie项目-day20" class="headerlink" title="Reader+Movie项目-day20"></a>Reader+Movie项目-day20</h1><h2 id="9、movie详情页数据调取"><a href="#9、movie详情页数据调取" class="headerlink" title="9、movie详情页数据调取"></a>9、movie详情页数据调取</h2><h3 id="（1）在movie-template-wxml中为每个电影添加方法-view-class-’movie-container’-catchtap-’onDetailTap’-data-movieId-’‘"><a href="#（1）在movie-template-wxml中为每个电影添加方法-view-class-’movie-container’-catchtap-’onDetailTap’-data-movieId-’‘" class="headerlink" title="（1）在movie-template.wxml中为每个电影添加方法 view class=’movie-container’ catchtap=’onDetailTap’ data-movieId=’‘"></a>（1）在movie-template.wxml中为每个电影添加方法 view class=’movie-container’ catchtap=’onDetailTap’ data-movieId=’‘</h3><h3 id="传入每个movie的movieId"><a href="#传入每个movie的movieId" class="headerlink" title="传入每个movie的movieId"></a>传入每个movie的movieId</h3><h3 id="并在movies-js中编写方法"><a href="#并在movies-js中编写方法" class="headerlink" title="并在movies.js中编写方法"></a>并在movies.js中编写方法</h3><pre><code class="python">  onDetailTap:function(event){
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: &#39;moveis-detail/movies-detail?id=&#39; + movieId
+    })
   },
+</code></pre>
+<h2 id="注意event-currentTarget-dataset-movieid的movieid为小写"><a href="#注意event-currentTarget-dataset-movieid的movieid为小写" class="headerlink" title="注意event.currentTarget.dataset.movieid的movieid为小写"></a>注意event.currentTarget.dataset.movieid的movieid为小写</h2><h3 id="（2）在movie-ditail-js中编写跳转后数据调用方法"><a href="#（2）在movie-ditail-js中编写跳转后数据调用方法" class="headerlink" title="（2）在movie-ditail.js中编写跳转后数据调用方法"></a>（2）在movie-ditail.js中编写跳转后数据调用方法</h3><pre><code class="python">onLoad: function(options) {
+    var movieId = options.id;
+    var url = app.globalData.douban_base + &quot;/v2/movie/subject/&quot; + movieId
+    util.http(url, this.processDoubanData)
+  },
+</code></pre>
+<h3 id="获取传入的id，并获得指定url的数据"><a href="#获取传入的id，并获得指定url的数据" class="headerlink" title="获取传入的id，并获得指定url的数据"></a>获取传入的id，并获得指定url的数据</h3><h3 id="http会获取到所有数据，需要通过回调函数processDoubanData来处理获得的所有数据"><a href="#http会获取到所有数据，需要通过回调函数processDoubanData来处理获得的所有数据" class="headerlink" title="http会获取到所有数据，需要通过回调函数processDoubanData来处理获得的所有数据"></a>http会获取到所有数据，需要通过回调函数processDoubanData来处理获得的所有数据</h3><pre><code class="python"> processDoubanData: function(data) {
+    if (!data) {
+      return;
+    }
+    var director = {
+      avatar: &quot;&quot;,
+      name: &quot;&quot;,
+      id: &quot;&quot;
+    }
+    if (data.directors[0] != null) {
+      if (data.directors[0].avatars != null) {
+        director.avatar = data.directors[0].avatars.large
 
-    ......
-]
-
-module.exports = {
-  postList: local_database
+      }
+      director.name = data.directors[0].name;
+      director.id = data.directors[0].id;
+    }
+    var movie = {
+      movieImg: data.images ? data.images.large : &quot;&quot;,
+      country: data.countries[0],
+      title: data.title,
+      originalTitle: data.original_title,
+      wishCount: data.wish_count,
+      commentCount: data.comments_count,
+      year: data.year,
+      generes: data.genres.join(&quot;、&quot;),
+      stars: util.covertToStarsArray(data.rating.stars),
+      score: data.rating.average,
+      director: director,
+      casts: util.convertToCastString(data.casts),
+      castsInfo: util.convertToCastInfos(data.casts),
+      summary: data.summary
+    }
+    console.log(movie)
+    this.setData({
+      movie: movie
+    })
+  }
+</code></pre>
+<h3 id="需要对一些变量即director里的内容进行一定的判定，因为有的电影有，而有的电影没有。避免因为调动不存在而出错"><a href="#需要对一些变量即director里的内容进行一定的判定，因为有的电影有，而有的电影没有。避免因为调动不存在而出错" class="headerlink" title="需要对一些变量即director里的内容进行一定的判定，因为有的电影有，而有的电影没有。避免因为调动不存在而出错"></a>需要对一些变量即director里的内容进行一定的判定，因为有的电影有，而有的电影没有。避免因为调动不存在而出错</h3><h3 id="（3）convertToCastString和convertToCastInfos方法在utils中编写，对变量进行一定的处理"><a href="#（3）convertToCastString和convertToCastInfos方法在utils中编写，对变量进行一定的处理" class="headerlink" title="（3）convertToCastString和convertToCastInfos方法在utils中编写，对变量进行一定的处理"></a>（3）convertToCastString和convertToCastInfos方法在utils中编写，对变量进行一定的处理</h3><pre><code class="python">function convertToCastString(casts){
+  var castsjoin = &quot;&quot;;
+  for(var idx in casts){
+    castsjoin = castsjoin + casts[idx].name + &quot; / &quot;;
+  }
+  return castsjoin.substring(0,castsjoin.length-2);
 }
 
+function convertToCastInfos(casts){
+  var castsArray = []
+  for(var idx in casts){
+    var cast = {
+      img:casts[idx].avatars?casts[idx].avatars.large:&quot;&quot;,
+      name:casts[idx].name
+    }
+    castsArray.push(cast);
+  }
+  return castsArray
+}
+</code></pre>
+<pre><code class="python">
 </code></pre>
 
       
@@ -490,12 +535,12 @@ module.exports = {
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader项目-day4(1)</p>
-    <p><span>文章字数:</span><span class="post-count">612</span></p>
+    <p><span>文章标题:</span>小程序reader+movie项目-day20</p>
+    <p><span>文章字数:</span><span class="post-count">381</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-07-17, 22:00:05</p>
-    <p><span>最后更新:</span>2018-07-17, 22:17:39</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/07/17/阅读小程序-day4(1)/" title="小程序reader项目-day4(1)">http://yoursite.com/2018/07/17/阅读小程序-day4(1)/</a>
+    <p><span>发布时间:</span>2018-08-26, 22:53:05</p>
+    <p><span>最后更新:</span>2018-08-26, 22:53:21</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/08/26/阅读+电影小程序-day20/" title="小程序reader+movie项目-day20">http://yoursite.com/2018/08/26/阅读+电影小程序-day20/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
