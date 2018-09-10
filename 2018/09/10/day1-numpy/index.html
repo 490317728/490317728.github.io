@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小程序reader+movie项目-day14 | Hexo</title>
-  <meta name="keywords" content=" 小程序 ">
-  <meta name="description" content="小程序reader+movie项目-day14 | Hexo">
+  <title>day1-numpy学习 | Hexo</title>
+  <meta name="keywords" content=" 数据分析 ">
+  <meta name="description" content="day1-numpy学习 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1、ndarrayimport numpy as np  lst = [[1,3,5],[2,4,6]]  type(lst)  list np_lst = np.array(lst)  type(np_lst)  numpy.ndarray np_lst = np.array(lst,dtype=float)  数据类型bool，int,int8/16/32/64/128,uint8/16/32">
 <meta name="keywords" content="数据分析">
@@ -405,9 +405,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-阅读+电影小程序-day14" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-day1-numpy" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">小程序reader+movie项目-day14</h1>
+        <h1 class="article-title">day1-numpy学习</h1>
     
     <div class="article-meta">
         
@@ -415,26 +415,26 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="小程序学习">小程序学习</a>
+            <a href="javascript:" data-rel="数据分析">数据分析</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">小程序</a>
+            <a href="javascript:" class="color5">数据分析</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-08-11 22:01:44'>2018-08-11 21:45</time>
+        创建时间:<time class="date" title='更新时间: 2018-09-10 23:08:08'>2018-09-10 23:07</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:516</span>
+        <span>字数:1,258</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -453,7 +453,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reader-Movie项目-day14"><span class="toc-text">Reader+Movie项目-day14</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Movie页–星星评分组件实现"><span class="toc-text">7.Movie页–星星评分组件实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）根据ratings下的stars等级来设置几颗星为亮的，比如stars为50，则为5颗星，stars为37则为3颗星"><span class="toc-text">（1）根据ratings下的stars等级来设置几颗星为亮的，比如stars为50，则为5颗星，stars为37则为3颗星</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#所以首先需要一个方法，来获取每个电影的stars值，并选取第一个数字，比如上面的5、3。从而构建数组-1-1-1-1-1-或者-1-1-1-0-0"><span class="toc-text">所以首先需要一个方法，来获取每个电影的stars值，并选取第一个数字，比如上面的5、3。从而构建数组[1,1,1,1,1]或者[1,1,1,0,0]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在根目录下新建一个文件夹utils，用来存放一些公用方法"><span class="toc-text">在根目录下新建一个文件夹utils，用来存放一些公用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stars-toString-substring-0-1-为变成字符串并取第一个值"><span class="toc-text">stars.toString().substring(0,1)为变成字符串并取第一个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-exports为输出这个方法，让其他文件可以调用"><span class="toc-text">module.exports为输出这个方法，让其他文件可以调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）在movie-js的开头调用util中定义的方法"><span class="toc-text">（2）在movie.js的开头调用util中定义的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-在处理movie的方法中添加相关调用"><span class="toc-text">(3)在处理movie的方法中添加相关调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stars-util-covertToStarsArray-subject-rating-stars-传递进参数，在方法中改变，并返回一个数组-x-x-x-x-x"><span class="toc-text">stars: util.covertToStarsArray(subject.rating.stars)传递进参数，在方法中改变，并返回一个数组[x,x,x,x,x]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）在movie-template中修改传入数据"><span class="toc-text">（4）在movie-template中修改传入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在一个data中传递两个数据，必须写成xxx：xxx，yyy：yyy的样式"><span class="toc-text">在一个data中传递两个数据，必须写成xxx：xxx，yyy：yyy的样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）修改stars-template中代码"><span class="toc-text">（5）修改stars-template中代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如果有半颗星，则多添加一个数字-1，1，2，0，0-，if-i-2为半颗星"><span class="toc-text">如果有半颗星，则多添加一个数字[1，1，2，0，0]，if i==2为半颗星</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、ndarray"><span class="toc-text">1、ndarray</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据类型bool，int-int8-16-32-64-128-uint8-16-32-64-128-float-float16-32-64-complex64-128"><span class="toc-text">数据类型bool，int,int8/16/32/64/128,uint8/16/32/64/128,float,float16/32/64,complex64/128</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Array-常用数组"><span class="toc-text">2、Array 常用数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Rand随机数：–均匀分布"><span class="toc-text">Rand随机数：–均匀分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RandInt"><span class="toc-text">RandInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Randn：–动态分布"><span class="toc-text">Randn：–动态分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Choice-–生成指定值"><span class="toc-text">Choice:–生成指定值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Distribute-–数学中常用的分布"><span class="toc-text">Distribute:–数学中常用的分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、numpy的操作"><span class="toc-text">3、numpy的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#axis为指定那一层进行操作-比如：-axis为0时，最外层进行操作"><span class="toc-text">axis为指定那一层进行操作 比如： axis为0时，最外层进行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#两个数组相乘"><span class="toc-text">两个数组相乘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、numpy矩阵操作与线性方程组"><span class="toc-text">4、numpy矩阵操作与线性方程组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、others"><span class="toc-text">5、others</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -468,81 +468,246 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Reader-Movie项目-day14"><a href="#Reader-Movie项目-day14" class="headerlink" title="Reader+Movie项目-day14"></a>Reader+Movie项目-day14</h1><h2 id="7-Movie页–星星评分组件实现"><a href="#7-Movie页–星星评分组件实现" class="headerlink" title="7.Movie页–星星评分组件实现"></a>7.Movie页–星星评分组件实现</h2><h3 id="（1）根据ratings下的stars等级来设置几颗星为亮的，比如stars为50，则为5颗星，stars为37则为3颗星"><a href="#（1）根据ratings下的stars等级来设置几颗星为亮的，比如stars为50，则为5颗星，stars为37则为3颗星" class="headerlink" title="（1）根据ratings下的stars等级来设置几颗星为亮的，比如stars为50，则为5颗星，stars为37则为3颗星"></a>（1）根据ratings下的stars等级来设置几颗星为亮的，比如stars为50，则为5颗星，stars为37则为3颗星</h3><h3 id="所以首先需要一个方法，来获取每个电影的stars值，并选取第一个数字，比如上面的5、3。从而构建数组-1-1-1-1-1-或者-1-1-1-0-0"><a href="#所以首先需要一个方法，来获取每个电影的stars值，并选取第一个数字，比如上面的5、3。从而构建数组-1-1-1-1-1-或者-1-1-1-0-0" class="headerlink" title="所以首先需要一个方法，来获取每个电影的stars值，并选取第一个数字，比如上面的5、3。从而构建数组[1,1,1,1,1]或者[1,1,1,0,0]"></a>所以首先需要一个方法，来获取每个电影的stars值，并选取第一个数字，比如上面的5、3。从而构建数组[1,1,1,1,1]或者[1,1,1,0,0]</h3><h3 id="在根目录下新建一个文件夹utils，用来存放一些公用方法"><a href="#在根目录下新建一个文件夹utils，用来存放一些公用方法" class="headerlink" title="在根目录下新建一个文件夹utils，用来存放一些公用方法"></a>在根目录下新建一个文件夹utils，用来存放一些公用方法</h3><pre><code class="python">utils/util.js
-function covertToStarsArray(stars){
-  var num = stars.toString().substring(0,1);
-  var array = [];
-  for(var i=1;i&lt;=5;i++){
-    if(i&lt;=num){
-      array.push(1);
-    }
-    else{
-      array.push(0);
-    }
-  }
-  return array;
-}
+        <h2 id="1、ndarray"><a href="#1、ndarray" class="headerlink" title="1、ndarray"></a>1、ndarray</h2><pre><code class="python">import numpy as np
+</code></pre>
+<pre><code class="python">lst = [[1,3,5],[2,4,6]]
+</code></pre>
+<pre><code class="python">type(lst)
+</code></pre>
+<pre><code>list
+</code></pre><pre><code class="python">np_lst = np.array(lst)
+</code></pre>
+<pre><code class="python">type(np_lst)
+</code></pre>
+<pre><code>numpy.ndarray
+</code></pre><pre><code class="python">np_lst = np.array(lst,dtype=float)
+</code></pre>
+<h4 id="数据类型bool，int-int8-16-32-64-128-uint8-16-32-64-128-float-float16-32-64-complex64-128"><a href="#数据类型bool，int-int8-16-32-64-128-uint8-16-32-64-128-float-float16-32-64-complex64-128" class="headerlink" title="数据类型bool，int,int8/16/32/64/128,uint8/16/32/64/128,float,float16/32/64,complex64/128"></a>数据类型bool，int,int8/16/32/64/128,uint8/16/32/64/128,float,float16/32/64,complex64/128</h4><pre><code class="python">print(np_lst.shape)  # 指明形状
+</code></pre>
+<pre><code>(2, 3)
+</code></pre><pre><code class="python">print(np_lst.ndim) # 维度
+</code></pre>
+<pre><code>2
+</code></pre><pre><code class="python">print(np_lst.dtype) # 数据类型 float默认为64位
+</code></pre>
+<pre><code>float64
+</code></pre><pre><code class="python">print(np_lst.itemsize) # float64占8个字节
+</code></pre>
+<pre><code>8
+</code></pre><pre><code class="python">print(np_lst.size) # 几个元素
+</code></pre>
+<pre><code>6
+</code></pre><h2 id="2、Array-常用数组"><a href="#2、Array-常用数组" class="headerlink" title="2、Array 常用数组"></a>2、Array 常用数组</h2><pre><code class="python">print(np.zeros([2,4])) #进行数值的初始化
+</code></pre>
+<pre><code>[[ 0.  0.  0.  0.]
+ [ 0.  0.  0.  0.]]
+</code></pre><pre><code class="python">print(np.ones([3,3]))
+</code></pre>
+<pre><code>[[ 1.  1.  1.]
+ [ 1.  1.  1.]
+ [ 1.  1.  1.]]
+</code></pre><h4 id="Rand随机数：–均匀分布"><a href="#Rand随机数：–均匀分布" class="headerlink" title="Rand随机数：–均匀分布"></a>Rand随机数：–均匀分布</h4><pre><code class="python">print(np.random.rand(2,4)) #均匀分布
+</code></pre>
+<pre><code>[[ 0.42527061  0.67090088  0.45692204  0.13686485]
+ [ 0.4154235   0.11482121  0.4065506   0.56620353]]
+</code></pre><pre><code class="python">print(np.random.rand())
+</code></pre>
+<pre><code>0.5530674299296717
+</code></pre><h4 id="RandInt"><a href="#RandInt" class="headerlink" title="RandInt"></a>RandInt</h4><pre><code class="python">print(np.random.randint(1,5,3)) # 1和5为范围，3为生成数量
+</code></pre>
+<pre><code>[4 4 3]
+</code></pre><h4 id="Randn：–动态分布"><a href="#Randn：–动态分布" class="headerlink" title="Randn：–动态分布"></a>Randn：–动态分布</h4><pre><code class="python">print(np.random.randn(2,4)) --标准正态分布
+</code></pre>
+<pre><code>[[ 0.40926988  0.91400287  2.46217863  0.94688983]
+ [-1.80416055  0.45239086  0.78121061 -1.43495235]]
+</code></pre><h4 id="Choice-–生成指定值"><a href="#Choice-–生成指定值" class="headerlink" title="Choice:–生成指定值"></a>Choice:–生成指定值</h4><pre><code class="python">print(np.random.choice([10,20,30]))
+</code></pre>
+<pre><code>30
+</code></pre><h4 id="Distribute-–数学中常用的分布"><a href="#Distribute-–数学中常用的分布" class="headerlink" title="Distribute:–数学中常用的分布"></a>Distribute:–数学中常用的分布</h4><pre><code class="python">print(np.random.beta(1,20,100))
+</code></pre>
+<pre><code>[  1.90980819e-03   1.95808509e-02   1.21481905e-03   3.62655038e-02
+   4.71541675e-02   1.64438613e-02   1.10346164e-02   9.40767053e-02
+   1.12397077e-01   1.03550645e-01   6.38861207e-02   3.77654620e-02
+   2.97725423e-02   1.80094468e-01   1.31265086e-02   2.02786068e-02
+   7.29609814e-02   2.71526548e-02   2.21313023e-01   2.93261690e-02
+   3.52570829e-02   4.89560471e-02   2.40015259e-03   5.76266922e-03
+   1.12798943e-01   5.46296071e-02   3.77593432e-02   3.05906062e-02
+   8.15414635e-02   1.77169634e-02   1.12381627e-01   3.67846849e-03
+   3.82853639e-02   1.34338537e-01   9.14772712e-02   7.08871041e-02
+   3.95298689e-02   1.43998204e-02   5.21743527e-02   5.73752229e-02
+   2.02548664e-02   5.18566504e-02   1.42882690e-02   3.33580311e-02
+   1.14248350e-02   3.48695933e-03   1.35122147e-01   8.54309965e-03
+   2.32843635e-02   1.84905093e-02   8.03551694e-02   1.32760027e-01
+   3.15988441e-03   8.92197174e-02   1.04194030e-01   9.17810764e-04
+   2.13647588e-02   5.61878551e-02   4.68845361e-02   2.72420439e-03
+   1.83496513e-01   1.14322730e-02   5.05975173e-02   2.00099642e-02
+   4.15661300e-02   1.20410723e-03   4.13950493e-02   2.04485067e-02
+   9.55575566e-02   6.41211784e-02   6.40966362e-02   4.01882682e-02
+   6.97824538e-02   2.80666163e-02   6.03704656e-03   3.26084460e-02
+   1.14788175e-03   9.88381109e-02   1.22114260e-02   1.80617218e-02
+   1.92042294e-02   1.66586407e-01   1.58247622e-02   6.77995511e-02
+   8.29379606e-02   2.21274999e-02   2.00031185e-02   1.86462515e-02
+   4.56998909e-02   3.04587308e-03   1.18799726e-01   2.58988951e-02
+   1.70304876e-01   5.34648662e-03   1.15931724e-01   8.85001341e-02
+   3.30318327e-02   1.76145702e-02   2.20667011e-04   8.66963694e-03]
+</code></pre><h2 id="3、numpy的操作"><a href="#3、numpy的操作" class="headerlink" title="3、numpy的操作"></a>3、numpy的操作</h2><pre><code class="python">print(np.arange(1,21).reshape([4,-1])) # arange-生成等差数列，reshape为变为4行5列的数组
+</code></pre>
+<pre><code>[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]
+ [11 12 13 14 15]
+ [16 17 18 19 20]]
+</code></pre><pre><code class="python">lst = (np.arange(1,11).reshape([2,-1]))
+</code></pre>
+<pre><code class="python">lst
+</code></pre>
+<pre><code>array([[ 1,  2,  3,  4,  5],
+       [ 6,  7,  8,  9, 10]])
+</code></pre><pre><code class="python">print(np.exp(lst)) # 自然指数操作
+</code></pre>
+<pre><code>[[  2.71828183e+00   7.38905610e+00   2.00855369e+01   5.45981500e+01
+    1.48413159e+02]
+ [  4.03428793e+02   1.09663316e+03   2.98095799e+03   8.10308393e+03
+    2.20264658e+04]]
+</code></pre><pre><code class="python">print(np.exp2(lst)) # 自然指数的平方
+</code></pre>
+<pre><code>[[    2.     4.     8.    16.    32.]
+ [   64.   128.   256.   512.  1024.]]
+</code></pre><pre><code class="python">print(np.sqrt(lst)) # 开平方
+</code></pre>
+<pre><code>[[ 1.          1.41421356  1.73205081  2.          2.23606798]
+ [ 2.44948974  2.64575131  2.82842712  3.          3.16227766]]
+</code></pre><pre><code class="python">print(np.log(lst)) # 取对数
+</code></pre>
+<pre><code>[[ 0.          0.69314718  1.09861229  1.38629436  1.60943791]
+ [ 1.79175947  1.94591015  2.07944154  2.19722458  2.30258509]]
+</code></pre><pre><code class="python">print(np.sin(lst))
+</code></pre>
+<pre><code>[[ 0.84147098  0.90929743  0.14112001 -0.7568025  -0.95892427]
+ [-0.2794155   0.6569866   0.98935825  0.41211849 -0.54402111]]
+</code></pre><pre><code class="python">lst = np.array([[[1,2,3,4],
+               [4,5,6,7]],
+               [[7,8,9,10],
+               [10,11,12,13]],
+               [[14,15,16,17],
+            [18,19,20,21]]])
+</code></pre>
+<pre><code class="python">lst
+</code></pre>
+<pre><code>array([[[ 1,  2,  3,  4],
+        [ 4,  5,  6,  7]],
 
-module.exports = {
-  covertToStarsArray: covertToStarsArray
-}
+       [[ 7,  8,  9, 10],
+        [10, 11, 12, 13]],
+
+       [[14, 15, 16, 17],
+        [18, 19, 20, 21]]])
+</code></pre><pre><code class="python">print(lst.sum())
 </code></pre>
-<h3 id="stars-toString-substring-0-1-为变成字符串并取第一个值"><a href="#stars-toString-substring-0-1-为变成字符串并取第一个值" class="headerlink" title="stars.toString().substring(0,1)为变成字符串并取第一个值"></a>stars.toString().substring(0,1)为变成字符串并取第一个值</h3><h3 id="module-exports为输出这个方法，让其他文件可以调用"><a href="#module-exports为输出这个方法，让其他文件可以调用" class="headerlink" title="module.exports为输出这个方法，让其他文件可以调用"></a>module.exports为输出这个方法，让其他文件可以调用</h3><h3 id="（2）在movie-js的开头调用util中定义的方法"><a href="#（2）在movie-js的开头调用util中定义的方法" class="headerlink" title="（2）在movie.js的开头调用util中定义的方法"></a>（2）在movie.js的开头调用util中定义的方法</h3><pre><code class="python">var util = require(&quot;../../utils/util.js&quot;)
+<pre><code>252
+</code></pre><pre><code class="python">print(lst.sum(axis=0))
 </code></pre>
-<h3 id="3-在处理movie的方法中添加相关调用"><a href="#3-在处理movie的方法中添加相关调用" class="headerlink" title="(3)在处理movie的方法中添加相关调用"></a>(3)在处理movie的方法中添加相关调用</h3><pre><code class="python">  processDoubanData: function (moviesDouban, settedKey,categoryTitle){
-    var movies = [];
-    for (var idx in moviesDouban.subjects){
-      var subject = moviesDouban.subjects[idx];
-      var title = subject.title;
-      if(title.length &gt;= 6){
-        title = title.substring(0,6) + &quot;...&quot;;
-      }
-      var temp = {
-        stars: util.covertToStarsArray(subject.rating.stars),
-        title:title,
-        average:subject.rating.average,
-        coverageUrl:subject.images.large,
-        movieId:subject.id,
-      }
-      movies.push(temp)
-    }
-    var readyData = {};
-    readyData[settedKey] ={
-      categoryTitle: categoryTitle,
-      movies:movies
-    } 
-    this.setData(readyData)
-  }
+<pre><code>[[22 25 28 31]
+ [32 35 38 41]]
+</code></pre><h3 id="axis为指定那一层进行操作-比如：-axis为0时，最外层进行操作"><a href="#axis为指定那一层进行操作-比如：-axis为0时，最外层进行操作" class="headerlink" title="axis为指定那一层进行操作 比如： axis为0时，最外层进行操作"></a>axis为指定那一层进行操作 比如： axis为0时，最外层进行操作</h3><pre><code class="python">print(lst.sum(axis=1))
 </code></pre>
-<h3 id="stars-util-covertToStarsArray-subject-rating-stars-传递进参数，在方法中改变，并返回一个数组-x-x-x-x-x"><a href="#stars-util-covertToStarsArray-subject-rating-stars-传递进参数，在方法中改变，并返回一个数组-x-x-x-x-x" class="headerlink" title="stars: util.covertToStarsArray(subject.rating.stars)传递进参数，在方法中改变，并返回一个数组[x,x,x,x,x]"></a>stars: util.covertToStarsArray(subject.rating.stars)传递进参数，在方法中改变，并返回一个数组[x,x,x,x,x]</h3><h3 id="（4）在movie-template中修改传入数据"><a href="#（4）在movie-template中修改传入数据" class="headerlink" title="（4）在movie-template中修改传入数据"></a>（4）在movie-template中修改传入数据</h3><pre><code class="python">&lt;import src=&quot;../stars/stars-template.wxml&quot; /&gt;
-&lt;template name=&quot;movieTemplate&quot;&gt;
-  &lt;view class=&#39;movie-container&#39;&gt;
-    &lt;image class=&#39;movie-img&#39; src=&#39;{{coverageUrl}}&#39;&gt;&lt;/image&gt;
-    &lt;text class=&#39;movie-title&#39;&gt;{{title}}&lt;/text&gt;
-    &lt;template is=&quot;starsTemplate&quot; data=&quot;{{stars:stars,score:average}}&quot;/&gt;
-  &lt;/view&gt;
-&lt;/template&gt;&lt;import src=&quot;../stars/stars-template.wxml&quot; /&gt;
-&lt;template name=&quot;movieTemplate&quot;&gt;
-  &lt;view class=&#39;movie-container&#39;&gt;
-    &lt;image class=&#39;movie-img&#39; src=&#39;{{coverageUrl}}&#39;&gt;&lt;/image&gt;
-    &lt;text class=&#39;movie-title&#39;&gt;{{title}}&lt;/text&gt;
-    &lt;template is=&quot;starsTemplate&quot; data=&quot;{{stars:stars,score:average}}&quot;/&gt;
-  &lt;/view&gt;
-&lt;/template&gt;
+<pre><code>[[ 5  7  9 11]
+ [17 19 21 23]
+ [32 34 36 38]]
+</code></pre><pre><code class="python">print(lst.sum(axis=2))
 </code></pre>
-<h3 id="在一个data中传递两个数据，必须写成xxx：xxx，yyy：yyy的样式"><a href="#在一个data中传递两个数据，必须写成xxx：xxx，yyy：yyy的样式" class="headerlink" title="在一个data中传递两个数据，必须写成xxx：xxx，yyy：yyy的样式"></a>在一个data中传递两个数据，必须写成xxx：xxx，yyy：yyy的样式</h3><h3 id="（5）修改stars-template中代码"><a href="#（5）修改stars-template中代码" class="headerlink" title="（5）修改stars-template中代码"></a>（5）修改stars-template中代码</h3><pre><code class="python">&lt;template name=&quot;starsTemplate&quot;&gt;
-  &lt;view class=&#39;stars-container&#39;&gt;
-    &lt;view class=&#39;stars&#39;&gt;
-      &lt;block wx:for=&quot;{{stars}}&quot; wx:for-item=&quot;i&quot;&gt;
-        &lt;image wx:if=&quot;{{i==1}}&quot; src=&#39;/images/icon/star.png&#39;&gt;&lt;/image&gt;
-        &lt;image wx:else src=&#39;/images/icon/none-star.png&#39;&gt;&lt;/image&gt;
-      &lt;/block&gt;
-    &lt;/view&gt;
-    &lt;text class=&#39;star-score&#39;&gt;{{score}}&lt;/text&gt;
-  &lt;/view&gt;
-&lt;/template&gt;
+<pre><code>[[10 22]
+ [34 46]
+ [62 78]]
+</code></pre><pre><code class="python">print(lst.max(axis=1))
 </code></pre>
-<h4 id="如果有半颗星，则多添加一个数字-1，1，2，0，0-，if-i-2为半颗星"><a href="#如果有半颗星，则多添加一个数字-1，1，2，0，0-，if-i-2为半颗星" class="headerlink" title="如果有半颗星，则多添加一个数字[1，1，2，0，0]，if i==2为半颗星"></a>如果有半颗星，则多添加一个数字[1，1，2，0，0]，if i==2为半颗星</h4><pre><code class="python">
+<pre><code>[[ 4  5  6  7]
+ [10 11 12 13]
+ [18 19 20 21]]
+</code></pre><pre><code class="python">print(lst.min(axis=0))
+</code></pre>
+<pre><code>[[1 2 3 4]
+ [4 5 6 7]]
+</code></pre><pre><code class="python">lst1 = np.array([10,20,30,40])
+lst2 = np.array([4,3,2,1])
+</code></pre>
+<pre><code class="python">print(lst1+lst2)
+</code></pre>
+<pre><code>[14 23 32 41]
+</code></pre><pre><code class="python">print(lst1-lst2)
+</code></pre>
+<pre><code>[ 6 17 28 39]
+</code></pre><pre><code class="python">print(lst1*lst2)
+</code></pre>
+<pre><code>[40 60 60 40]
+</code></pre><pre><code class="python">print(lst1/lst2)
+</code></pre>
+<pre><code>[  2.5          6.66666667  15.          40.        ]
+</code></pre><pre><code class="python">print(lst1**2)
+</code></pre>
+<pre><code>[ 100  400  900 1600]
+</code></pre><h4 id="两个数组相乘"><a href="#两个数组相乘" class="headerlink" title="两个数组相乘"></a>两个数组相乘</h4><pre><code class="python">print(np.dot(lst1.reshape([2,2]),lst2.reshape([2,2])))
+</code></pre>
+<pre><code>[[ 80  50]
+ [200 130]]
+</code></pre><pre><code class="python">print(np.concatenate((lst1,lst2),axis=0)) # 连接
+</code></pre>
+<pre><code>[10 20 30 40  4  3  2  1]
+</code></pre><pre><code class="python">print(np.vstack((lst1,lst2))) #编程一个数组
+</code></pre>
+<pre><code>[[10 20 30 40]
+ [ 4  3  2  1]]
+</code></pre><pre><code class="python">print(np.hstack((lst1,lst2)))
+</code></pre>
+<pre><code>[10 20 30 40  4  3  2  1]
+</code></pre><pre><code class="python">print(np.split(lst1,2))
+</code></pre>
+<pre><code>[array([10, 20]), array([30, 40])]
+</code></pre><pre><code class="python">print(np.copy(lst1)) # 复制数组
+</code></pre>
+<pre><code>[10 20 30 40]
+</code></pre><h2 id="4、numpy矩阵操作与线性方程组"><a href="#4、numpy矩阵操作与线性方程组" class="headerlink" title="4、numpy矩阵操作与线性方程组"></a>4、numpy矩阵操作与线性方程组</h2><pre><code class="python">from numpy.linalg import *
+</code></pre>
+<pre><code class="python">print(np.eye(3)) # 生成单位矩阵
+</code></pre>
+<pre><code>[[ 1.  0.  0.]
+ [ 0.  1.  0.]
+ [ 0.  0.  1.]]
+</code></pre><pre><code class="python">list = np.array([[1.,2.],
+               [3.,4.]])
+</code></pre>
+<pre><code class="python">print(inv(list)) # 逆矩阵
+</code></pre>
+<pre><code>[[-2.   1. ]
+ [ 1.5 -0.5]]
+</code></pre><pre><code class="python">print(list.transpose()) # 转置矩阵
+</code></pre>
+<pre><code>[[ 1.  3.]
+ [ 2.  4.]]
+</code></pre><pre><code class="python"> print(det(list)) # 行列式
+</code></pre>
+<pre><code>-2.0
+</code></pre><pre><code class="python">print(eig(list)) # 特征值与特征向量
+</code></pre>
+<pre><code>(array([-0.37228132,  5.37228132]), array([[-0.82456484, -0.41597356],
+       [ 0.56576746, -0.90937671]]))
+</code></pre><pre><code class="python">y = np.array([[5.],[7.]]) 
+</code></pre>
+<pre><code class="python">print(solve(list,y)) # 求解线性方程组
+</code></pre>
+<pre><code>[[-3.]
+ [ 4.]]
+</code></pre><h2 id="5、others"><a href="#5、others" class="headerlink" title="5、others"></a>5、others</h2><pre><code class="python">print(np.fft.fft(np.array([1,1,1,1,1,1,1,1]))) # FFT
+</code></pre>
+<pre><code>[ 8.+0.j  0.+0.j  0.+0.j  0.+0.j  0.+0.j  0.+0.j  0.+0.j  0.+0.j]
+</code></pre><pre><code class="python">print(np.corrcoef([1,0,1],[0,2,1])) # 相关系数
+</code></pre>
+<pre><code>[[ 1.        -0.8660254]
+ [-0.8660254  1.       ]]
+</code></pre><pre><code class="python">print(np.poly1d([3,1,4])) # 生成一元多次函数
+</code></pre>
+<pre><code>   2
+3 x + 1 x + 4
+</code></pre><pre><code class="python">
 </code></pre>
 
       
@@ -553,12 +718,12 @@ module.exports = {
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>小程序reader+movie项目-day14</p>
-    <p><span>文章字数:</span><span class="post-count">516</span></p>
+    <p><span>文章标题:</span>day1-numpy学习</p>
+    <p><span>文章字数:</span><span class="post-count">1,258</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
-    <p><span>发布时间:</span>2018-08-11, 21:45:05</p>
-    <p><span>最后更新:</span>2018-08-11, 22:01:44</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/08/11/阅读+电影小程序-day14/" title="小程序reader+movie项目-day14">http://yoursite.com/2018/08/11/阅读+电影小程序-day14/</a>
+    <p><span>发布时间:</span>2018-09-10, 23:07:05</p>
+    <p><span>最后更新:</span>2018-09-10, 23:08:08</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/09/10/day1-numpy/" title="day1-numpy学习">http://yoursite.com/2018/09/10/day1-numpy/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
