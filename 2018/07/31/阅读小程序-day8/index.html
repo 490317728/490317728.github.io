@@ -7,17 +7,18 @@
   <meta name="description" content="小程序reader项目-day8 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="本篇笔记学习自CSDN的博主Koala_Tree看过吴恩达老师的课程后，不想自己做笔记了，就直接跟着博主又打了一遍，加深记忆在此感谢Koala_Tree博主以下为在Coursera上吴恩达老师的DeepLearning.ai课程项目中，第一部分《神经网络和深度学习》第二周课程部分关键点的笔记。神经网络和深度学习—神经网络基础1、二分类问题·样本：(x,y)，训练样本包含m个；·其中x∈Rnx，表示">
+<meta name="keywords" content="数据分析，深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="吴恩达深度学习笔记1-2--神经网络基础">
 <meta property="og:url" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本篇笔记学习自CSDN的博主Koala_Tree看过吴恩达老师的课程后，不想自己做笔记了，就直接跟着博主又打了一遍，加深记忆在此感谢Koala_Tree博主以下为在Coursera上吴恩达老师的DeepLearning.ai课程项目中，第一部分《神经网络和深度学习》第二周课程部分关键点的笔记。神经网络和深度学习—神经网络基础1、二分类问题·样本：(x,y)，训练样本包含m个；·其中x∈Rnx，表示">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/attachment:new.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/attachment:2.1.2.png">
-<meta property="og:updated_time" content="2018-09-20T13:47:59.949Z">
+<meta property="og:updated_time" content="2018-09-20T14:27:52.072Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="吴恩达深度学习笔记1-2--神经网络基础">
 <meta name="twitter:description" content="本篇笔记学习自CSDN的博主Koala_Tree看过吴恩达老师的课程后，不想自己做笔记了，就直接跟着博主又打了一遍，加深记忆在此感谢Koala_Tree博主以下为在Coursera上吴恩达老师的DeepLearning.ai课程项目中，第一部分《神经网络和深度学习》第二周课程部分关键点的笔记。神经网络和深度学习—神经网络基础1、二分类问题·样本：(x,y)，训练样本包含m个；·其中x∈Rnx，表示">
 <meta name="twitter:image" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/attachment:new.png">
 
@@ -147,6 +148,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">爬虫</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据分析，深度学习</a>
     </li>
     
     <div class="clearfix"></div>
@@ -395,12 +400,12 @@
             <span class="post-date" title="2018-09-10 23:07:05">2018/09/10</span>
         </a>
         
-        <a  class=""
+        <a  class="数据分析 "
            href="/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/"
-           data-tag=""
+           data-tag="数据分析，深度学习"
            data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2018-09-20 21:48:09">2018/09/20</span>
+            <span class="post-title" title="吴恩达深度学习笔记1-2--神经网络基础">吴恩达深度学习笔记1-2--神经网络基础</span>
+            <span class="post-date" title="2018-09-20 22:27:05">2018/09/20</span>
         </a>
         
     </nav>
@@ -601,7 +606,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#hexo','#github','#小程序','#数据分析','#爬虫',],
+            'data': ['#hexo','#github','#小程序','#数据分析','#爬虫','#数据分析，深度学习',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
