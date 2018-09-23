@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归【识别猫】 的简单的神经网络一、引入需要的库·numpy ：是用Python进行科学计算的基本软件包。·h5py：是与H5文件中存储的数据集进行交互的常用软件包。·matplotlib：是一个著名的库，用于在Python中绘制图表。·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。import numpy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归【识别猫】 的简单的神经网络一、引入需要的库·numpy ：是用Python进行科学计算的基本软件包。·h5py：是与H5文件中存储的数据集进行交互的常用软件包。·matplotlib：是一个著名的库，用于在Python中绘制图表。·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。import numpy">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_7_0.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_42_0.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_45_1.png">
+<meta property="og:updated_time" content="2018-09-23T14:29:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归【识别猫】 的简单的神经网络一、引入需要的库·numpy ：是用Python进行科学计算的基本软件包。·h5py：是与H5文件中存储的数据集进行交互的常用软件包。·matplotlib：是一个著名的库，用于在Python中绘制图表。·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。import numpy">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_7_0.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Wangjian</span>
+</div>
+
+<div class="icon">
+    
+    <a class="rss" title="rss" href="/atom.xml" target="_blank"></a>
+    
+    
+    <a class="github" title="github" href="https://github.com/490317728" target="_blank"></a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="email" title="email" href="mailto:490317728@qq.com"></a>
+    
+</div>
+
+
+
+<ul>
+    <li class="all active">全部文章</li>
+    
+    <li data-rel="hexo"> hexo </li>
+    
+    <li data-rel="小程序学习"> 小程序学习 </li>
+    
+    <li data-rel="数据分析"> 数据分析 </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="32">
+<input type="hidden" id="yelog_site_word_count" value="19.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+        <label for="tagswitch">Tags:</label>
+        <input id="tagswitch" type="checkbox">
+    </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">小程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据分析</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">爬虫</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据分析，深度学习</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="hexo "
+           href="/2018/07/05/hexo-github建立个人博客/"
+           data-tag="hexo,github"
+           data-author="" >
+            <span class="post-title" title="hexo+github建立个人博客">hexo+github建立个人博客</span>
+            <span class="post-date" title="2018-07-05 22:33:27">2018/07/05</span>
+        </a>
+        
+        <a  class="hexo "
+           href="/2018/08/07/hexo生成博文插入图片/"
+           data-tag="hexo,github"
+           data-author="" >
+            <span class="post-title" title="hexo生成博文插入图片">hexo生成博文插入图片</span>
+            <span class="post-date" title="2018-08-07 22:04:16">2018/08/07</span>
+        </a>
+        
+        <a  class="hexo "
+           href="/2018/08/05/hexo绑定自己的域名/"
+           data-tag="hexo,github"
+           data-author="" >
+            <span class="post-title" title="hexo绑定自己的域名">hexo绑定自己的域名</span>
+            <span class="post-date" title="2018-08-05 19:48:02">2018/08/05</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/02/小程序tab选项卡-day10（2）/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day10（2）">小程序reader+movie项目-day10（2）</span>
+            <span class="post-date" title="2018-08-02 22:00:05">2018/08/02</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/05/阅读+电影小程序-day11/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day11">小程序reader+movie项目-day11</span>
+            <span class="post-date" title="2018-08-05 21:59:05">2018/08/05</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/07/阅读+电影小程序-day12/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day12">小程序reader+movie项目-day12</span>
+            <span class="post-date" title="2018-08-07 21:46:05">2018/08/07</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/08/阅读-电影小程序-day13/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day13">小程序reader+movie项目-day13</span>
+            <span class="post-date" title="2018-08-08 21:48:05">2018/08/08</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/09/阅读小程序-day1/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day1">小程序reader项目-day1</span>
+            <span class="post-date" title="2018-07-09 22:30:05">2018/07/09</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/02/阅读小程序-day10/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day10（1）">小程序reader项目-day10（1）</span>
+            <span class="post-date" title="2018-08-02 21:30:05">2018/08/02</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/11/阅读小程序-day2/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day2">小程序reader项目-day2</span>
+            <span class="post-date" title="2018-07-11 22:30:05">2018/07/11</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/16/阅读小程序-day3/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day3">小程序reader项目-day3</span>
+            <span class="post-date" title="2018-07-16 22:30:05">2018/07/16</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/17/阅读小程序-day4(1)/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day4(1)">小程序reader项目-day4(1)</span>
+            <span class="post-date" title="2018-07-17 22:00:05">2018/07/17</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/17/阅读小程序-day4(2)/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day4(2)">小程序reader项目-day4(2)</span>
+            <span class="post-date" title="2018-07-17 22:15:05">2018/07/17</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/18/阅读小程序-day5/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day5">小程序reader项目-day5</span>
+            <span class="post-date" title="2018-07-18 21:47:05">2018/07/18</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/18/阅读小程序-day6/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day6">小程序reader项目-day6</span>
+            <span class="post-date" title="2018-07-18 22:06:05">2018/07/18</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/30/阅读小程序-day7/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day7">小程序reader项目-day7</span>
+            <span class="post-date" title="2018-07-30 23:10:05">2018/07/30</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/07/31/阅读小程序-day8/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day8">小程序reader项目-day8</span>
+            <span class="post-date" title="2018-07-31 22:50:05">2018/07/31</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/01/阅读小程序-day9/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader项目-day9">小程序reader项目-day9</span>
+            <span class="post-date" title="2018-08-01 22:40:05">2018/08/01</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/11/阅读+电影小程序-day14/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day14">小程序reader+movie项目-day14</span>
+            <span class="post-date" title="2018-08-11 21:45:05">2018/08/11</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/13/阅读+电影小程序-day15/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day15">小程序reader+movie项目-day15</span>
+            <span class="post-date" title="2018-08-13 22:14:05">2018/08/13</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/16/阅读+电影小程序-day16/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day16">小程序reader+movie项目-day16</span>
+            <span class="post-date" title="2018-08-16 22:58:05">2018/08/16</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/19/阅读+电影小程序-day17（2）/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day17（7）">小程序reader+movie项目-day17（7）</span>
+            <span class="post-date" title="2018-08-19 16:09:05">2018/08/19</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/19/阅读+电影小程序-day17（1）/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day17（1）">小程序reader+movie项目-day17（1）</span>
+            <span class="post-date" title="2018-08-19 16:08:05">2018/08/19</span>
+        </a>
+        
+        <a  class="数据分析 "
+           href="/2018/08/19/python爬虫学习笔记1/"
+           data-tag="数据分析,爬虫"
+           data-author="" >
+            <span class="post-title" title="python爬虫学习笔记1">python爬虫学习笔记1</span>
+            <span class="post-date" title="2018-08-19 17:55:05">2018/08/19</span>
+        </a>
+        
+        <a  class="数据分析 "
+           href="/2018/08/20/python爬虫学习笔记2/"
+           data-tag="数据分析,爬虫"
+           data-author="" >
+            <span class="post-title" title="python爬虫学习笔记2">python爬虫学习笔记2</span>
+            <span class="post-date" title="2018-08-20 22:26:05">2018/08/20</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/20/阅读+电影小程序-day18/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day18">小程序reader+movie项目-day18</span>
+            <span class="post-date" title="2018-08-20 22:27:05">2018/08/20</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/23/阅读+电影小程序-day19/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day19">小程序reader+movie项目-day19</span>
+            <span class="post-date" title="2018-08-23 22:57:05">2018/08/23</span>
+        </a>
+        
+        <a  class="小程序学习 "
+           href="/2018/08/26/阅读+电影小程序-day20/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="小程序reader+movie项目-day20">小程序reader+movie项目-day20</span>
+            <span class="post-date" title="2018-08-26 22:53:05">2018/08/26</span>
+        </a>
+        
+        <a  class="数据分析 "
+           href="/2018/08/29/杭州租房数据爬取（lianjia）/"
+           data-tag="数据分析,爬虫"
+           data-author="" >
+            <span class="post-title" title="杭州租房数据--lianjia">杭州租房数据--lianjia</span>
+            <span class="post-date" title="2018-08-29 22:51:05">2018/08/29</span>
+        </a>
+        
+        <a  class="数据分析 "
+           href="/2018/09/10/day1-numpy/"
+           data-tag="数据分析"
+           data-author="" >
+            <span class="post-title" title="day1-numpy学习">day1-numpy学习</span>
+            <span class="post-date" title="2018-09-10 23:07:05">2018/09/10</span>
+        </a>
+        
+        <a  class="数据分析 "
+           href="/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/"
+           data-tag="数据分析，深度学习"
+           data-author="" >
+            <span class="post-title" title="吴恩达深度学习笔记1-2--神经网络基础">吴恩达深度学习笔记1-2--神经网络基础</span>
+            <span class="post-date" title="2018-09-20 22:27:05">2018/09/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2018-09-23 22:30:30">2018/09/23</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归" class="article article-type-post" itemscope itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-09-23 22:29:42'>2018-09-23 22:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3,842</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归"><span class="toc-text">吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#【识别猫】-的简单的神经网络"><span class="toc-text">【识别猫】 的简单的神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、引入需要的库"><span class="toc-text">一、引入需要的库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#·numpy-：是用Python进行科学计算的基本软件包。"><span class="toc-text">·numpy ：是用Python进行科学计算的基本软件包。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·h5py：是与H5文件中存储的数据集进行交互的常用软件包。"><span class="toc-text">·h5py：是与H5文件中存储的数据集进行交互的常用软件包。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·matplotlib：是一个著名的库，用于在Python中绘制图表。"><span class="toc-text">·matplotlib：是一个著名的库，用于在Python中绘制图表。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·lr-utils-：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。"><span class="toc-text">·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、加载数据"><span class="toc-text">二、加载数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们可以看一下我们加载的文件里面的图片都是些什么样子的，比如我就查看一下训练集里面的第26张图片，当然你也可以改变index的值查看一下其他的图片。"><span class="toc-text">我们可以看一下我们加载的文件里面的图片都是些什么样子的，比如我就查看一下训练集里面的第26张图片，当然你也可以改变index的值查看一下其他的图片。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据处理"><span class="toc-text">三、数据处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为了方便，我们要把维度为（64，64，3）的numpy数组重新构造为（64-x-64-x-3，1）的数组，要乘以3的原因是每张图片是由64x64像素构成的，而每个像素点由（R，G，B）三原色构成的，所以要乘以3。在此之后，我们的训练和测试数据集是一个numpy数组，【每列代表一个平坦的图像】-，应该有m-train和m-test列。"><span class="toc-text">为了方便，我们要把维度为（64，64，3）的numpy数组重新构造为（64 x 64 x 3，1）的数组，要乘以3的原因是每张图片是由64x64像素构成的，而每个像素点由（R，G，B）三原色构成的，所以要乘以3。在此之后，我们的训练和测试数据集是一个numpy数组，【每列代表一个平坦的图像】 ，应该有m_train和m_test列。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当你想将形状（a，b，c，d）的矩阵X平铺成形状（b-c-d，a）的矩阵X-flatten时，可以使用以下代码：-X-flatten-X-reshape-X-shape-0-，-1-T"><span class="toc-text">当你想将形状（a，b，c，d）的矩阵X平铺成形状（b  c  d，a）的矩阵X_flatten时，可以使用以下代码： X_flatten = X.reshape(X.shape [0]，-1).T</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这一段意思是指把数组变为209行的矩阵（因为训练集里有209张图片），但是我懒得算列有多少，于是我就用-1告诉程序你帮我算，最后程序算出来时12288列，我再最后用一个T表示转置，这就变成了12288行，209列。测试集亦如此。"><span class="toc-text">这一段意思是指把数组变为209行的矩阵（因为训练集里有209张图片），但是我懒得算列有多少，于是我就用-1告诉程序你帮我算，最后程序算出来时12288列，我再最后用一个T表示转置，这就变成了12288行，209列。测试集亦如此。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为了表示彩色图像，必须为每个像素指定红色，绿色和蓝色通道（RGB），因此像素值实际上是从0到255范围内的三个数字的向量。机器学习中一个常见的预处理步骤是对数据集进行居中和标准化，这意味着可以减去每个示例中整个numpy数组的平均值，然后将每个示例除以整个numpy数组的标准偏差。但对于图片数据集，它更简单，更方便，几乎可以将数据集的每一行除以255（像素通道的最大值），因为在RGB中不存在比255大的数据，所以我们可以放心的除以255，让标准化的数据位于-0-1-之间，现在标准化我们的数据集："><span class="toc-text">为了表示彩色图像，必须为每个像素指定红色，绿色和蓝色通道（RGB），因此像素值实际上是从0到255范围内的三个数字的向量。机器学习中一个常见的预处理步骤是对数据集进行居中和标准化，这意味着可以减去每个示例中整个numpy数组的平均值，然后将每个示例除以整个numpy数组的标准偏差。但对于图片数据集，它更简单，更方便，几乎可以将数据集的每一行除以255（像素通道的最大值），因为在RGB中不存在比255大的数据，所以我们可以放心的除以255，让标准化的数据位于[0,1]之间，现在标准化我们的数据集：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、构建神经网络"><span class="toc-text">四、构建神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立神经网络的主要步骤是："><span class="toc-text">建立神经网络的主要步骤是：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义模型结构（例如输入特征的数量）"><span class="toc-text">1. 定义模型结构（例如输入特征的数量）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-初始化模型的参数"><span class="toc-text">2. 初始化模型的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-循环"><span class="toc-text">3.循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-计算当前损失（正向传播）"><span class="toc-text">3.1 计算当前损失（正向传播）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-计算当前梯度（反向传播）"><span class="toc-text">3.2 计算当前梯度（反向传播）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-更新参数（梯度下降）"><span class="toc-text">3.3 更新参数（梯度下降）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步：现在构建sigmoid-，需要使用-sigmoid（w-T-x-b）-计算来做出预测。"><span class="toc-text">第一步：现在构建sigmoid()，需要使用 sigmoid（w ^ T x + b） 计算来做出预测。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步：既然sigmoid测试好了，我们现在就可以初始化我们需要的参数w和b了。"><span class="toc-text">第二步：既然sigmoid测试好了，我们现在就可以初始化我们需要的参数w和b了。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化参数的函数已经构建好了，现在就可以执行“前向”和“后向”传播步骤来学习参数。"><span class="toc-text">初始化参数的函数已经构建好了，现在就可以执行“前向”和“后向”传播步骤来学习参数。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步：我们现在要实现一个计算成本函数及其渐变的函数propagate（）。"><span class="toc-text">第三步：我们现在要实现一个计算成本函数及其渐变的函数propagate（）。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写好之后我们来测试一下。"><span class="toc-text">写好之后我们来测试一下。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四步：现在，使用渐变下降更新参数。"><span class="toc-text">第四步：现在，使用渐变下降更新参数。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目标是通过最小化成本函数J来学习w和b。对于参数-θ-，更新规则是-θ-θ−α-dθ，其中-α-是学习率。"><span class="toc-text">目标是通过最小化成本函数J来学习w和b。对于参数 θ ，更新规则是 θ=θ−α dθ，其中 α 是学习率。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试优化函数："><span class="toc-text">测试优化函数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#optimize函数会输出已学习的w和b的值，我们可以使用w和b来预测数据集X的标签。"><span class="toc-text">optimize函数会输出已学习的w和b的值，我们可以使用w和b来预测数据集X的标签。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五步：-现在我们要实现预测函数predict（）。计算预测有两个步骤："><span class="toc-text">第五步： 现在我们要实现预测函数predict（）。计算预测有两个步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算-Y’-A-σ-w-TX-b"><span class="toc-text">计算 $$ Y’=A=σ(w^TX+b)$$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将a的值变为0（如果激活值-lt-0-5）或者为1（如果激活值-gt-0-5），"><span class="toc-text">将a的值变为0（如果激活值&lt;= 0.5）或者为1（如果激活值&gt; 0.5），</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后将预测值存储在向量Y-prediction中。"><span class="toc-text">然后将预测值存储在向量Y_prediction中。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第六步-就目前而言，我们基本上把所有的东西都做完了，现在我们要把这些函数统统整合到一个model-函数中，届时只需要调用一个model-就基本上完成所有的事了。"><span class="toc-text">第六步:就目前而言，我们基本上把所有的东西都做完了，现在我们要把这些函数统统整合到一个model()函数中，届时只需要调用一个model()就基本上完成所有的事了。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们更改一下学习率和迭代次数，有可能会发现训练集的准确性可能会提高，但是测试集准确性会下降，这是由于过拟合造成的，但是我们并不需要担心，我们以后会使用更好的算法来解决这些问题的。"><span class="toc-text">我们更改一下学习率和迭代次数，有可能会发现训练集的准确性可能会提高，但是测试集准确性会下降，这是由于过拟合造成的，但是我们并不需要担心，我们以后会使用更好的算法来解决这些问题的。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、绘制图"><span class="toc-text">五、绘制图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#跑一波出来的效果图是这样的，可以看到成本下降，它显示参数正在被学习："><span class="toc-text">跑一波出来的效果图是这样的，可以看到成本下降，它显示参数正在被学习：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#让我们进一步分析一下，并研究学习率alpha的可能选择。为了让渐变下降起作用，我们必须明智地选择学习速率。学习率α-决定了我们更新参数的速度。如果学习率过高，我们可能会“超过”最优值。同样，如果它太小，我们将需要太多迭代才能收敛到最佳值。这就是为什么使用良好调整的学习率至关重要的原因。"><span class="toc-text">让我们进一步分析一下，并研究学习率alpha的可能选择。为了让渐变下降起作用，我们必须明智地选择学习速率。学习率α 决定了我们更新参数的速度。如果学习率过高，我们可能会“超过”最优值。同样，如果它太小，我们将需要太多迭代才能收敛到最佳值。这就是为什么使用良好调整的学习率至关重要的原因。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们可以比较一下我们模型的学习曲线和几种学习速率的选择。也可以尝试使用不同于我们初始化的learning-rates变量包含的三个值，并看一下会发生什么。"><span class="toc-text">我们可以比较一下我们模型的学习曲线和几种学习速率的选择。也可以尝试使用不同于我们初始化的learning_rates变量包含的三个值，并看一下会发生什么。</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归"><a href="#吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归" class="headerlink" title="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归"></a>吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归</h1><h2 id="【识别猫】-的简单的神经网络"><a href="#【识别猫】-的简单的神经网络" class="headerlink" title="【识别猫】 的简单的神经网络"></a>【识别猫】 的简单的神经网络</h2><h2 id="一、引入需要的库"><a href="#一、引入需要的库" class="headerlink" title="一、引入需要的库"></a>一、引入需要的库</h2><h3 id="·numpy-：是用Python进行科学计算的基本软件包。"><a href="#·numpy-：是用Python进行科学计算的基本软件包。" class="headerlink" title="·numpy ：是用Python进行科学计算的基本软件包。"></a>·numpy ：是用Python进行科学计算的基本软件包。</h3><h3 id="·h5py：是与H5文件中存储的数据集进行交互的常用软件包。"><a href="#·h5py：是与H5文件中存储的数据集进行交互的常用软件包。" class="headerlink" title="·h5py：是与H5文件中存储的数据集进行交互的常用软件包。"></a>·h5py：是与H5文件中存储的数据集进行交互的常用软件包。</h3><h3 id="·matplotlib：是一个著名的库，用于在Python中绘制图表。"><a href="#·matplotlib：是一个著名的库，用于在Python中绘制图表。" class="headerlink" title="·matplotlib：是一个著名的库，用于在Python中绘制图表。"></a>·matplotlib：是一个著名的库，用于在Python中绘制图表。</h3><h3 id="·lr-utils-：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。"><a href="#·lr-utils-：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。" class="headerlink" title="·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。"></a>·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。</h3><pre><code class="python">import numpy as np 
+import h5py
+import matplotlib.pyplot as plt
+from lr_utils import load_dataset
+</code></pre>
+<h2 id="二、加载数据"><a href="#二、加载数据" class="headerlink" title="二、加载数据"></a>二、加载数据</h2><pre><code class="python">train_set_x_orig , train_set_y , test_set_x_orig , test_set_y , classes = load_dataset()
+</code></pre>
+<h3 id="我们可以看一下我们加载的文件里面的图片都是些什么样子的，比如我就查看一下训练集里面的第26张图片，当然你也可以改变index的值查看一下其他的图片。"><a href="#我们可以看一下我们加载的文件里面的图片都是些什么样子的，比如我就查看一下训练集里面的第26张图片，当然你也可以改变index的值查看一下其他的图片。" class="headerlink" title="我们可以看一下我们加载的文件里面的图片都是些什么样子的，比如我就查看一下训练集里面的第26张图片，当然你也可以改变index的值查看一下其他的图片。"></a>我们可以看一下我们加载的文件里面的图片都是些什么样子的，比如我就查看一下训练集里面的第26张图片，当然你也可以改变index的值查看一下其他的图片。</h3><pre><code class="python">index = 25
+plt.imshow(train_set_x_orig[index])
+plt.show()
+print(&quot;train_set_y=&quot; + str(train_set_y))
+</code></pre>
+<p><img src="/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_7_0.png" alt="png"></p>
+<pre><code>train_set_y=[[0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 0
+  0 1 0 0 1 1 0 0 0 0 1 0 0 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0
+  0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 1 1 0 0 1 0 0 0 0 1 0 1 0 1 1 1 1 1
+  1 0 0 0 0 0 1 0 0 0 1 0 0 1 0 1 0 1 1 0 0 0 1 1 1 1 1 0 0 0 0 1 0 1 1 1 0
+  1 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 1 1 1 0 0 1 1 0 1 0 1 0 0 0 0 0
+  1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0]]
+</code></pre><h2 id="三、数据处理"><a href="#三、数据处理" class="headerlink" title="三、数据处理"></a>三、数据处理</h2><pre><code class="python">m_train = train_set_y.shape[1] #训练集里图片的数量。
+m_test = test_set_y.shape[1] #测试集里图片的数量。
+num_px = train_set_x_orig.shape[1] #训练、测试集里面的图片的宽度和高度（均为64x64）
+</code></pre>
+<pre><code class="python">print (&quot;训练集的数量: m_train = &quot; + str(m_train))
+print (&quot;测试集的数量 : m_test = &quot; + str(m_test))
+print (&quot;每张图片的宽/高 : num_px = &quot; + str(num_px))
+print (&quot;每张图片的大小 : (&quot; + str(num_px) + &quot;, &quot; + str(num_px) + &quot;, 3)&quot;)
+print (&quot;训练集_图片的维数 : &quot; + str(train_set_x_orig.shape))
+print (&quot;训练集_标签的维数 : &quot; + str(train_set_y.shape))
+print (&quot;测试集_图片的维数: &quot; + str(test_set_x_orig.shape))
+print (&quot;测试集_标签的维数: &quot; + str(test_set_y.shape))
+</code></pre>
+<pre><code>训练集的数量: m_train = 209
+测试集的数量 : m_test = 50
+每张图片的宽/高 : num_px = 64
+每张图片的大小 : (64, 64, 3)
+训练集_图片的维数 : (209, 64, 64, 3)
+训练集_标签的维数 : (1, 209)
+测试集_图片的维数: (50, 64, 64, 3)
+测试集_标签的维数: (1, 50)
+</code></pre><h3 id="为了方便，我们要把维度为（64，64，3）的numpy数组重新构造为（64-x-64-x-3，1）的数组，要乘以3的原因是每张图片是由64x64像素构成的，而每个像素点由（R，G，B）三原色构成的，所以要乘以3。在此之后，我们的训练和测试数据集是一个numpy数组，【每列代表一个平坦的图像】-，应该有m-train和m-test列。"><a href="#为了方便，我们要把维度为（64，64，3）的numpy数组重新构造为（64-x-64-x-3，1）的数组，要乘以3的原因是每张图片是由64x64像素构成的，而每个像素点由（R，G，B）三原色构成的，所以要乘以3。在此之后，我们的训练和测试数据集是一个numpy数组，【每列代表一个平坦的图像】-，应该有m-train和m-test列。" class="headerlink" title="为了方便，我们要把维度为（64，64，3）的numpy数组重新构造为（64 x 64 x 3，1）的数组，要乘以3的原因是每张图片是由64x64像素构成的，而每个像素点由（R，G，B）三原色构成的，所以要乘以3。在此之后，我们的训练和测试数据集是一个numpy数组，【每列代表一个平坦的图像】 ，应该有m_train和m_test列。"></a>为了方便，我们要把维度为（64，64，3）的numpy数组重新构造为（64 x 64 x 3，1）的数组，要乘以3的原因是每张图片是由64x64像素构成的，而每个像素点由（R，G，B）三原色构成的，所以要乘以3。在此之后，我们的训练和测试数据集是一个numpy数组，【每列代表一个平坦的图像】 ，应该有m_train和m_test列。</h3><h3 id="当你想将形状（a，b，c，d）的矩阵X平铺成形状（b-c-d，a）的矩阵X-flatten时，可以使用以下代码：-X-flatten-X-reshape-X-shape-0-，-1-T"><a href="#当你想将形状（a，b，c，d）的矩阵X平铺成形状（b-c-d，a）的矩阵X-flatten时，可以使用以下代码：-X-flatten-X-reshape-X-shape-0-，-1-T" class="headerlink" title="当你想将形状（a，b，c，d）的矩阵X平铺成形状（b  c  d，a）的矩阵X_flatten时，可以使用以下代码： X_flatten = X.reshape(X.shape [0]，-1).T"></a>当你想将形状（a，b，c，d）的矩阵X平铺成形状（b <em> c </em> d，a）的矩阵X_flatten时，可以使用以下代码： X_flatten = X.reshape(X.shape [0]，-1).T</h3><pre><code class="python">#将训练集的维度降低并转置。
+train_set_x_flatten  = train_set_x_orig.reshape(train_set_x_orig.shape[0],-1).T
+#将测试集的维度降低并转置。
+test_set_x_flatten = test_set_x_orig.reshape(test_set_x_orig.shape[0],-1).T
+</code></pre>
+<h3 id="这一段意思是指把数组变为209行的矩阵（因为训练集里有209张图片），但是我懒得算列有多少，于是我就用-1告诉程序你帮我算，最后程序算出来时12288列，我再最后用一个T表示转置，这就变成了12288行，209列。测试集亦如此。"><a href="#这一段意思是指把数组变为209行的矩阵（因为训练集里有209张图片），但是我懒得算列有多少，于是我就用-1告诉程序你帮我算，最后程序算出来时12288列，我再最后用一个T表示转置，这就变成了12288行，209列。测试集亦如此。" class="headerlink" title="这一段意思是指把数组变为209行的矩阵（因为训练集里有209张图片），但是我懒得算列有多少，于是我就用-1告诉程序你帮我算，最后程序算出来时12288列，我再最后用一个T表示转置，这就变成了12288行，209列。测试集亦如此。"></a>这一段意思是指把数组变为209行的矩阵（因为训练集里有209张图片），但是我懒得算列有多少，于是我就用-1告诉程序你帮我算，最后程序算出来时12288列，我再最后用一个T表示转置，这就变成了12288行，209列。测试集亦如此。</h3><pre><code class="python">print (&quot;训练集降维最后的维度： &quot; + str(train_set_x_flatten.shape))
+print (&quot;训练集_标签的维数 : &quot; + str(train_set_y.shape))
+print (&quot;测试集降维之后的维度: &quot; + str(test_set_x_flatten.shape))
+print (&quot;测试集_标签的维数 : &quot; + str(test_set_y.shape))
+</code></pre>
+<pre><code>训练集降维最后的维度： (12288, 209)
+训练集_标签的维数 : (1, 209)
+测试集降维之后的维度: (12288, 50)
+测试集_标签的维数 : (1, 50)
+</code></pre><h3 id="为了表示彩色图像，必须为每个像素指定红色，绿色和蓝色通道（RGB），因此像素值实际上是从0到255范围内的三个数字的向量。机器学习中一个常见的预处理步骤是对数据集进行居中和标准化，这意味着可以减去每个示例中整个numpy数组的平均值，然后将每个示例除以整个numpy数组的标准偏差。但对于图片数据集，它更简单，更方便，几乎可以将数据集的每一行除以255（像素通道的最大值），因为在RGB中不存在比255大的数据，所以我们可以放心的除以255，让标准化的数据位于-0-1-之间，现在标准化我们的数据集："><a href="#为了表示彩色图像，必须为每个像素指定红色，绿色和蓝色通道（RGB），因此像素值实际上是从0到255范围内的三个数字的向量。机器学习中一个常见的预处理步骤是对数据集进行居中和标准化，这意味着可以减去每个示例中整个numpy数组的平均值，然后将每个示例除以整个numpy数组的标准偏差。但对于图片数据集，它更简单，更方便，几乎可以将数据集的每一行除以255（像素通道的最大值），因为在RGB中不存在比255大的数据，所以我们可以放心的除以255，让标准化的数据位于-0-1-之间，现在标准化我们的数据集：" class="headerlink" title="为了表示彩色图像，必须为每个像素指定红色，绿色和蓝色通道（RGB），因此像素值实际上是从0到255范围内的三个数字的向量。机器学习中一个常见的预处理步骤是对数据集进行居中和标准化，这意味着可以减去每个示例中整个numpy数组的平均值，然后将每个示例除以整个numpy数组的标准偏差。但对于图片数据集，它更简单，更方便，几乎可以将数据集的每一行除以255（像素通道的最大值），因为在RGB中不存在比255大的数据，所以我们可以放心的除以255，让标准化的数据位于[0,1]之间，现在标准化我们的数据集："></a>为了表示彩色图像，必须为每个像素指定红色，绿色和蓝色通道（RGB），因此像素值实际上是从0到255范围内的三个数字的向量。机器学习中一个常见的预处理步骤是对数据集进行居中和标准化，这意味着可以减去每个示例中整个numpy数组的平均值，然后将每个示例除以整个numpy数组的标准偏差。但对于图片数据集，它更简单，更方便，几乎可以将数据集的每一行除以255（像素通道的最大值），因为在RGB中不存在比255大的数据，所以我们可以放心的除以255，让标准化的数据位于[0,1]之间，现在标准化我们的数据集：</h3><pre><code class="python">train_set_x = train_set_x_flatten / 255
+test_set_x = test_set_x_flatten / 255
+</code></pre>
+<h2 id="四、构建神经网络"><a href="#四、构建神经网络" class="headerlink" title="四、构建神经网络"></a>四、构建神经网络</h2><h3 id="建立神经网络的主要步骤是："><a href="#建立神经网络的主要步骤是：" class="headerlink" title="建立神经网络的主要步骤是："></a>建立神经网络的主要步骤是：</h3><h3 id="1-定义模型结构（例如输入特征的数量）"><a href="#1-定义模型结构（例如输入特征的数量）" class="headerlink" title="1. 定义模型结构（例如输入特征的数量）"></a>1. 定义模型结构（例如输入特征的数量）</h3><h3 id="2-初始化模型的参数"><a href="#2-初始化模型的参数" class="headerlink" title="2. 初始化模型的参数"></a>2. 初始化模型的参数</h3><h3 id="3-循环"><a href="#3-循环" class="headerlink" title="3.循环"></a>3.循环</h3><h4 id="3-1-计算当前损失（正向传播）"><a href="#3-1-计算当前损失（正向传播）" class="headerlink" title="3.1 计算当前损失（正向传播）"></a>3.1 计算当前损失（正向传播）</h4><h4 id="3-2-计算当前梯度（反向传播）"><a href="#3-2-计算当前梯度（反向传播）" class="headerlink" title="3.2 计算当前梯度（反向传播）"></a>3.2 计算当前梯度（反向传播）</h4><h4 id="3-3-更新参数（梯度下降）"><a href="#3-3-更新参数（梯度下降）" class="headerlink" title="3.3 更新参数（梯度下降）"></a>3.3 更新参数（梯度下降）</h4><h3 id="第一步：现在构建sigmoid-，需要使用-sigmoid（w-T-x-b）-计算来做出预测。"><a href="#第一步：现在构建sigmoid-，需要使用-sigmoid（w-T-x-b）-计算来做出预测。" class="headerlink" title="第一步：现在构建sigmoid()，需要使用 sigmoid（w ^ T x + b） 计算来做出预测。"></a>第一步：现在构建sigmoid()，需要使用 sigmoid（w ^ T x + b） 计算来做出预测。</h3><pre><code class="python">def sigmoid(z):
+    &quot;&quot;&quot;
+        参数：
+            z - 任何大小的标量或numpy数组
+        返回：
+            s - sigmoid(z)
+    &quot;&quot;&quot;
+    s = 1/(1+np.exp(-z))
+    return s
+</code></pre>
+<pre><code class="python">print(&quot;============测试sigmoid=========&quot;)
+print(&quot;sigmoid(0)=&quot;+str(sigmoid(0)))
+print(&quot;sigmoid(9.2)=&quot;+str(sigmoid(9.2)))
+</code></pre>
+<pre><code>============测试sigmoid=========
+sigmoid(0)=0.5
+sigmoid(9.2)=0.999898970806
+</code></pre><h3 id="第二步：既然sigmoid测试好了，我们现在就可以初始化我们需要的参数w和b了。"><a href="#第二步：既然sigmoid测试好了，我们现在就可以初始化我们需要的参数w和b了。" class="headerlink" title="第二步：既然sigmoid测试好了，我们现在就可以初始化我们需要的参数w和b了。"></a>第二步：既然sigmoid测试好了，我们现在就可以初始化我们需要的参数w和b了。</h3><pre><code class="python">def initialize_with_zeros(dim):
+    &quot;&quot;&quot;
+        此函数为w创建一个维度为（dim，1）的0向量，并将b初始化为0
+
+        参数：
+            dim - 我们想要的w矢量的大小（或者这种情况下的参数数量）
+
+        返回：
+            w - 维度为(dim,1)的初始化向量
+            b - 初始化的标量
+    &quot;&quot;&quot;
+    w = np.zeros(shape=(dim,1))
+    b = 0
+    # 使用断言来确保我确保我要的数据是正确的
+    assert(w.shape==(dim,1)) #w的维度是(dim,1)
+    assert(isinstance(b,float) or isinstance(b,int)) #b的类型是float或者int
+
+    return(w,b)
+</code></pre>
+<h3 id="初始化参数的函数已经构建好了，现在就可以执行“前向”和“后向”传播步骤来学习参数。"><a href="#初始化参数的函数已经构建好了，现在就可以执行“前向”和“后向”传播步骤来学习参数。" class="headerlink" title="初始化参数的函数已经构建好了，现在就可以执行“前向”和“后向”传播步骤来学习参数。"></a>初始化参数的函数已经构建好了，现在就可以执行“前向”和“后向”传播步骤来学习参数。</h3><h3 id="第三步：我们现在要实现一个计算成本函数及其渐变的函数propagate（）。"><a href="#第三步：我们现在要实现一个计算成本函数及其渐变的函数propagate（）。" class="headerlink" title="第三步：我们现在要实现一个计算成本函数及其渐变的函数propagate（）。"></a>第三步：我们现在要实现一个计算成本函数及其渐变的函数propagate（）。</h3><pre><code class="python">def propagate(w,b,X,Y):
+    &quot;&quot;&quot;
+        实现前向和后向传播的成本函数及其梯度
+        参数：
+            w - 权重，大小不等的数组（num_px * num_py * 3,1）
+            b - 偏差，一个标量
+            X - 矩阵类型为（num_px * num_px * 3,训练数量）
+            Y - 真正的“标签”矢量（如果非猫则为0，如果是猫则为1），矩阵维度为（1，训练数据数量）
+
+        返回：
+            cost - 逻辑回归的负对数似然成本-误差值
+            dw - 相对于w的损失梯度，因此与w相同的形状
+            db - 相对于b的损失梯度，因此与b相同的形状
+    &quot;&quot;&quot;
+    m = X.shape[1]
+
+    #正向传播
+    A = sigmoid(np.dot(w.T,X)+b)#计算激活值，请参考公式2
+    cost = (-1/m)*np.sum(Y*np.log(A) + (1-Y)*(np.log(1-A)))#计算成本，请参考公式3和4
+
+    #反向传播
+    dw = (1/m)*np.dot(X,(A - Y).T)
+    db = (1/m)*np.sum(A-Y)
+
+    #使用断言确保数据正确的
+    assert(dw.shape == w.shape) 
+    assert(db.dtype == float) 
+    cost = np.squeeze(cost) 
+    assert(cost.shape == ())
+
+    #创建一个字典，把dw和db保存起来
+    grads = {
+        &quot;dw&quot;:dw,
+        &quot;db&quot;:db
+    }
+    return(grads,cost)
+</code></pre>
+<h3 id="写好之后我们来测试一下。"><a href="#写好之后我们来测试一下。" class="headerlink" title="写好之后我们来测试一下。"></a>写好之后我们来测试一下。</h3><pre><code class="python">#测试一下propagate
+print(&quot;==========测试propagete========&quot;)
+#初始化一些参数
+w,b,X,Y = np.array([[1],[2]]),2,np.array([[1,2],[3,4]]),np.array([[1,0]])
+grads,cost = propagate(w,b,X,Y)
+print(&quot;dw = &quot; + str(grads[&quot;dw&quot;]))
+print(&quot;db = &quot; + str(grads[&quot;db&quot;]))
+print(&quot;cost = &quot; + str(cost))
+</code></pre>
+<pre><code>==========测试propagete========
+dw = [[ 0.99993216]
+ [ 1.99980262]]
+db = 0.499935230625
+cost = 6.00006477319
+</code></pre><h3 id="第四步：现在，使用渐变下降更新参数。"><a href="#第四步：现在，使用渐变下降更新参数。" class="headerlink" title="第四步：现在，使用渐变下降更新参数。"></a>第四步：现在，使用渐变下降更新参数。</h3><h3 id="目标是通过最小化成本函数J来学习w和b。对于参数-θ-，更新规则是-θ-θ−α-dθ，其中-α-是学习率。"><a href="#目标是通过最小化成本函数J来学习w和b。对于参数-θ-，更新规则是-θ-θ−α-dθ，其中-α-是学习率。" class="headerlink" title="目标是通过最小化成本函数J来学习w和b。对于参数 θ ，更新规则是 θ=θ−α dθ，其中 α 是学习率。"></a>目标是通过最小化成本函数J来学习w和b。对于参数 θ ，更新规则是 θ=θ−α dθ，其中 α 是学习率。</h3><pre><code class="python">def optimize(w,b,X,Y,num_iterations,learning_rate,print_cost = False):
+    &quot;&quot;&quot;
+        此函数通过运行梯度下降算法来优化w和b
+
+        参数：
+            w - 权重，大小不等的数组（num_px*num_px*3,1）
+            b - 偏差，一个标量
+            X - 维度为（num_px * num_px * 3,训练数据的数量）的数组。
+            Y - 真正的“标签”矢量（如果非猫则为0，如果是猫则为1），矩阵维度为（1，训练数据的数量）
+            num_iterations - 优化循环的迭代次数
+            learning_rate - 梯度下降更新规则的学习率
+            print_cost - 每100步打印一次损失值
+
+        返回：
+            params - 包含权重w和偏差b的字典
+            grads - 包含权重和偏差相对于成本函数的梯度的字典
+            成本 - 优化期间计算的所有成本列表，将用于绘制学习曲线
+
+        提示：
+        我们需要写下两个步骤并遍历它们：
+            （1）计算当前参数的成本和梯度，使用propagate()。
+            （2）使用w和b的梯度下降法则更新参数。
+    &quot;&quot;&quot;
+
+    costs = []
+
+    for i in range(num_iterations):
+        grads,cost = propagate(w,b,X,Y)
+
+        dw = grads[&quot;dw&quot;]
+        db = grads[&quot;db&quot;]
+
+        w = w - learning_rate * dw
+        b = b - learning_rate * db
+
+        #记录成本
+        if i%100 == 0:
+            costs.append(cost)
+        #打印成本数据
+        if (print_cost) and (i%100==0):
+            print(&quot;迭代的次数：%i , 误差值： %f&quot; % (i,cost))
+
+    params = {
+        &quot;w&quot; : w,
+        &quot;b&quot; : b
+    }
+    grads = {
+        &quot;dw&quot;:dw,
+        &quot;db&quot;:db
+    }
+    return (params,grads,costs)
+</code></pre>
+<h3 id="测试优化函数："><a href="#测试优化函数：" class="headerlink" title="测试优化函数："></a>测试优化函数：</h3><pre><code class="python">#测试optimize
+print(&quot;===========测试optimize============&quot;)
+w,b,X,Y = np.array([[1],[2]]),2,np.array([[1,2],[3,4]]),np.array([[1,0]])
+params,grads,costs = optimize(w,b,X,Y,num_iterations=100,learning_rate=0.009,print_cost=False)
+print(&quot;w=&quot; + str(params[&quot;w&quot;]))
+print(&quot;b=&quot; + str(params[&quot;b&quot;]))
+print(&quot;w=&quot; + str(grads[&quot;dw&quot;]))
+print(&quot;b=&quot; + str(grads[&quot;db&quot;]))
+</code></pre>
+<pre><code>===========测试optimize============
+w=[[ 0.1124579 ]
+ [ 0.23106775]]
+b=1.55930492484
+w=[[ 0.90158428]
+ [ 1.76250842]]
+b=0.430462071679
+</code></pre><h3 id="optimize函数会输出已学习的w和b的值，我们可以使用w和b来预测数据集X的标签。"><a href="#optimize函数会输出已学习的w和b的值，我们可以使用w和b来预测数据集X的标签。" class="headerlink" title="optimize函数会输出已学习的w和b的值，我们可以使用w和b来预测数据集X的标签。"></a>optimize函数会输出已学习的w和b的值，我们可以使用w和b来预测数据集X的标签。</h3><h3 id="第五步：-现在我们要实现预测函数predict（）。计算预测有两个步骤："><a href="#第五步：-现在我们要实现预测函数predict（）。计算预测有两个步骤：" class="headerlink" title="第五步： 现在我们要实现预测函数predict（）。计算预测有两个步骤："></a>第五步： 现在我们要实现预测函数predict（）。计算预测有两个步骤：</h3><h3 id="计算-Y’-A-σ-w-TX-b"><a href="#计算-Y’-A-σ-w-TX-b" class="headerlink" title="计算 $$ Y’=A=σ(w^TX+b)$$"></a>计算 $$ Y’=A=σ(w^TX+b)$$</h3><h3 id="将a的值变为0（如果激活值-lt-0-5）或者为1（如果激活值-gt-0-5），"><a href="#将a的值变为0（如果激活值-lt-0-5）或者为1（如果激活值-gt-0-5），" class="headerlink" title="将a的值变为0（如果激活值&lt;= 0.5）或者为1（如果激活值&gt; 0.5），"></a>将a的值变为0（如果激活值&lt;= 0.5）或者为1（如果激活值&gt; 0.5），</h3><h3 id="然后将预测值存储在向量Y-prediction中。"><a href="#然后将预测值存储在向量Y-prediction中。" class="headerlink" title="然后将预测值存储在向量Y_prediction中。"></a>然后将预测值存储在向量Y_prediction中。</h3><pre><code class="python">def predict(w,b,X):
+    &quot;&quot;&quot;
+    使用学习逻辑回归参数logistic(w,b)预测标签是0还是1
+
+    参数：
+        w - 权重，大小不等的数组（num_px*num_px*3,1)
+        b - 偏差，一个标量
+        X - 维度为（num_px*num_px*3,训练数据的数量）的数据
+
+    返回：
+        Y_rediction - 包含X中所有图片的预测【0|1】的一个numpy数组（向量）
+    &quot;&quot;&quot;
+
+    m = X.shape[1]# 图片的数量
+    Y_prediction = np.zeros((1,m))
+    w = w.reshape(X.shape[0],1)
+
+    #预测猫在图片中出现的概率
+    A = sigmoid(np.dot(w.T,X) + b)
+    for i in range(A.shape[1]):
+        #将概率a[0,i] = 1 if A[0,i] &gt; 0.5 else 0
+        Y_prediction[0,i] =1 if A[0,i] &gt; 0.5 else 0
+    #使用断言
+    assert(Y_prediction.shape == (1,m))
+
+    return Y_prediction
+</code></pre>
+<pre><code class="python"># 测试predict
+print(&quot;==========测试predict========&quot;)
+w,b,X,Y = np.array([[1],[2]]),2,np.array([[1,2],[3,4]]),np.array([[1,0]])
+print(&quot;predictions = &quot; + str(predict(w,b,X)))
+</code></pre>
+<pre><code>==========测试predict========
+predictions = [[ 1.  1.]]
+</code></pre><h3 id="第六步-就目前而言，我们基本上把所有的东西都做完了，现在我们要把这些函数统统整合到一个model-函数中，届时只需要调用一个model-就基本上完成所有的事了。"><a href="#第六步-就目前而言，我们基本上把所有的东西都做完了，现在我们要把这些函数统统整合到一个model-函数中，届时只需要调用一个model-就基本上完成所有的事了。" class="headerlink" title="第六步:就目前而言，我们基本上把所有的东西都做完了，现在我们要把这些函数统统整合到一个model()函数中，届时只需要调用一个model()就基本上完成所有的事了。"></a>第六步:就目前而言，我们基本上把所有的东西都做完了，现在我们要把这些函数统统整合到一个model()函数中，届时只需要调用一个model()就基本上完成所有的事了。</h3><pre><code class="python">def model(X_train,Y_train,X_text,Y_test,num_iterations = 2000,learning_rate=0.5,print_cost=False):
+    &quot;&quot;&quot;
+    通过调用之前实现的函数来构建逻辑回归模型
+
+    参数：
+        X_train - numpy的数组，维度为（num_px * num_px * 3,m_train）的训练集
+        Y_train - numpy的数组，维度为（1,m_train）的训练标签集
+        X_test - numpy的数组，维度为（num_px * num_px * 3,m_test）的训练集
+        Y_test - numpy的数组，维度为（1,m_test）的训练标签集
+        num_iterations - 表示用于优化参数的迭代次数
+        learning_rate - 表示optimize()更新规则中使用的学习速率的超参数
+        print_cost - 设置为true以每100次迭代打印成本
+
+    返回：
+        d - 包含有关模型信息的字典
+    &quot;&quot;&quot;
+    w,b = initialize_with_zeros(X_train.shape[0])
+
+    parameters,grads,costs = optimize(w,b,X_train,Y_train,num_iterations,learning_rate,print_cost)
+
+    #从字典“参数”中检索w和b
+    w,b = parameters[&quot;w&quot;],parameters[&quot;b&quot;]
+
+    #预测测试/训练集的例子
+    Y_prediction_test = predict(w,b,X_text)
+    Y_prediction_train = predict(w,b,X_train)
+
+    #打印训练后的准确性
+    print(&quot;训练集准确性：&quot;,format(100 - np.mean(np.abs(Y_prediction_train - Y_train))*100),&quot;%&quot;)
+    print(&quot;测试集准确性：&quot;,format(100 - np.mean(np.abs(Y_prediction_test - Y_test))*100),&quot;%&quot;)
+
+    d = {
+        &quot;costs&quot;:costs,
+        &quot;Y_prediction_test&quot;:Y_prediction_test,
+        &quot;Y_prediction_train&quot;:Y_prediction_train,
+        &quot;w&quot;:w,
+        &quot;b&quot;:b,
+        &quot;learning_rate&quot;:learning_rate,
+        &quot;num_iterations&quot;:num_iterations
+    }
+    return d
+</code></pre>
+<pre><code class="python">#测试model
+print(&quot;======测试model========&quot;)
+d = model(train_set_x,train_set_y,test_set_x,test_set_y,num_iterations=2000,learning_rate=0.005,print_cost=True)
+</code></pre>
+<pre><code>======测试model========
+迭代的次数：0 , 误差值： 0.693147
+迭代的次数：100 , 误差值： 0.584508
+迭代的次数：200 , 误差值： 0.466949
+迭代的次数：300 , 误差值： 0.376007
+迭代的次数：400 , 误差值： 0.331463
+迭代的次数：500 , 误差值： 0.303273
+迭代的次数：600 , 误差值： 0.279880
+迭代的次数：700 , 误差值： 0.260042
+迭代的次数：800 , 误差值： 0.242941
+迭代的次数：900 , 误差值： 0.228004
+迭代的次数：1000 , 误差值： 0.214820
+迭代的次数：1100 , 误差值： 0.203078
+迭代的次数：1200 , 误差值： 0.192544
+迭代的次数：1300 , 误差值： 0.183033
+迭代的次数：1400 , 误差值： 0.174399
+迭代的次数：1500 , 误差值： 0.166521
+迭代的次数：1600 , 误差值： 0.159305
+迭代的次数：1700 , 误差值： 0.152667
+迭代的次数：1800 , 误差值： 0.146542
+迭代的次数：1900 , 误差值： 0.140872
+训练集准确性： 99.04306220095694 %
+测试集准确性： 70.0 %
+</code></pre><h3 id="我们更改一下学习率和迭代次数，有可能会发现训练集的准确性可能会提高，但是测试集准确性会下降，这是由于过拟合造成的，但是我们并不需要担心，我们以后会使用更好的算法来解决这些问题的。"><a href="#我们更改一下学习率和迭代次数，有可能会发现训练集的准确性可能会提高，但是测试集准确性会下降，这是由于过拟合造成的，但是我们并不需要担心，我们以后会使用更好的算法来解决这些问题的。" class="headerlink" title="我们更改一下学习率和迭代次数，有可能会发现训练集的准确性可能会提高，但是测试集准确性会下降，这是由于过拟合造成的，但是我们并不需要担心，我们以后会使用更好的算法来解决这些问题的。"></a>我们更改一下学习率和迭代次数，有可能会发现训练集的准确性可能会提高，但是测试集准确性会下降，这是由于过拟合造成的，但是我们并不需要担心，我们以后会使用更好的算法来解决这些问题的。</h3><h2 id="五、绘制图"><a href="#五、绘制图" class="headerlink" title="五、绘制图"></a>五、绘制图</h2><pre><code class="python">costs = np.squeeze(d[&#39;costs&#39;])
+plt.plot(costs)
+plt.ylabel(&#39;cost&#39;)
+plt.xlabel(&#39;iterations(per hundreds)&#39;)
+plt.title(&quot;Learning rate = &quot; + str(d[&quot;learning_rate&quot;]))
+plt.show()
+</code></pre>
+<p><img src="/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_42_0.png" alt="png"></p>
+<h4 id="跑一波出来的效果图是这样的，可以看到成本下降，它显示参数正在被学习："><a href="#跑一波出来的效果图是这样的，可以看到成本下降，它显示参数正在被学习：" class="headerlink" title="跑一波出来的效果图是这样的，可以看到成本下降，它显示参数正在被学习："></a>跑一波出来的效果图是这样的，可以看到成本下降，它显示参数正在被学习：</h4><h3 id="让我们进一步分析一下，并研究学习率alpha的可能选择。为了让渐变下降起作用，我们必须明智地选择学习速率。学习率α-决定了我们更新参数的速度。如果学习率过高，我们可能会“超过”最优值。同样，如果它太小，我们将需要太多迭代才能收敛到最佳值。这就是为什么使用良好调整的学习率至关重要的原因。"><a href="#让我们进一步分析一下，并研究学习率alpha的可能选择。为了让渐变下降起作用，我们必须明智地选择学习速率。学习率α-决定了我们更新参数的速度。如果学习率过高，我们可能会“超过”最优值。同样，如果它太小，我们将需要太多迭代才能收敛到最佳值。这就是为什么使用良好调整的学习率至关重要的原因。" class="headerlink" title="让我们进一步分析一下，并研究学习率alpha的可能选择。为了让渐变下降起作用，我们必须明智地选择学习速率。学习率α 决定了我们更新参数的速度。如果学习率过高，我们可能会“超过”最优值。同样，如果它太小，我们将需要太多迭代才能收敛到最佳值。这就是为什么使用良好调整的学习率至关重要的原因。"></a>让我们进一步分析一下，并研究学习率alpha的可能选择。为了让渐变下降起作用，我们必须明智地选择学习速率。学习率α 决定了我们更新参数的速度。如果学习率过高，我们可能会“超过”最优值。同样，如果它太小，我们将需要太多迭代才能收敛到最佳值。这就是为什么使用良好调整的学习率至关重要的原因。</h3><h3 id="我们可以比较一下我们模型的学习曲线和几种学习速率的选择。也可以尝试使用不同于我们初始化的learning-rates变量包含的三个值，并看一下会发生什么。"><a href="#我们可以比较一下我们模型的学习曲线和几种学习速率的选择。也可以尝试使用不同于我们初始化的learning-rates变量包含的三个值，并看一下会发生什么。" class="headerlink" title="我们可以比较一下我们模型的学习曲线和几种学习速率的选择。也可以尝试使用不同于我们初始化的learning_rates变量包含的三个值，并看一下会发生什么。"></a>我们可以比较一下我们模型的学习曲线和几种学习速率的选择。也可以尝试使用不同于我们初始化的learning_rates变量包含的三个值，并看一下会发生什么。</h3><pre><code class="python">learning_rates = [0.01,0.001,0.0001]
+models = {}
+for i in learning_rates:
+    print(&quot;learing rate is:&quot; + str(i))
+    models[str(i)] = model(train_set_x,train_set_y,test_set_x,test_set_y,num_iterations=1500,learning_rate=i,print_cost=False)
+    print(&#39;\n&#39; + &quot;-------------------------------------------------&quot; + &#39;\n&#39;)
+
+for i in learning_rates:
+    plt.plot(np.squeeze(models[str(i)][&quot;costs&quot;]),label = str(models[str(i)][&quot;learning_rate&quot;]))
+
+plt.ylabel(&#39;cost&#39;)
+plt.xlabel(&#39;iterations&#39;)
+
+legend = plt.legend(loc=&#39;upper center&#39;)
+frame = legend.get_frame()
+frame.set_facecolor(&#39;0.90&#39;)
+plt.show()
+</code></pre>
+<pre><code>learing rate is:0.01
+训练集准确性： 99.52153110047847 %
+测试集准确性： 68.0 %
+
+-------------------------------------------------
+
+learing rate is:0.001
+训练集准确性： 88.99521531100478 %
+测试集准确性： 64.0 %
+
+-------------------------------------------------
+
+learing rate is:0.0001
+训练集准确性： 68.42105263157895 %
+测试集准确性： 36.0 %
+
+-------------------------------------------------
+</code></pre><p><img src="/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_45_1.png" alt="png"></p>
+<pre><code class="python">
+</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span></p>
+    <p><span>文章字数:</span><span class="post-count">3,842</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
+    <p><span>发布时间:</span>2018-09-23, 22:30:30</p>
+    <p><span>最后更新:</span>2018-09-23, 22:29:42</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/" title="">http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017 Yelog</p>
+<p class="footer-entry">Buit with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#hexo','#github','#小程序','#数据分析','#爬虫','#数据分析，深度学习',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 2px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("http://www.taopic.com/uploads/allimg/140504/235031-1405040UZ931.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+</html>

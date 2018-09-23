@@ -6,21 +6,21 @@
   <meta name="keywords" content=" 小程序 ">
   <meta name="description" content="小程序reader+movie项目-day16 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="本篇笔记学习自CSDN的博主Koala_Tree看过吴恩达老师的课程后，不想自己做笔记了，就直接跟着博主又打了一遍，加深记忆在此感谢Koala_Tree博主以下为在Coursera上吴恩达老师的DeepLearning.ai课程项目中，第一部分《神经网络和深度学习》第二周课程部分关键点的笔记。神经网络和深度学习—神经网络基础1、二分类问题·样本：(x,y)，训练样本包含m个；·其中x∈Rnx，表示">
-<meta name="keywords" content="数据分析，深度学习">
+<meta name="description" content="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归【识别猫】 的简单的神经网络一、引入需要的库·numpy ：是用Python进行科学计算的基本软件包。·h5py：是与H5文件中存储的数据集进行交互的常用软件包。·matplotlib：是一个著名的库，用于在Python中绘制图表。·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。import numpy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="吴恩达深度学习笔记1-2--神经网络基础">
-<meta property="og:url" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本篇笔记学习自CSDN的博主Koala_Tree看过吴恩达老师的课程后，不想自己做笔记了，就直接跟着博主又打了一遍，加深记忆在此感谢Koala_Tree博主以下为在Coursera上吴恩达老师的DeepLearning.ai课程项目中，第一部分《神经网络和深度学习》第二周课程部分关键点的笔记。神经网络和深度学习—神经网络基础1、二分类问题·样本：(x,y)，训练样本包含m个；·其中x∈Rnx，表示">
+<meta property="og:description" content="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归【识别猫】 的简单的神经网络一、引入需要的库·numpy ：是用Python进行科学计算的基本软件包。·h5py：是与H5文件中存储的数据集进行交互的常用软件包。·matplotlib：是一个著名的库，用于在Python中绘制图表。·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。import numpy">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/attachment:new.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/attachment:2.1.2.png">
-<meta property="og:updated_time" content="2018-09-20T14:27:52.072Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_7_0.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_42_0.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_45_1.png">
+<meta property="og:updated_time" content="2018-09-23T14:29:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴恩达深度学习笔记1-2--神经网络基础">
-<meta name="twitter:description" content="本篇笔记学习自CSDN的博主Koala_Tree看过吴恩达老师的课程后，不想自己做笔记了，就直接跟着博主又打了一遍，加深记忆在此感谢Koala_Tree博主以下为在Coursera上吴恩达老师的DeepLearning.ai课程项目中，第一部分《神经网络和深度学习》第二周课程部分关键点的笔记。神经网络和深度学习—神经网络基础1、二分类问题·样本：(x,y)，训练样本包含m个；·其中x∈Rnx，表示">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/20/吴恩达Coursera深度学习课程笔记1-2--神经网络基础/attachment:new.png">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归【识别猫】 的简单的神经网络一、引入需要的库·numpy ：是用Python进行科学计算的基本软件包。·h5py：是与H5文件中存储的数据集进行交互的常用软件包。·matplotlib：是一个著名的库，用于在Python中绘制图表。·lr_utils ：在本文的资料包里，一个加载资料包里面的数据的简单功能的库。import numpy">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/output_7_0.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -100,8 +100,8 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="31">
-<input type="hidden" id="yelog_site_word_count" value="16.1k">
+<input type="hidden" id="yelog_site_posts_number" value="32">
+<input type="hidden" id="yelog_site_word_count" value="19.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -406,6 +406,14 @@
            data-author="" >
             <span class="post-title" title="吴恩达深度学习笔记1-2--神经网络基础">吴恩达深度学习笔记1-2--神经网络基础</span>
             <span class="post-date" title="2018-09-20 22:27:05">2018/09/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/09/23/吴恩达课后编程作业1-2：具有神经网络思维的Logistic回归/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2018-09-23 22:30:30">2018/09/23</span>
         </a>
         
     </nav>
