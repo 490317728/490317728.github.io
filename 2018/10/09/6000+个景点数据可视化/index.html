@@ -418,7 +418,7 @@
         </a>
         
         <a  class="数据分析 "
-           href="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/"
+           href="/2018/10/09/6000+个景点数据可视化/"
            data-tag="数据分析"
            data-author="" >
             <span class="post-title" title="6000+个景点数据可视化">6000+个景点数据可视化</span>
@@ -437,7 +437,7 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-6000+个景点数据可视化/6000+个景点数据可视化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-6000+个景点数据可视化" class="article article-type-post" itemscope itemprop="blogPost">
     
         <h1 class="article-title">6000+个景点数据可视化</h1>
     
@@ -461,7 +461,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-09 20:03:42'>2018-10-09 20:03</time>
+        创建时间:<time class="date" title='更新时间: 2018-10-09 21:02:44'>2018-10-09 20:03</time>
         
     </div>
     <div class="article-meta">
@@ -582,14 +582,14 @@ sns.barplot(num_top[&quot;name&quot;][:30],num_top[&quot;num&quot;][:30])
 plt.xticks(rotation=80)
 plt.show()
 </code></pre>
-<p><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/output_5_0.png" alt="png"></p>
+<p><img src="/2018/10/09/6000+个景点数据可视化/output_5_0.png" alt="png"></p>
 <pre><code class="python">#省份与景区评级
 data[&#39;level_sum&#39;] = 1
 var = data.groupby([&#39;province&#39;,&#39;level&#39;]).level_sum.sum()
 var.unstack().plot(kind=&#39;bar&#39;,figsize=(35,10),stacked=False,color=[&#39;red&#39;,&#39;blue&#39;,&#39;green&#39;,&#39;yellow&#39;])
 plt.show()
 </code></pre>
-<p><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/output_6_0.png" alt="png"></p>
+<p><img src="/2018/10/09/6000+个景点数据可视化/output_6_0.png" alt="png"></p>
 <pre><code class="python">#根据省\市统计销量和
 pro_num = data.groupby([&#39;province&#39;]).agg(&#39;sum&#39;).reset_index()
 city_num = data.groupby([&#39;city&#39;]).agg(&#39;sum&#39;).reset_index()
@@ -626,7 +626,7 @@ map = Map(&#39;省份景点热度热力图&#39;,title_color=&quot;#fff&quot;,tit
 map.add(&#39;&#39;,pro_num[&#39;province&#39;],pro_num[&quot;hot&quot;],maptype=&quot;china&quot;,visual_range=[5000,80000],is_visualmap=True,visual_text_color=&#39;#000&#39;,is_label_show=True)
 map.render(path=&quot;F:\dataAnalysis\pro_hot.html&quot;)
 </code></pre>
-<p><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/hot.jpg" alt="jpg"><br><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/num.jpg" alt="jpg"></p>
+<p><img src="/2018/10/09/6000+个景点数据可视化/hot.jpg" alt="jpg"><br><img src="/2018/10/09/6000+个景点数据可视化/num.jpg" alt="jpg"></p>
 <pre><code class="python">#人少的5A景区，4A景区，3A景区
 top_5A = data[data[&quot;level&quot;] ==&quot;5A景区&quot;].sort_values(by=&#39;num&#39;,axis = 0,ascending=True).reset_index(drop=True)
 top_4A = data[data[&quot;level&quot;] ==&quot;4A景区&quot;].sort_values(by=&#39;num&#39;,axis = 0,ascending=True).reset_index(drop=True)
@@ -644,9 +644,9 @@ ax = sns.barplot(top_3A[&quot;name&quot;][:15],top_3A[&quot;hot&quot;][:15])
 ax.set_title(&quot;人少的3A景区&quot;) 
 plt.show()
 </code></pre>
-<p><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/output_9_0.png" alt="png"></p>
-<p><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/output_9_1.png" alt="png"></p>
-<p><img src="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/output_9_2.png" alt="png"></p>
+<p><img src="/2018/10/09/6000+个景点数据可视化/output_9_0.png" alt="png"></p>
+<p><img src="/2018/10/09/6000+个景点数据可视化/output_9_1.png" alt="png"></p>
+<p><img src="/2018/10/09/6000+个景点数据可视化/output_9_2.png" alt="png"></p>
 <pre><code class="python">
 </code></pre>
 
@@ -662,8 +662,8 @@ plt.show()
     <p><span>文章字数:</span><span class="post-count">1,089</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Wangjian">Wangjian</a></p>
     <p><span>发布时间:</span>2018-10-09, 20:03:00</p>
-    <p><span>最后更新:</span>2018-10-09, 20:03:42</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/" title="6000+个景点数据可视化">http://yoursite.com/2018/10/09/6000+个景点数据可视化/6000+个景点数据可视化/</a>
+    <p><span>最后更新:</span>2018-10-09, 21:02:44</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/10/09/6000+个景点数据可视化/" title="6000+个景点数据可视化">http://yoursite.com/2018/10/09/6000+个景点数据可视化/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
